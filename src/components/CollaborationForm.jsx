@@ -173,7 +173,7 @@ const CollaborationForm = () => {
             }}
           >
             <img
-              src="public\All Images Landing page Altecht\collaboration-form.png"
+              src="All Images Landing page Altecht\collaboration-form.png"
               alt="Two business people shaking hands over a tablet"
               className="w-full h-full object-cover"
             />
