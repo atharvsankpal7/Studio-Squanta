@@ -1,4 +1,6 @@
+import BrandHero from "../components/BrandText";
 import HeroSection from "../components/HeroSection";
+import ServicesGrid from "../components/ServiceGrid";
 import Welcome from "../components/Welcome";
 
  const StudioSquantaVer01LandingPage = ({ className }) => {
@@ -6,6 +8,8 @@ import Welcome from "../components/Welcome";
     <>
       <HeroSection  />
       <Welcome/>
+      <BrandHero/>
+      <ServicesGrid/>
     </>
   );
 };
