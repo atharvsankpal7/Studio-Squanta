@@ -10,7 +10,7 @@ function Welcome() {
   return (
     <div className="min-h-screen bg-black text-white relative overflow-hidden ">
       {/* Decorative bars - Left side */}
-      <div ref={leftBarsRef} className="absolute left-4 md:left-16 bottom-0 hidden md:flex items-end gap-4 z-10">
+      <div ref={leftBarsRef} className=" absolute left-4 md:left-16 bottom-0 hidden lg:flex items-end gap-4 z-10">
         <motion.div 
           initial={{ height: 0 }}
           animate={isLeftInView ? { height: "10rem" } : { height: 0 }}
@@ -32,7 +32,7 @@ function Welcome() {
       </div>
 
       {/* Decorative bars - Right side */}
-      <div ref={rightBarsRef} className="absolute right-4 md:right-16 top-1/4 hidden md:flex items-start gap-4 z-10">
+      <div ref={rightBarsRef} className="absolute right-4 md:right-16 top-1/4 hidden lg:flex items-start gap-4 z-10">
         <motion.div 
           initial={{ height: 0 }}
           animate={isRightInView ? { height: "10rem" } : { height: 0 }}

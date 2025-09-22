@@ -1,99 +1,76 @@
-import React from 'react';
+import Container from "./ui/Container";
 
-// SVG Components (use public paths)
-const QuoteIcon1 = () => (
-    <img src="/icons/quote-up_svgrepo.com.png" alt="Quote Icon" className="w-[2.5rem] h-[2.5rem] text-gray-900" />
-);
-const QuoteIcon2 = () => (
-    <img src="/icons/quote-close-editor_svgrepo.com.png" alt="Quote Icon" className="w-[2.5rem] h-[2.5rem] text-gray-900" />
-);
+function TestimonialCard({ testimonial }) {
+  return (
+    <div
+      className={"w-[338px] h-[443px] flex flex-col relative"}
+      style={{ backgroundColor: testimonial.backgroundColor || "#E6FFEA" }}
+    >
+      {testimonial.image && (
+        <img
+          src={testimonial.image}
+          alt={testimonial.name}
+          className="w-full h-[200px] object-cover"
+        />
+      )}
 
-// Testimonials data
-const testimonials = [
-    {
-        image: '/All Images Landing page Altecht/c1.png',
-        quote: '“With Altecht’s custom solutions, we built a seamless platform that connects people and amplifies our mission.”',
-        client: 'Karmic',
-        ceoName: 'Manindar K. S.',
-        ceoDesignation: 'Director of Engineering, Karmic'
-    },
-    {
-        image: '/All Images Landing page Altecht/c2.png',
-        quote: '“Altecht helped us launch a stylish, scalable e-commerce platform that matches our brand’s energy.”',
-        client: 'Off-Thrd',
-        ceoName: 'M. D. Poleki',
-        ceoDesignation: 'Product Lead, Off-Thrd'
-    },
-    {
-        image: '/All Images Landing page Altecht/c4.png',
-        quote: '“Their tech made farming smarter—easy access to tools, data, and services for real impact on the ground.”',
-        client: 'Smart Kisaan',
-        ceoName: 'Maneesh Pahuja',
-        ceoDesignation: 'Enterpreneur, Smart Kisaan'
-    },
-];
+      <div className="p-6 flex-1 flex flex-col justify-between">
+        <p className="text-black font-montserrat text-base font-medium leading-normal mb-6">
+          {testimonial.content}
+        </p>
 
-const TestimonialCard = ({ image, quote, client, ceoName, ceoDesignation }) => (
-    <div className="w md:h-[36.611rem] flex-shrink-0 bg-white rounded-md"
-         style={{
-             boxShadow: "4.721px 9.441px 18.883px 0 rgba(0, 0, 0, 0.25)"
-         }}>
-        <div className="flex flex-col items-center">
-            <div className=" h-[17.184rem] w-[19.938rem]  mt-[1rem] overflow-hidden flex-shrink-0 bg-gray-100 px-5">
-                <img
-                    src={encodeURI(image)}
-                    alt={client}
-                    loading="lazy"
-                    className="w-full h-full object-cover object-center"
-                />
-            </div>
-
-            <h3 className="w-[17.361rem] mt-[1rem] md:mt-[1.75rem] text-black font-montserrat text-xl md:text-[1.890rem] font-medium text-left md:text-left">
-                {client}
-            </h3>
-
-            <p className="w-[18.542rem] mt-[1rem] md:mt-[1.25rem] md:h-[5.665rem] text-[#616161] font-montserrat text-sm md:text-[0.945rem] font-normal text-left md:text-left">
-                {quote}
-            </p>
-
-            <div className="md:max-w-[13.045rem] mt-[1rem] mb-[1.5rem] md:mb-0 md:mt-[1.51rem] self-start ml-[2rem] md:px-0 md:self-end md:mr-[1.438rem] ">
-                <p className="text-black font-montserrat text-sm md:text-[0.796rem] font-normal">
-                    {ceoName}
-                </p>
-                <p className="text-[#8A8A8A] font-montserrat text-sm md:text-[0.796rem] font-normal">
-                    {ceoDesignation}
-                </p>
-            </div>
+        <div>
+          <h3 className="text-black font-rogbold text-[20px] font-normal leading-normal tracking-[0.79px]">
+            {testimonial.name}
+          </h3>
+          <p className="text-black font-rogbold text-[20px] font-normal leading-normal tracking-[0.79px]">
+            {testimonial.title}
+          </p>
         </div>
+      </div>
     </div>
-);
+  );
+}
 
-const TestimonialsSection = () => {
-    return (
-        <div className="bg-white ">
-            <h2 className="w-full max-w-[42.5rem] mx-auto mt-[3rem] md:mt-[5.56rem] mb-[3rem] md:mb-[6.13rem] text-black font-montserrat text-3xl md:text-[2.5rem] font-semibold text-center">
-                What Our Client Say?
-            </h2>
+export default function TestimonialsSection() {
+  return (
+    <section className="bg-black py-16 md:py-24 lg:py-32">
+    
+      {/* Hero Section with Partner Text */}
+      <Container className="bg-black">
+        <h1
+          className="text-[24px] sm:text-[32px] md:text-[48px] lg:text-[72px] xl:text-[96.68px] 
+                     font-normal leading-tight sm:leading-normal
+                     tracking-[1px] sm:tracking-[1.28px] md:tracking-[2px] lg:tracking-[3px] xl:tracking-[3.867px]
+                     uppercase text-white 
+                     max-w-[90%] sm:max-w-[95%] md:max-w-[1279px]
+                     mx-auto text-center sm:text-left"
+          style={{
+            fontFamily: "Rogbold, -apple-system, Roboto, Helvetica, sans-serif",
+          }}
+        >
+          We partner with ambitious minds shaping what&apos;s next.
+        </h1>
+      </Container>
 
-            {/* Flex layout: wrap on smaller screens; precise desktop horizontal gap 11.22px */}
-            <div className="flex flex-wrap justify-center gap-y-[1.5rem] gap-x-[1rem] md:gap-x-[0.701rem]"
-                 style={{
-                     marginBottom: "3.32rem"
-                 }}>
-                {testimonials.map((testimonial, index) => (
-                    <div key={index} className="flex justify-center">
-                        <TestimonialCard
-                            image={testimonial.image}
-                            quote={testimonial.quote}
-                            client={testimonial.client}
-                            ceoName={testimonial.ceoName}
-                            ceoDesignation={testimonial.ceoDesignation}
-                        />
-                    </div>
-                ))}
-            </div>
-        </div>
-    );
-};
-
-export default TestimonialsSection;
+      {/* Testimonials Section */}
+      <Container className="bg-black flex items-center justify-center flex-col xl:flex-row gap-3">
+        <img 
+          src="/Squanta Assets/testinomial.png"
+          alt="Testimonial 1" 
+          className="w-full sm:w-[28.125rem] md:w-[34.375rem] lg:w-[37.5rem] xl:w-[42.25rem] 
+                     h-auto sm:h-[18.75rem] md:h-[21.875rem] lg:h-[25rem] xl:h-[27.688rem] 
+                     flex-shrink-0 object-cover"
+        />
+        <img
+          src="/Squanta Assets/testinomial2.png"
+          alt="Testimonial 2"
+          className="hidden md:block 
+                     w-full sm:w-[28.125rem] md:w-[34.375rem] lg:w-[37.5rem] xl:w-[42.25rem]
+                     h-auto sm:h-[18.75rem] md:h-[21.875rem] lg:h-[25rem] xl:h-[27.688rem]
+                     flex-shrink-0 object-cover"
+        />
+      </Container>
+    </section>
+  );
+}
