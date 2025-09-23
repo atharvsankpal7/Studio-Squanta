@@ -6,7 +6,7 @@ const CollaborationSection = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="bg-white">
+    <div className="bg-black text-white">
       <div className="
         w-full max-w-[90rem] h-auto xl:h-[32.6875rem] mx-auto 
         flex flex-col items-center px-[1rem] sm:px-[2rem] md:px-[3rem] lg:px-[4rem] xl:px-[0.25rem]
@@ -25,7 +25,6 @@ const CollaborationSection = () => {
             flex items-center justify-center
           "
           style={{
-            color: "#000",
             fontFamily: "Montserrat",
             fontStyle: "normal",
             fontWeight: "500",
@@ -33,7 +32,7 @@ const CollaborationSection = () => {
             margin: "0 auto 1rem auto",
           }}
         >
-          We approach every project as a true partnership.
+         We approach every project as a true partnership where our innovation aligns with your vision.
         </h2>
 
         {/* Motion Button */}
@@ -52,9 +51,9 @@ const CollaborationSection = () => {
             md:w-[32rem] md:h-[4rem] md:p-[0.625rem] md:gap-[1rem] md:rounded-[2.5rem] md:mt-10
             lg:w-[50rem] lg:h-[5rem] lg:p-[0.625rem] lg:gap-[1.125rem] lg:rounded-[3rem] lg:mt-12
             xl:w-[82.375rem] xl:h-[6.3125rem] xl:p-[0.625rem] xl:gap-[1.25rem] xl:rounded-[3.5625rem] xl:mt-[4.95rem]
-            border-2 border-[#BADEFF] bg-[#007AEC] cursor-pointer
-            hover:bg-black hover:drop-shadow-[0_0_0.5rem_rgba(0,0,0,0.5)] hover:border-gray-700
-          "
+            border-2 border-[#00FF26] bg-[#000] cursor-pointer
+            hover:bg-[#00FF26] hover:drop-shadow-[0_0_0.5rem_rgba(0,0,0,0.5)] hover:border-[#00FF26] 
+           "
           onClick={() => navigate("/collaboration")}
         >
           {/* Button Text */}
@@ -65,11 +64,10 @@ const CollaborationSection = () => {
               sm:text-[1.25rem] sm:w-[10rem]
               md:text-[1.5rem] md:w-[12rem]
               lg:text-[2rem] lg:w-[16rem]
-              xl:text-[3rem] xl:w-[25.75rem]
+              xl:text-[3rem] xl:w-[25.75rem] group-hover:text-black
             "
             style={{
               flexShrink: 0,
-              color: "#FFF",
               fontFamily: "Montserrat",
               fontStyle: "normal",
               fontWeight: "600",

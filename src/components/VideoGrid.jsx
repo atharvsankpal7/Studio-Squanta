@@ -159,7 +159,7 @@ function VideoGrid() {
   const [selectedVideoIndex, setSelectedVideoIndex] = useState(0);
 
   return (
-    <section className="px-[60px] pb-[120px] pt-[120px] bg-black">
+    <section className="px-[60px] pb-[120px] pt-[120px] bg-black xl:block hidden">
       <div className="flex justify-center">
         <CircularVideoList
           selectedIndex={selectedVideoIndex}

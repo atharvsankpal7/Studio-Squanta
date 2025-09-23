@@ -4,6 +4,8 @@ import ServicesGrid from "../components/ServiceGrid";
 import Welcome from "../components/Welcome";
 import TestimonialsSection from "../components/TestimonialsSection";
 import VideoGrid from "../components/VideoGrid";
+import FeaturedWorks from "../components/WorkSection";
+import CollaborationSection from "../components/CollaborationSection";
 
  const StudioSquantaVer01LandingPage = ({ className }) => {
   return (
@@ -14,6 +16,8 @@ import VideoGrid from "../components/VideoGrid";
       <ServicesGrid/>
       <TestimonialsSection />
       <VideoGrid />
+      <FeaturedWorks/>
+      <CollaborationSection/>
     </>
   );
 };
