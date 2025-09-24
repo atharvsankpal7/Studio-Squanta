@@ -5,19 +5,21 @@ import Welcome from "../components/Welcome";
 import TestimonialsSection from "../components/TestimonialsSection";
 import VideoGrid from "../components/VideoGrid";
 import FeaturedWorks from "../components/WorkSection";
-import CollaborationSection from "../components/CollaborationSection";
+import Marquee from "../components/Marquee";
+import CollaborationSectionHome from "../components/CollaborationSectionHome";
 
- const StudioSquantaVer01LandingPage = ({ className }) => {
+const StudioSquantaVer01LandingPage = ({ className }) => {
   return (
     <>
-      <HeroSection  />
-      <Welcome/>
-      <BrandHero/>
-      <ServicesGrid/>
+      <HeroSection />
+      <Welcome />
+      <BrandHero />
+      <Marquee />
+      <ServicesGrid />
       <TestimonialsSection />
       <VideoGrid />
-      <FeaturedWorks/>
-      <CollaborationSection/>
+      <FeaturedWorks />
+      <CollaborationSectionHome />
     </>
   );
 };

@@ -15,12 +15,12 @@ const HeroSection = () => {
           muted
           playsInline
           className="absolute top-0 left-0 w-full h-full object-cover"
-          src="Squanta Assets\14066241_1920_1080_30fps.mp4"
+          src="Squanta Assets/14066241_1920_1080_30fps.mp4"
         />
-        
+
         {/* Main Content Container */}
         <Container className="relative z-10 w-full h-screen flex flex-col items-center justify-center">
-          
+
           {/* Studio and SQUANTA Text */}
           <div className="flex flex-col items-center justify-center">
             <motion.div
@@ -29,15 +29,7 @@ const HeroSection = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="mb-4 md:mb-8"
             >
-              <h1 
-                className="font-sans text-white/50 uppercase tracking-[0.31em]"
-                style={{
-                  fontFamily: 'Rogbold, sans-serif',
-                  fontSize: 'clamp(3rem, 8vw + 2rem, 15.3125rem)', // Responsive from 48px to 245px
-                  fontWeight: 400,
-                  lineHeight: 'normal',
-                }}
-              >
+              <h1 className="font-rogbold hero-title text-white/50 uppercase tracking-[0.31em]">
                 Studio
               </h1>
             </motion.div>
@@ -49,15 +41,7 @@ const HeroSection = () => {
               transition={{ duration: 0.8, delay: 0.5 }}
               className="mb-8 md:mb-12 lg:mb-16"
             >
-              <h1 
-                className="font-sans text-white/75 uppercase tracking-[0.31em]"
-                style={{
-                  fontFamily: 'Rogbold, sans-serif',
-                  fontSize: 'clamp(3rem, 8vw + 2rem, 15.3125rem)', // Responsive from 48px to 245px
-                  fontWeight: 400,
-                  lineHeight: 'normal',
-                }}
-              >
+              <h1 className="font-rogbold hero-title text-white/75 uppercase tracking-[0.31em]">
                 SQUANTA
               </h1>
             </motion.div>
@@ -78,15 +62,7 @@ const HeroSection = () => {
                 height: '63px',
               }}
             >
-              <span
-                className="font-semibold"
-                style={{
-                  fontFamily: 'Montserrat, sans-serif',
-                  fontSize: '16px',
-                  fontWeight: 600,
-                  lineHeight: 'normal',
-                }}
-              >
+              <span className="font-montserrat font-semibold text-[16px] leading-normal">
                 Let's Collaborate
               </span>
               <svg

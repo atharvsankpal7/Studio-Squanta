@@ -80,8 +80,7 @@ const ServiceGrid = () => {
       {sections.map((section, idx) => (
         <Container key={idx} className="flex flex-col w-full text-white mb-[120px] md:mb-[330px] lg:mb[650px]">
           <h2
-            className="text-white font-normal uppercase text-[40px] md:text-[96.683px]"
-            style={{ fontFamily: "Rogbold", lineHeight: "normal" }}
+            className="text-white font-rogbold font-normal uppercase text-[40px] md:text-[96.683px] leading-normal"
           >
             {section.title}
           </h2>

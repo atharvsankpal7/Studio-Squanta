@@ -1,8 +1,8 @@
-import type { Config } from "tailwindcss";
+// Tailwind config (plain JS)
 
 export default {
   darkMode: ["class"],
-  content: ["./client/**/*.{ts,tsx}"],
+  content: ["./index.html", "./src/**/*.{js,jsx,ts,tsx}"],
   prefix: "",
   theme: {
     container: {
@@ -62,6 +62,7 @@ export default {
         'squanta-green': '#00FF26',
       },
       fontFamily: {
+        'rogbold': ['Rogbold', 'sans-serif'],
         'orbitron': ['Orbitron', 'sans-serif'],
         'montserrat': ['Montserrat', 'sans-serif'],
       },

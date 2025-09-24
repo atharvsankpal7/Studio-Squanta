@@ -57,26 +57,17 @@ const Navbar = () => {
   };
 
   return (
-    <div className={`w-full fixed top-0 left-0 right-0 z-50 bg-black transition-opacity duration-300 ${
-      showNavbar ? "opacity-100" : "opacity-0 pointer-events-none"
-    }`}>
+    <div className={`w-full fixed top-0 left-0 right-0 z-50 bg-black transition-opacity duration-300 ${showNavbar ? "opacity-100" : "opacity-0 pointer-events-none"
+      }`}>
       <nav
-        className="w-full lg:max-w-[90rem] mx-auto lg:px-10 px-2 md:px-[3.75rem] max-w-[100vw] flex  items-center justify-center"
-        style={{ minHeight: "4.625rem", fontFamily: "Montserrat, sans-serif" }}
+        className="w-full lg:max-w-[90rem] mx-auto lg:px-10 px-2 md:px-[3.75rem] max-w-[100vw] flex  items-center justify-center font-montserrat"
+        style={{ minHeight: "4.625rem" }}
       >
         <div className="flex justify-between items-center text-white h-full w-full relative ">
           {/* Logo */}
           <motion.div whileTap={{ scale: 0.95 }} className="flex items-center">
             <Link to="/" className="flex items-center hover:opacity-80">
-              <div
-                className="flex items-center justify-center px-[10px] py-[10px]"
-                style={{ 
-                  fontFamily: "Rogbold, sans-serif",
-                  fontSize: "29.938px",
-                  fontWeight: "400",
-                  lineHeight: "normal"
-                }}
-              >
+              <div className="flex items-center justify-center px-[10px] py-[10px] text-[29.938px] leading-normal font-rogbold">
                 <span style={{ color: "#FFFFFF" }}>STUDIO </span>
                 <span style={{ color: "#00FF26" }}>SQUANTA</span>
               </div>
@@ -89,11 +80,9 @@ const Navbar = () => {
               <motion.div key={item.path} whileHover={{ scale: 1.05 }}>
                 <Link
                   to={item.path}
-                  className={`transition-all duration-300 whitespace-nowrap hover:opacity-80 ${
-                    isActivePath(item.path) ? 'opacity-100' : 'opacity-100'
-                  }`}
+                  className={`transition-all duration-300 whitespace-nowrap hover:opacity-80 ${isActivePath(item.path) ? 'opacity-100' : 'opacity-100'
+                    } font-montserrat`}
                   style={{
-                    fontFamily: "Murecho, sans-serif",
                     fontSize: "14px",
                     fontWeight: "600",
                     letterSpacing: "1.54px",
@@ -113,36 +102,30 @@ const Navbar = () => {
               <motion.div whileHover={{ scale: 1.05 }}>
                 <Link
                   to="/future"
-                  className="flex items-center justify-center px-[10px] py-[10px] transition-all duration-300 hover:bg-gray-800"
+                  className="flex items-center justify-center px-[10px] py-[10px] transition-all duration-300 hover:bg-gray-800 font-montserrat text-[16px] font-semibold"
                   style={{
                     width: "133px",
                     height: "40px",
                     borderRadius: "57px",
                     border: "1px solid #FFF",
                     background: "#2B2B2B",
-                    fontFamily: "Montserrat, sans-serif",
-                    fontSize: "16px",
-                    fontWeight: "600",
                     color: "#FFF"
                   }}
                 >
                   Future
                 </Link>
               </motion.div>
-              
+
               <motion.div whileHover={{ scale: 1.05 }}>
                 <Link
                   to="/collaboration"
-                  className="flex items-center justify-center px-[10px] py-[10px] transition-all duration-300 hover:bg-gray-800"
+                  className="flex items-center justify-center px-[10px] py-[10px] transition-all duration-300 hover:bg-gray-800 font-montserrat text-[16px] font-semibold"
                   style={{
                     width: "133px",
                     height: "40px",
                     borderRadius: "57px",
                     border: "1px solid #FFF",
                     background: "#2B2B2B",
-                    fontFamily: "Montserrat, sans-serif",
-                    fontSize: "16px",
-                    fontWeight: "600",
                     color: "#FFF"
                   }}
                 >
@@ -190,9 +173,8 @@ const Navbar = () => {
                   <motion.div key={item.path} variants={itemVariants}>
                     <Link
                       to={item.path}
-                      className="block py-2 text-base font-medium hover:text-gray-400"
+                      className="block py-2 text-base font-medium hover:text-gray-400 font-montserrat"
                       style={{
-                        fontFamily: "Murecho, sans-serif",
                         fontSize: "14px",
                         fontWeight: "600",
                         letterSpacing: "1.54px",
@@ -206,9 +188,8 @@ const Navbar = () => {
                 <motion.div variants={itemVariants} className="pt-3 space-y-2">
                   <Link
                     to="/future"
-                    className="bg-[#2B2B2B] border border-white text-white hover:bg-gray-800 font-medium py-2 px-4 rounded-full w-full block text-center text-sm"
+                    className="bg-[#2B2B2B] border border-white text-white hover:bg-gray-800 font-medium py-2 px-4 rounded-full w-full block text-center text-sm font-montserrat"
                     style={{
-                      fontFamily: "Montserrat, sans-serif",
                       fontSize: "16px",
                       fontWeight: "600",
                     }}
@@ -218,9 +199,8 @@ const Navbar = () => {
                   </Link>
                   <Link
                     to="/collaboration"
-                    className="bg-[#2B2B2B] border border-white text-white hover:bg-gray-800 font-medium py-2 px-4 rounded-full w-full block text-center text-sm"
+                    className="bg-[#2B2B2B] border border-white text-white hover:bg-gray-800 font-medium py-2 px-4 rounded-full w-full block text-center text-sm font-montserrat"
                     style={{
-                      fontFamily: "Montserrat, sans-serif",
                       fontSize: "16px",
                       fontWeight: "600",
                     }}

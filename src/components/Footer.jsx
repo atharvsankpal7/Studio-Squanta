@@ -122,21 +122,21 @@ const Footer = () => {
               <div className="w-full max-w-[17.75rem] h-12 sm:h-14 lg:h-[3rem] border border-white rounded-[3.125rem] bg-black flex justify-center items-center gap-6 sm:gap-8 lg:gap-[3.125rem] px-4">
                 <a href="#" aria-label="Our Google page" className="hover:opacity-75 transition-opacity duration-200">
                   <img 
-                    src="/All Images Landing page Altecht/Google.png" 
+                    src="/icons/google.png" 
                     alt="Google" 
                     className="w-6 h-6 sm:w-7 sm:h-7 lg:w-[2.375rem] lg:h-[2.375rem]" 
                   />
                 </a>
                 <a href="https://www.instagram.com/altecht_/" aria-label="Our Instagram profile" className="hover:opacity-75 transition-opacity duration-200">
                   <img 
-                    src="/All Images Landing page Altecht/Instagram.png" 
+                    src="/icons/insta.png" 
                     alt="Instagram" 
                     className="w-6 h-6 sm:w-7 sm:h-7 lg:w-[2.375rem] lg:h-[2.375rem]" 
                   />
                 </a>
                 <a href="https://www.linkedin.com/company/altecht/" aria-label="Our LinkedIn profile" className="hover:opacity-75 transition-opacity duration-200">
                   <img 
-                    src="/All Images Landing page Altecht/linkedin_svgrepo.com.svg" 
+                    src="/icons/linkedin_svgrepo.com.png" 
                     alt="LinkedIn" 
                     className="w-6 h-6 sm:w-7 sm:h-7 lg:w-[2.375rem] lg:h-[2.375rem]" 
                   />

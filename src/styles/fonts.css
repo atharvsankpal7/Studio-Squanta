@@ -1,5 +1,9 @@
+/* Load Montserrat from Google Fonts so Tailwind's font-montserrat works */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap');
+
 :root {
-    font-family: 'Rogbold', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    /* Use Montserrat as the default document font. Apply Rogbold only where explicitly used. */
+    font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 * {
@@ -9,4 +13,35 @@
 /* Keep Audiowide only for specific elements */
 .font-audiowide {
     font-family: 'Audiowide', cursive !important;
+}
+
+/* Rogbold font-face */
+@font-face {
+    font-family: 'Rogbold';
+    /* try local first, then absolute path (Vite), then relative as fallback */
+    src: local('Rogbold'),
+        url('/fonts/Rogbold.otf') format('opentype'),
+        url('/src/assets/Rogbold.otf') format('opentype'),
+        url('../assets/Rogbold.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Ensure Tailwind's font-rogbold uses Rogbold and fallback to Montserrat if it fails */
+.font-rogbold {
+    font-family: 'Rogbold', 'Montserrat', sans-serif !important;
+}
+
+/* Hero title sizing: fluid up to a hard max on large screens */
+.hero-title {
+    font-size: clamp(3rem, 11vw + 2rem, 15.3125rem);
+    line-height: normal;
+}
+
+/* Force the exact max on very large desktop viewports (common 1920px and above) */
+@media (min-width: 1920px) {
+    .hero-title {
+        font-size: 15.3125rem !important;
+    }
 }

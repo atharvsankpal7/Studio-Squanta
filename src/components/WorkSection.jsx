@@ -13,7 +13,7 @@ const WorkCard = ({ image, title, countryFlag, description, tags }) => {
       {/* Content */}
       <div className="py-6 flex flex-col ">
         {/* Title */}
-        <div className="flex items-center gap-2 mb-3">
+        <div className="flex items-center gap-2 mb-4">
           <h3 className="text-xl font-semibold">{title}</h3>
           {countryFlag && (
             <img
@@ -24,13 +24,13 @@ const WorkCard = ({ image, title, countryFlag, description, tags }) => {
           )}
         </div>
 
-        {/* Description */}
-        <p className="text-base text-[16px] lg:text-[26px] text-gray-300 leading-relaxed mb-4">
-          {description}
-        </p>
+        {/* /* Description */ }
+          <p className="text-base text-[16px] lg:text-[26px] text-gray-300 leading-tight  mb-4 font-rogbold" style={{ letterSpacing: "0.18106rem" ,minHeight: "6.1rem"}}>
+            {description}
+          </p>
 
-        {/* Tags */}
-        <div className="mt-auto min-h-[60px] lg:min-h-[90px] flex flex-wrap gap-2">
+          {/* Tags */}
+        <div className="mt-auto min-h-[60px] lg:min-h-[90px] flex flex-wrap gap-5">
           {tags.map((tag, i) => (
             <span
               key={i}
@@ -86,7 +86,7 @@ const FeaturedWorks = () => {
   return (
     <section className="bg-black py-12 px-6 md:px-12">
       <Container>
-        <h2 className="text-white mb-10 font-['Rogbold'] font-normal text-[32px] md:text-[96.68px]">
+        <h2 className="text-white mb-10 font-rogbold font-normal text-[32px] md:text-[96.68px]">
           FEATURED WORKS
         </h2>
 

@@ -35,19 +35,11 @@ function TestimonialCard({ testimonial }) {
 export default function TestimonialsSection() {
   return (
     <section className="bg-black py-16 md:py-24 lg:py-32">
-    
+
       {/* Hero Section with Partner Text */}
       <Container className="bg-black">
         <h1
-          className="text-[24px] sm:text-[32px] md:text-[48px] lg:text-[72px] xl:text-[96.68px] 
-                     font-normal leading-tight sm:leading-normal
-                     tracking-[1px] sm:tracking-[1.28px] md:tracking-[2px] lg:tracking-[3px] xl:tracking-[3.867px]
-                     uppercase text-white 
-                     max-w-[90%] sm:max-w-[95%] md:max-w-[1279px]
-                     mx-auto text-center sm:text-left"
-          style={{
-            fontFamily: "Rogbold, -apple-system, Roboto, Helvetica, sans-serif",
-          }}
+          className="text-[32px] sm:text-[48px] md:text-[56px] lg:text-[72px] xl:text-[96.68px] font-rogbold font-normal leading-tight sm:leading-normal tracking-[1px] sm:tracking-[1.28px] md:tracking-[2px] lg:tracking-[3px] xl:tracking-[3.867px] uppercase text-white max-w-[90%] sm:max-w-[95%] md:max-w-[1279px] mx-auto text-center sm:text-left"
         >
           We partner with ambitious minds shaping what&apos;s next.
         </h1>
@@ -55,20 +47,15 @@ export default function TestimonialsSection() {
 
       {/* Testimonials Section */}
       <Container className="bg-black flex items-center justify-center flex-col xl:flex-row gap-3">
-        <img 
+        <img
           src="/Squanta Assets/testinomial.png"
-          alt="Testimonial 1" 
-          className="w-full sm:w-[28.125rem] md:w-[34.375rem] lg:w-[37.5rem] xl:w-[42.25rem] 
-                     h-auto sm:h-[18.75rem] md:h-[21.875rem] lg:h-[25rem] xl:h-[27.688rem] 
-                     flex-shrink-0 object-cover"
+          alt="Testimonial 1"
+          className="w-full max-w-full flex-1 min-w-0 h-auto sm:h-[18.75rem] md:h-[21.875rem] lg:h-[25rem] xl:h-[27.688rem] object-cover"
         />
         <img
           src="/Squanta Assets/testinomial2.png"
           alt="Testimonial 2"
-          className="hidden md:block 
-                     w-full sm:w-[28.125rem] md:w-[34.375rem] lg:w-[37.5rem] xl:w-[42.25rem]
-                     h-auto sm:h-[18.75rem] md:h-[21.875rem] lg:h-[25rem] xl:h-[27.688rem]
-                     flex-shrink-0 object-cover"
+          className=" w-full max-w-full flex-1 min-w-0 h-auto sm:h-[18.75rem] md:h-[21.875rem] lg:h-[25rem] xl:h-[27.688rem] object-cover"
         />
       </Container>
     </section>

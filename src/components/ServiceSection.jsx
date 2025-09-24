@@ -7,18 +7,17 @@ import React from 'react';
  * @param {Array} services - Array of service items to display
  * @param {string} className - Additional CSS classes
  */
-const ServiceSection = ({ 
-  title, 
-  description, 
-  services = [], 
-  className = '' 
+const ServiceSection = ({
+  title,
+  description,
+  services = [],
+  className = ''
 }) => {
   return (
     <div className={`space-y-6 ${className}`}>
       {/* Title */}
       <h2
-        className="text-white text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-normal uppercase leading-tight"
-        style={{ fontFamily: 'Rogbold, -apple-system, Roboto, Helvetica, sans-serif' }}
+        className="text-white text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-rogbold font-normal uppercase leading-tight"
       >
         {title}
       </h2>
