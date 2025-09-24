@@ -2,7 +2,14 @@ import React from "react";
 import Container from "./ui/Container";
 
 // Reusable Card Component
-const WorkCard = ({ image, title, countryFlag, description, tags }) => {
+const WorkCard = ({
+  image,
+  title,
+  countryFlag,
+  description,
+  tags,
+  disableDescription,
+}) => {
   return (
     <div className="flex flex-col bg-black text-white overflow-hidden shadow-lg">
       {/* Image */}
@@ -24,12 +31,17 @@ const WorkCard = ({ image, title, countryFlag, description, tags }) => {
           )}
         </div>
 
-        {/* /* Description */ }
-          <p className="text-base text-[16px] lg:text-[26px] text-gray-300 leading-tight  mb-4 font-rogbold" style={{ letterSpacing: "0.18106rem" ,minHeight: "6.1rem"}}>
+        {/* /* Description */}
+        {!disableDescription && (
+          <p
+            className="text-base text-[16px] lg:text-[26px] text-gray-300 leading-tight  mb-4 font-rogbold"
+            style={{ letterSpacing: "0.18106rem", minHeight: "6.1rem" }}
+          >
             {description}
           </p>
+        )}
 
-          {/* Tags */}
+        {/* Tags */}
         <div className="mt-auto min-h-[60px] lg:min-h-[90px] flex flex-wrap gap-5">
           {tags.map((tag, i) => (
             <span
@@ -45,10 +57,9 @@ const WorkCard = ({ image, title, countryFlag, description, tags }) => {
   );
 };
 
-
 // Featured Works Section
-const FeaturedWorks = () => {
-  const works = [
+const FeaturedWorks = ({ disableDescription = false }) => {
+  let works = [
     {
       image: "Squanta Assets/Rectangle 64.png",
       title: "FIREFIT",
@@ -83,20 +94,28 @@ const FeaturedWorks = () => {
     },
   ];
 
+  works = disableDescription ? [...works, ...works] : works;
+
   return (
     <section className="bg-black py-12 px-6 md:px-12">
       <Container>
-        <h2 className="text-white mb-10 font-rogbold font-normal text-[32px] md:text-[96.68px]">
-          FEATURED WORKS
-        </h2>
+        {!disableDescription && (
+          <h2 className="text-white mb-10 font-rogbold font-normal text-[32px] md:text-[96.68px]">
+            FEATURED WORKS
+          </h2>
+        )}
 
         {/* Responsive Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 gap-y-[65px] md:gap-y-[221px]">
           {works.map((work, i) => (
-            <WorkCard key={i} {...work} />
+            <WorkCard
+              key={i}
+              {...work}
+              disableDescription={disableDescription}
+            />
           ))}
         </div>
-        <div className="flex justify-center mt-12">
+        {!disableDescription && <div className="flex justify-center mt-12">
           <button className="flex items-center gap-2 text-white border border-white rounded-[57px] px-6 py-2 hover:bg-white hover:text-black ">
             <span>View All</span>
             <svg
@@ -116,7 +135,7 @@ const FeaturedWorks = () => {
               />
             </svg>
           </button>
-        </div>
+        </div>}
       </Container>
     </section>
   );
