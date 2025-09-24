@@ -4,7 +4,7 @@ import React from 'react';
  * Container component with consistent horizontal padding
  * Uses 3.75rem padding on desktop, responsive on smaller screens
  */
-const Container = ({ 
+const   Container = ({ 
   children, 
   className = '', 
   as: Component = 'div',

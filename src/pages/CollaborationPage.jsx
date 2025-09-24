@@ -10,7 +10,7 @@ const CollaborationPage = () => {
     }, []);
 
     return (
-        <Container>
+        <Container className="px-4 sm:px-6 md:px-[3.75rem] lg:pl-0 pt-18">
             <CollaborationForm />
         </Container>
     );
