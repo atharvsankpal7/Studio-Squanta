@@ -168,7 +168,7 @@ const CollaborationForm = () => {
             />
           </div>
 
-          {/* Right Column - Form */}}
+          {/* Right Column - Form */}
           <div className="flex flex-col flex-1 min-w-0">
             <h3
               className="text-[1.5rem] lg:text-[2rem] md:text-[1.8rem] font-semibold mt-6 lg:mt-[3.25rem] md:mt-[2.75rem] mb-6 lg:mb-[3.25rem] md:mb-[2.75rem] text-center"
