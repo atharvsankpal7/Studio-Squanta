@@ -55,7 +55,7 @@ export default function TestimonialsSection() {
         <img
           src="/Squanta Assets/testinomial2.png"
           alt="Testimonial 2"
-          className=" w-full max-w-full flex-1 min-w-0 h-auto sm:h-[18.75rem] md:h-[21.875rem] lg:h-[25rem] xl:h-[27.688rem] object-cover"
+          className="hidden md:block w-full max-w-full flex-1 min-w-0 h-auto sm:h-[18.75rem] md:h-[21.875rem] lg:h-[25rem] xl:h-[27.688rem] object-cover"
         />
       </Container>
     </section>
