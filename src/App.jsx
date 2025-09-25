@@ -6,7 +6,7 @@ import KnowMorePage from './pages/KnowMorePage';
 import CollaborationPage from './pages/CollaborationPage';
 import WorkPage from './pages/WorkPage';
 import ClientPage from './pages/ClientPage';
-import CareersPageContainer from './pages/CareersPageContainer';
+import FuturePage from './pages/FuturePage';
 import PageWrapper from './layouts/PageWrapper';
 
 const App = () => {
@@ -18,6 +18,7 @@ const App = () => {
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/know-more" element={<KnowMorePage />} />
           <Route path="/collaboration" element={<CollaborationPage />} />
+          <Route path="/future" element={<FuturePage />} />
           <Route path="/work" element={<WorkPage />} />
           <Route path="/client" element={<ClientPage />} />
           {/* <Route path="/careers" element={<CareersPageContainer />} /> */}
