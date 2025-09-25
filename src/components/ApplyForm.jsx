@@ -12,22 +12,22 @@ const InputField = ({
   error,
   name,
 }) => (
-  <div style={{ marginBottom: "clamp(2rem, 3rem, 4.31rem)" }}>
+  <div style={{ marginBottom: "clamp(1.75rem, 5vw, 4.31rem)" }}>
     <label
       style={{
         color: "#898989",
         fontFamily: "Montserrat",
-        fontSize: "clamp(0.875rem, 1.06131rem, 1.06131rem)",
+        fontSize: "clamp(0.75rem, 2vw, 1.06131rem)",
         fontStyle: "normal",
         fontWeight: 700,
         lineHeight: "normal",
-        marginBottom: "clamp(0.25rem, 0.44rem, 0.44rem)",
+        marginBottom: "clamp(0.5rem, 1vw, 0.44rem)",
         display: "block",
       }}
     >
-      {label} {!optional && <span className="text-red-500">*</span>}
+      {label} {!optional}
     </label>
-    <div style={{ marginBottom: "clamp(0.75rem, 1.06rem, 1.06rem)" }}>
+    <div style={{ marginBottom: "clamp(1rem, 1vw, 1.06rem)" }}>
       <input
         type={type}
         name={name}
@@ -37,7 +37,7 @@ const InputField = ({
         onBlur={onBlur}
         style={{
           display: "flex",
-          padding: "clamp(0.75rem, 1.03006rem, 1.03006rem) clamp(1rem, 1.24856rem, 1.24856rem)",
+          padding: "clamp(0.5rem, 2vw, 1.03006rem) clamp(0.75rem, 2vw, 1.24856rem)",
           justifyContent: "space-between",
           alignItems: "center",
           alignSelf: "stretch",
@@ -45,9 +45,10 @@ const InputField = ({
           border: error ? "1px solid #ef4444" : "1px solid #d1d5db",
           borderRadius: "9999px",
           backgroundColor: "white",
+          color: "#000",
           outline: "none",
         }}
-        className="focus:ring-2 focus:ring-blue-500 transition-shadow"
+        className="focus:ring-2 focus:ring-green-500 transition-shadow"
       />
       {error && <p className="text-center text-red-500 text-sm">{error}</p>}
     </div>
@@ -99,7 +100,7 @@ const ApplyForm = () => {
     // Portfolio validation (optional)
     if (
       formData.portfolio &&
-      !/^(https?:\/\/)?([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?$/.test(
+      !/^(https?:\/\/)?([\w-]+\.)+[\w-]+(\/[\w- .\/\?%&=]*)?$/.test(
         formData.portfolio
       )
     ) {
@@ -143,7 +144,7 @@ const ApplyForm = () => {
       if (!/^\d+(\.\d{1,2})?$/.test(value)) return "Please enter a valid CTC";
     }
     if (name === "portfolio" && value) {
-      if (!/^(https?:\/\/)?([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?$/.test(value)) {
+      if (!/^(https?:\/\/)?([\w-]+\.)+[\w-]+(\/[\w- .\/\?%&=]*)?$/.test(value)) {
         return "Please enter a valid URL";
       }
     }
@@ -201,49 +202,34 @@ const ApplyForm = () => {
     }
   };
 
-   return (
-     <div
-       id="apply-form"
-       className="bg-white min-h-screen font-sans antialiased text-gray-900"
-     >
-       <div className="py-8 md:py-16 px-4 md:px-0">
-         <div className="">
-           <h1
-             style={{
-               color: "#000",
-               fontFamily: "Montserrat, sans-serif",
-               fontStyle: "normal",
-               fontWeight: 600,
-               lineHeight: "normal",
-               textTransform: "capitalize",
-               marginBottom: "clamp(2rem, 3rem, 3rem)"
-             }}
-             className="text-center lg:text-left text-[3rem] sm:text-[4.5rem] lg:text-[6.03563rem]"
-           >
-             Apply Here
-           </h1>
-         </div>
-         <div className="grid md:grid-cols-2 gap-x-16 lg:gap-x-24 items-center">
-           <div className="hidden md:flex  items-center">
-             <div className="">
-               <img
-                src="All Images Landing page Altecht\Careers.jpg"
-                alt="A rowing team working in unison"
-                style={{
-                  width: "34.625rem",
-                  height: "47.125rem",
-                  flexShrink: 0,
-                }}
-                className="object-cover shadow-lg"
-                onError={(e) => {
-                  e.target.onerror = null;
-                  e.target.src =
-                    "https://placehold.co/600x800/e2e8f0/e2e8f0?text=Image";
-                }}
-              />
-            </div>
+  return (
+    <div id="apply-form" className="bg-black min-h-screen font-sans antialiased text-white">
+      <div className="py-6 md:py-16 px-4 md:px-0">
+        <div className="">
+          <h1
+            style={{
+              color: "#FFF",
+              fontStyle: "normal",
+              fontWeight: 400,
+              textTransform: "uppercase",
+              marginBottom: "clamp(1rem, 2rem, 3rem)"
+            }}
+            className="text-center lg:text-left text-[2rem] sm:text-[3rem] lg:text-[6.03563rem] font-rogbold tracking-wide"
+          >
+            Apply Here
+          </h1>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-x-8 lg:gap-x-24 items-start">
+          <div className="hidden md:flex items-center">
+            <div>{/* Decorative/illustration area (kept empty) */}</div>
           </div>
-          <form noValidate onSubmit={handleSubmit}>
+
+          <form
+            noValidate
+            onSubmit={handleSubmit}
+            className="w-full max-w-[34rem] md:max-w-none mx-auto md:mx-0"
+          >
             <InputField
               label="What's your name?"
               placeholder="Your name"
@@ -292,25 +278,24 @@ const ApplyForm = () => {
               error={errors.portfolio}
             />
 
-             <div style={{ marginBottom: "clamp(1.25rem, 1.93rem, 1.93rem)" }}>
-               <label
-                 style={{
-                   color: "#898989",
-                   fontFamily: "Montserrat",
-                   fontSize: "clamp(0.875rem, 1.06131rem, 1.06131rem)",
-                   fontStyle: "normal",
-                   fontWeight: 700,
-                   lineHeight: "normal",
-                   marginBottom: "clamp(0.25rem, 0.44rem, 0.44rem)",
-                   display: "block",
-                 }}
-               >
-                 Upload Document <span className="text-red-500">*</span>
-               </label>
+            <div style={{ marginBottom: "clamp(0.75rem, 1.5rem, 1.93rem)" }}>
+              <label
+                style={{
+                  color: "#898989",
+                  fontFamily: "Montserrat",
+                  fontStyle: "normal",
+                  fontWeight: 700,
+                  fontSize: "clamp(0.75rem, 2vw, 1.06131rem)",
+                  lineHeight: "normal",
+                  marginBottom: "clamp(0.25rem, 0.44rem, 0.44rem)",
+                  display: "block",
+                }}
+              >
+                Upload Document
+              </label>
               <div
-                className={`relative border ${
-                  errors.resume ? "border-red-500" : "border-gray-300"
-                } rounded-full hover:border-gray-400`}
+                className={`relative border ${errors.resume ? "border-red-500" : "border-gray-300"
+                  } rounded-full hover:border-gray-400`}
               >
                 <input
                   type="file"
@@ -318,64 +303,56 @@ const ApplyForm = () => {
                   onChange={handleFileChange}
                   accept=".pdf,.doc,.docx"
                 />
-                 <div
-                   style={{
-                     display: "flex",
-                     padding: "0 clamp(1rem, 1.24856rem, 1.24856rem) 0 0",
-                     justifyContent: "space-between",
-                     alignItems: "center",
-                     alignSelf: "stretch",
-                     backgroundColor: "white",
-                     borderRadius: "9999px",
-                   }}
-                 >
-                   <span
-                     className="bg-blue-600 text-white text-sm font-semibold rounded-full"
-                     style={{
-                       padding: "clamp(0.75rem, 1.03006rem, 1.03006rem) clamp(1rem, 1.24856rem, 1.24856rem)",
-                       background:
-                         "linear-gradient(0deg, #007AEC 0%, #007AEC 100%), #000",
-                     }}
-                   >
-                     Choose File
-                   </span>
-                  <span className="ml-3 text-gray-500 truncate">
+                <div
+                  style={{
+                    display: "flex",
+                    padding: "0 clamp(0.5rem, 0.9rem, 1.24856rem) 0 0",
+                    alignItems: "center",
+                    alignSelf: "stretch",
+                    backgroundColor: "white",
+                    borderRadius: "9999px",
+                  }}
+                >
+                  <span
+                    className="bg-[#1C1C1C] text-white text-sm font-semibold rounded-full"
+                    style={{
+                      padding:
+                        "clamp(0.5rem, 0.75rem, 1.03006rem) clamp(0.75rem, 1rem, 1.24856rem)",
+                    }}
+                  >
+                    Choose File
+                  </span>
+                  <span className="ml-3 text-gray-500 truncate text-sm">
                     {selectedFileName || "Upload your resume"}
                   </span>
                 </div>
               </div>
               {errors.resume && (
-                <p className="text-center text-red-500 text-sm">
-                  {errors.resume}
-                </p>
+                <p className="text-center text-red-500 text-sm">{errors.resume}</p>
               )}
             </div>
 
-             <button
-               type="submit"
-               style={{
-                 display: "flex",
-                 width: "100%",
-                 maxWidth: "38.747rem",
-                 height: "clamp(3rem, 3.93306rem, 3.93306rem)",
-                 padding: "clamp(0.5rem, 0.62431rem, 0.62431rem)",
-                 justifyContent: "center",
-                 alignItems: "center",
-                 gap: "clamp(0.5rem, 0.62431rem, 0.62431rem)",
-                 flexShrink: 0,
-                 borderRadius: "clamp(2rem, 3.55844rem, 3.55844rem)",
-                 background:
-                   "linear-gradient(0deg, #007AEC 0%, #007AEC 100%), #000",
-                 border: "none",
-                 color: "white",
-                 fontWeight: "bold",
-                 cursor: "pointer",
-                 fontSize: "clamp(0.875rem, 1rem, 1rem)"
-               }}
-               className="hover:opacity-90 transition-opacity duration-300"
-             >
-               APPLY NOW
-             </button>
+            <button
+              type="submit"
+              style={{
+                display: "flex",
+                width: "100%",
+                height: "clamp(2.5rem, 3.2rem, 3.93306rem)",
+                padding: "clamp(0.4rem, 0.5rem, 0.62431rem)",
+                justifyContent: "center",
+                alignItems: "center",
+                gap: "clamp(0.375rem, 0.5rem, 0.62431rem)",
+                flexShrink: 0,
+                borderRadius: "clamp(1.5rem, 2.5rem, 3.55844rem)",
+                color: "white",
+                fontWeight: "bold",
+                cursor: "pointer",
+                fontSize: "clamp(0.75rem, 0.9rem, 1rem)"
+              }}
+              className="hover:opacity-90 transition-opacity duration-300 bg-[#1C1C1C] border border-[#00FF26] mx-auto md:mx-0"
+            >
+              APPLY NOW
+            </button>
           </form>
         </div>
       </div>

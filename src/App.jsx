@@ -8,6 +8,7 @@ import WorkPage from './pages/WorkPage';
 import ClientPage from './pages/ClientPage';
 import FuturePage from './pages/FuturePage';
 import PageWrapper from './layouts/PageWrapper';
+import CareersPageContainer from './pages/CareersPageContainer';
 
 const App = () => {
   return (
@@ -21,7 +22,7 @@ const App = () => {
           <Route path="/future" element={<FuturePage />} />
           <Route path="/work" element={<WorkPage />} />
           <Route path="/client" element={<ClientPage />} />
-          {/* <Route path="/careers" element={<CareersPageContainer />} /> */}
+          <Route path="/careers" element={<CareersPageContainer />} />
         </Routes>
       </PageWrapper>
     </Router>
