@@ -60,7 +60,7 @@ const Navbar = () => {
     <div className={`w-full fixed top-0 left-0 right-0 z-50 bg-black transition-opacity duration-300 ${showNavbar ? "opacity-100" : "opacity-0 pointer-events-none"
       }`}>
       <nav
-        className="w-full lg:max-w-[90rem] mx-auto lg:px-10 px-2 md:px-[3.75rem] max-w-[100vw] flex  items-center justify-center font-montserrat"
+        className="w-full lg:max-w-[90rem] mx-auto lg:px-10 px-2 md:px-[3.75rem] max-w-[100vw] flex flex-col lg:flex-rowitems-center justify-center font-montserrat"
         style={{ minHeight: "4.625rem" }}
       >
         <div className="flex justify-between items-center text-white h-full w-full relative ">
