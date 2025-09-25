@@ -97,7 +97,6 @@ const CollaborationForm = () => {
   // toggle this to true to always show modal on submit for testing purposes
   const TEST_SHOW_MODAL_ON_SUBMIT = true;
 
-
   const validateField = (name, value) => {
     if (name === "name") {
       if (!value.trim()) return "Name is required";
@@ -200,7 +199,7 @@ const CollaborationForm = () => {
   return (
     <div className=" ">
       <FirstSectionWrapper>
-        <div className="flex flex-col lg:flex-row md:flex-row lg:justify-between md:justify-between  gap-6 lg:gap-8 h-[95rem]">
+        <div className="flex flex-col lg:flex-row md:flex-row lg:justify-between md:justify-between  gap-6 lg:gap-8 lg:h-[95rem]">
           {/* Left Column - Image (hidden on mobile) */}
           <div className="hidden lg:block flex-shrink-0 w-1/2 max-w-[44.0625rem]">
             <img
@@ -269,7 +268,10 @@ const CollaborationForm = () => {
                 as="textarea"
                 isDescription={true}
               />
-              <div style={{ marginBottom: "clamp(1.25rem, 1.93rem, 1.93rem)" }} className="mt-[1.5rem] md:mt-[3.25rem]">
+              <div
+                style={{ marginBottom: "clamp(1.25rem, 1.93rem, 1.93rem)" }}
+                className="mt-[1.5rem] md:mt-[3.25rem]"
+              >
                 <label
                   style={{
                     fontFamily: "Montserrat",
@@ -284,8 +286,14 @@ const CollaborationForm = () => {
                   Upload Document
                 </label>
                 <div
-                  className={`relative border ${errors.resume ? "border-red-500" : "border-gray-300"
-                    }  hover:border-gray-400`} style={{ borderRadius: "0.3125rem", border: "1px solid rgb(120, 120, 120)", background: "rgb(255, 255, 255)" }}
+                  className={`relative border ${
+                    errors.resume ? "border-red-500" : "border-gray-300"
+                  }  hover:border-gray-400`}
+                  style={{
+                    borderRadius: "0.3125rem",
+                    border: "1px solid rgb(120, 120, 120)",
+                    background: "rgb(255, 255, 255)",
+                  }}
                 >
                   <input
                     type="file"
@@ -306,8 +314,8 @@ const CollaborationForm = () => {
                     <span
                       className="bg-black text-white text-md font-semibold "
                       style={{
-                        padding: "clamp(0.75rem, 1.03006rem, 1.03006rem) clamp(0.75rem, 1.04856rem, 1.04856rem)",
-
+                        padding:
+                          "clamp(0.75rem, 1.03006rem, 1.03006rem) clamp(0.75rem, 1.04856rem, 1.04856rem)",
                       }}
                     >
                       Choose File
@@ -368,11 +376,20 @@ const CollaborationForm = () => {
                     justifyContent: "space-evenly",
                     padding: "2rem",
                     boxSizing: "border-box",
-                    animation: "modal-pop 320ms cubic-bezier(.2,.8,.2,1) forwards",
+                    animation:
+                      "modal-pop 320ms cubic-bezier(.2,.8,.2,1) forwards",
                   }}
                 >
                   {/* 1st text - STUDIO SQUANTA (two words with different colors) */}
-                  <div style={{ display: "flex", gap: "0.5rem", alignItems: "center", flexWrap: "wrap", justifyContent: "center" }}>
+                  <div
+                    style={{
+                      display: "flex",
+                      gap: "0.5rem",
+                      alignItems: "center",
+                      flexWrap: "wrap",
+                      justifyContent: "center",
+                    }}
+                  >
                     <span
                       className="font-rogbold"
                       style={{
@@ -400,21 +417,93 @@ const CollaborationForm = () => {
                   </div>
 
                   {/* 2nd - SVG stack (center SVG will pop) */}
-                  <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-                    <div style={{ width: "8.8125rem", height: "8.8125rem", position: "relative", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <div
+                      style={{
+                        width: "8.8125rem",
+                        height: "8.8125rem",
+                        position: "relative",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                      }}
+                    >
                       {/* outer SVG */}
-                      <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 141 141" fill="none">
-                        <path fillRule="evenodd" clipRule="evenodd" d="M70.5 141C109.436 141 141 109.436 141 70.5C141 31.5639 109.436 0 70.5 0C31.5639 0 0 31.5639 0 70.5C0 109.436 31.5639 141 70.5 141Z" fill="#51DC8E" fillOpacity="0.5" />
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="100%"
+                        height="100%"
+                        viewBox="0 0 141 141"
+                        fill="none"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          clipRule="evenodd"
+                          d="M70.5 141C109.436 141 141 109.436 141 70.5C141 31.5639 109.436 0 70.5 0C31.5639 0 0 31.5639 0 70.5C0 109.436 31.5639 141 70.5 141Z"
+                          fill="#51DC8E"
+                          fillOpacity="0.5"
+                        />
                       </svg>
                       {/* inner centered circle with pop animation */}
-                      <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>
-                        <div style={{ width: "5.72813rem", height: "5.72813rem", position: "relative", display: "flex", alignItems: "center", justifyContent: "center", animation: "svg-pop 420ms cubic-bezier(.2,.8,.2,1) 120ms both" }}>
-                          <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 93 93" fill="none">
-                            <path fillRule="evenodd" clipRule="evenodd" d="M46.4996 92.3258C71.808 92.3258 92.3246 71.8092 92.3246 46.5008C92.3246 21.1923 71.808 0.675781 46.4996 0.675781C21.1911 0.675781 0.674561 21.1923 0.674561 46.5008C0.674561 71.8092 21.1911 92.3258 46.4996 92.3258Z" fill="#00FF26" />
+                      <div
+                        style={{
+                          position: "absolute",
+                          inset: 0,
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                        }}
+                      >
+                        <div
+                          style={{
+                            width: "5.72813rem",
+                            height: "5.72813rem",
+                            position: "relative",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            animation:
+                              "svg-pop 420ms cubic-bezier(.2,.8,.2,1) 120ms both",
+                          }}
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="100%"
+                            height="100%"
+                            viewBox="0 0 93 93"
+                            fill="none"
+                          >
+                            <path
+                              fillRule="evenodd"
+                              clipRule="evenodd"
+                              d="M46.4996 92.3258C71.808 92.3258 92.3246 71.8092 92.3246 46.5008C92.3246 21.1923 71.808 0.675781 46.4996 0.675781C21.1911 0.675781 0.674561 21.1923 0.674561 46.5008C0.674561 71.8092 21.1911 92.3258 46.4996 92.3258Z"
+                              fill="#00FF26"
+                            />
                           </svg>
                           {/* innermost small svg */}
-                          <div style={{ position: "absolute", width: "1.7625rem", height: "1.7625rem", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 43 31" fill="none">
+                          <div
+                            style={{
+                              position: "absolute",
+                              width: "1.7625rem",
+                              height: "1.7625rem",
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                            }}
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="100%"
+                              height="100%"
+                              viewBox="0 0 43 31"
+                              fill="none"
+                            >
                               <path
                                 d="M4 16.5L16.5 28L39 4"
                                 stroke="#2B2B2B"
@@ -430,7 +519,12 @@ const CollaborationForm = () => {
                   </div>
 
                   {/* 3rd - message text */}
-                  <div style={{ width: "min(31.1875rem, 90%)", textAlign: "center" }}>
+                  <div
+                    style={{
+                      width: "min(31.1875rem, 90%)",
+                      textAlign: "center",
+                    }}
+                  >
                     <p
                       className="font-montserrat text-white"
                       style={{
@@ -440,7 +534,8 @@ const CollaborationForm = () => {
                         lineHeight: "normal",
                       }}
                     >
-                      Thank you! We've received your details and will get back to you shortly.
+                      Thank you! We've received your details and will get back
+                      to you shortly.
                     </p>
                   </div>
                 </div>

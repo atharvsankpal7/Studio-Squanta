@@ -9,6 +9,7 @@ import ClientPage from './pages/ClientPage';
 import FuturePage from './pages/FuturePage';
 import PageWrapper from './layouts/PageWrapper';
 import CareersPageContainer from './pages/CareersPageContainer';
+import Firefit from './pages/casestudy/Firefit';
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
           <Route path="/work" element={<WorkPage />} />
           <Route path="/client" element={<ClientPage />} />
           <Route path="/careers" element={<CareersPageContainer />} />
+          <Route path="/casestudy/firefit" element={<Firefit />} />
         </Routes>
       </PageWrapper>
     </Router>
