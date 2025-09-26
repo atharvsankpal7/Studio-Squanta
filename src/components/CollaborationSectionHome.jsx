@@ -23,7 +23,7 @@ const CollaborationSectionHome = () => {
                     sm:text-[3rem] sm:max-w-[30rem] sm:mb-6
                     md:text-[4rem] md:max-w-[40rem] md:mb-8
                     lg:text-[5.8rem] lg:max-w-[60rem] lg:mb-12
-                    xl:text-[6.1rem] xl:max-w-[72.5rem] xl:h-[29.25rem] xl:mb-0
+                    xl:text-[4rem] xl:max-w-[72.5rem] xl:h-[29.25rem] xl:mb-0
                     flex items-center justify-center
                     font-alan-sans
                 "

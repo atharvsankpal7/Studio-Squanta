@@ -42,7 +42,7 @@ const ServiceGrid = () => {
       ],
     },
     {
-      title: "Content Creative",
+      title: "Content & Creative",
       description:
         "We develop brand-aligned content that not only grabs attention but inspires action - engineered for impact across fast-evolving digital channels.",
       rightColumnServices: [
@@ -56,7 +56,7 @@ const ServiceGrid = () => {
       leftColumnServices: ["Organic Content", "Art Direction"],
     },
     {
-      title: "Marketing Growth",
+      title: "Marketing & Growth",
       description:
         "We help brands accelerate growth through full-funnel marketing, data-led creative, and performance strategies that turn attention into action and keep customers engaged.",
       rightColumnServices: [
@@ -78,9 +78,9 @@ const ServiceGrid = () => {
   return (
     <section className="bg-black py-16 md:py-24 lg:py-32">
       {sections.map((section, idx) => (
-        <Container key={idx} className="flex flex-col w-full text-white mb-[120px] md:mb-[330px] lg:mb[650px]">
+        <Container key={idx} className="flex flex-col w-full text-white mb-[120px] md:mb-[330px] lg:mb[850px]  ">
           <h2
-            className="text-white font-alan-sans font-normal uppercase text-[40px] md:text-[96.683px] leading-normal"
+            className=" font-alan-sans  uppercase text-[40px] md:text-[55px] font-[700] xl:text-[86.011px] leading-normal"
           >
             {section.title}
           </h2>
@@ -92,7 +92,7 @@ const ServiceGrid = () => {
             }}
           ></div>
 
-          <p className="text-[#9E9E9E] font-montserrat text-[16px] font-semibold leading-normal max-w-lg">
+          <p className="text-[#9E9E9E] font-montserrat text-[16px] font-semibold leading-normal sm:max-w-[568px]">
             {section.description}
           </p>
 

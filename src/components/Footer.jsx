@@ -36,7 +36,7 @@ const Footer = () => {
           {/* Left Column */}
           <div className="flex flex-col items-start flex-1">
             {/* Let's Discuss Text */}
-            <h2 className="text-white text-left text-lg sm:text-xl md:text-2xl lg:text-[2.01113rem] font-normal max-w-full lg:max-w-[19.4375rem] leading-tight">
+            <h2 className="text-white text-left text-lg sm:text-xl md:text-2xl lg:text-[2.61113rem] font-bold max-w-full lg:max-w-[19.4375rem] leading-normal">
               Let's Discuss Your Vision. With US
             </h2>
 
@@ -63,7 +63,15 @@ const Footer = () => {
 
             {/* Email and Button */}
             <div className="flex flex-col sm:flex-row items-start sm:items-center mt-6 md:mt-8 lg:mt-[7.5rem] gap-3 sm:gap-4">
-              <span className="text-white text-base sm:text-lg md:text-xl lg:text-[1.86994rem] font-medium break-all sm:break-normal">
+              <span
+                className="text-white text-[2rem] font-medium break-all sm:break-normal"
+                style={{
+                  fontSize: "32px",
+                  fontStyle: "normal",
+                  fontWeight: 500,
+                  lineHeight: "normal",
+                }}
+              >
                 hello@studiosquanta.com
               </span>
               <button className="hover:cursor-pointer sm:ml-[1.69rem] w-12 h-12 sm:w-16 sm:h-16 lg:w-[4.05156rem] lg:h-[2.10369rem] transform hover:scale-105 transition-transform">
@@ -119,7 +127,13 @@ const Footer = () => {
                   <Link
                     key={index}
                     to={link.path}
-                    className="text-white text-base sm:text-lg lg:text-[1.5rem] font-medium leading-normal hover:opacity-75 transition-opacity duration-200 py-1"
+                    className="text-white font-medium leading-normal hover:opacity-75 transition-opacity duration-200 py-1"
+                    style={{
+                      fontSize: "24px",
+                      fontStyle: "normal",
+                      fontWeight: 500,
+                      lineHeight: "normal",
+                    }}
                     onClick={() =>
                       window.scrollTo({ top: 0, behavior: "smooth" })
                     }
@@ -133,7 +147,13 @@ const Footer = () => {
                   <Link
                     key={index}
                     to={link.path}
-                    className="text-white text-base sm:text-lg lg:text-[1.5rem] font-medium leading-normal hover:opacity-75 transition-opacity duration-200 py-1"
+                    className="text-white font-medium leading-normal hover:opacity-75 transition-opacity duration-200 py-1"
+                    style={{
+                      fontSize: "24px",
+                      fontStyle: "normal",
+                      fontWeight: 500,
+                      lineHeight: "normal",
+                    }}
                     onClick={() =>
                       window.scrollTo({ top: 0, behavior: "smooth" })
                     }
@@ -188,11 +208,28 @@ const Footer = () => {
         {/* --- MODIFIED SECTION START --- */}
         {/* Bottom Section */}
         <div className="relative mt-8 sm:mt-10 lg:mt-[15rem] pb-6 sm:pb-8">
-          {/* Dotted Border */}
-          <div className="h-[0.125rem] border-t-2 border-dashed border-white w-full"></div>
+          {/* Dotted / Dashed Border with centered dash pattern */}
+          <div className="w-full flex justify-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="100%"
+              height="2"
+              preserveAspectRatio="none"
+            >
+              <line
+                x1="0"
+                y1="1"
+                x2="100%"
+                y2="1"
+                stroke="white"
+                strokeWidth="2"
+                strokeDasharray="25,25"
+              />
+            </svg>
+          </div>
 
-          {/* Center - Arrow Up Button */}
-          <div className="absolute left-1/2 top-0 transform -translate-x-1/2 -translate-y-1/2">
+          {/* Arrow Up Button — sits below border, centered */}
+          <div className="flex justify-center mt-4">
             <button
               aria-label="Scroll to top"
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
@@ -201,17 +238,14 @@ const Footer = () => {
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
-                fill="white"
                 className="w-5 h-5 sm:w-6 sm:h-6 lg:w-[1.8rem] lg:h-[1.8rem]"
+                fill="none"
+                stroke="#00FF26"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2.5"
-                  stroke="#00FF26"
-                  d="M12 2 L12 22 M4 10 l8 -8 l8 8"
-                  fill="none" // Use fill="none" because the stroke creates the visible shape
-                />
+                <path d="M12 2 L12 22 M4 10 l8 -8 l8 8" />
               </svg>
             </button>
           </div>
@@ -220,21 +254,42 @@ const Footer = () => {
           <div className="flex flex-col sm:flex-row justify-end items-center gap-3 sm:gap-6 text-white text-center sm:text-right mt-6 sm:mt-8">
             <a
               href="#"
-              className="hover:opacity-75 transition-opacity duration-200 text-xs sm:text-sm lg:text-base"
+              className="hover:opacity-75 transition-opacity duration-200"
+              style={{
+                fontSize: "12px",
+                fontStyle: "normal",
+                fontWeight: 500,
+                lineHeight: "normal",
+              }}
             >
               Privacy Policy
             </a>
             <a
               href="#"
-              className="hover:opacity-75 transition-opacity duration-200 text-xs sm:text-sm lg:text-base"
+              className="hover:opacity-75 transition-opacity duration-200"
+              style={{
+                fontSize: "12px",
+                fontStyle: "normal",
+                fontWeight: 500,
+                lineHeight: "normal",
+              }}
             >
               SiteMap
             </a>
-            <span className="text-xs sm:text-sm lg:text-base mt-2 sm:mt-0">
+            <span
+              style={{
+                fontSize: "12px",
+                fontStyle: "normal",
+                fontWeight: 500,
+                lineHeight: "normal",
+              }}
+              className="mt-2 sm:mt-0"
+            >
               @{new Date().getFullYear()}, Altecht. All Rights Reserved.
             </span>
           </div>
         </div>
+
         {/* --- MODIFIED SECTION END --- */}
       </footer>
     </div>

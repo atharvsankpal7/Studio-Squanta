@@ -176,13 +176,17 @@
 
 /* Hero title sizing: fluid up to a hard max on large screens */
 .hero-title {
-    font-size: clamp(3rem, 11vw + 2rem, 15.3125rem);
+    font-size: clamp(3rem, 8vw + 2rem, 14rem);
     line-height: normal;
 }
 
-/* Force the exact max on very large desktop viewports (common 1920px and above) */
+/* Force the exact max on very ladrge desktop viewports (common 1920px and above) */
 @media (min-width: 1920px) {
     .hero-title {
-        font-size: 15.3125rem !important;
+        font-size: 208.671px !important;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 20.867px;
     }
 }

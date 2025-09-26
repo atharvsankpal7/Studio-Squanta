@@ -20,10 +20,10 @@ function TestimonialCard({ testimonial }) {
         </p>
 
         <div>
-          <h3 className="text-black font-alan-sans text-[20px] font-normal leading-normal tracking-[0.79px]">
+          <h3 className="text-black font-rogbold text-[20px] font-normal leading-normal tracking-[0.79px]">
             {testimonial.name}
           </h3>
-          <p className="text-black font-alan-sans text-[20px] font-normal leading-normal tracking-[0.79px]">
+          <p className="text-black font-rogbold text-[20px] font-normal leading-normal tracking-[0.79px]">
             {testimonial.title}
           </p>
         </div>
@@ -39,7 +39,7 @@ export default function TestimonialsSection() {
       {/* Hero Section with Partner Text */}
       <Container className="bg-black">
         <h1
-          className="text-[32px] sm:text-[48px] md:text-[56px] lg:text-[72px] xl:text-[96.68px] font-alan-sans font-normal leading-tight sm:leading-normal tracking-[1px] sm:tracking-[1.28px] md:tracking-[2px] lg:tracking-[3px] xl:tracking-[3.867px] uppercase text-white max-w-[90%] sm:max-w-[95%] md:max-w-[1279px] mx-auto text-center sm:text-left"
+          className="text-[32px] sm:text-[48px] md:text-[56px] lg:text-[72px] xl:text-[96.68px] font-rogbold font-normal leading-tight sm:leading-normal tracking-[1px] sm:tracking-[1.28px] md:tracking-[2px] lg:tracking-[3px] xl:tracking-[3.867px] uppercase text-white max-w-[90%] sm:max-w-[95%] md:max-w-[1279px] mx-auto text-center sm:text-left"
         >
           We partner with ambitious minds shaping what&apos;s next.
         </h1>

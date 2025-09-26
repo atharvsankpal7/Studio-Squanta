@@ -22,7 +22,7 @@ const HeroSection = () => {
         <Container className="relative z-10 w-full h-screen flex flex-col items-center justify-center">
 
           {/* Studio and SQUANTA Text */}
-          <div className="flex flex-col items-center justify-center">
+          <div className="flex flex-col items-center justify-center font-[700] ">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}

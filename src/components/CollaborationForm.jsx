@@ -364,9 +364,10 @@ const CollaborationForm = () => {
                   style={{
                     width: "min(51.875rem, 95%)",
                     maxWidth: "51.875rem",
-                    minHeight: "25.875rem",
+                    minWidth: "285px",
+                    minHeight: "208px",
                     height: "clamp(25.875rem, 50vw, 37.875rem)",
-                    maxHeight: "37.875rem",
+                    maxHeight: "606px",
                     flexShrink: 0,
                     borderRadius: "4.375rem",
                     background: "#1C1C1C",

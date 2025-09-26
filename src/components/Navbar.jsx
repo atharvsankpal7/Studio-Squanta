@@ -35,9 +35,9 @@ const Navbar = () => {
 
   const menuItems = [
     { label: "WORK", path: "/work" },
-    { label: "ABOUT", path: "/know-more" },
+    // { label: "ABOUT", path: "/know-more" },
     { label: "SERVICES", path: "/services" },
-    { label: "CLIENTS", path: "/client" },
+    // { label: "CLIENTS", path: "/client" },
   ];
 
   const dropdownVariants = {

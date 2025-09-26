@@ -174,7 +174,7 @@ function VideoGrid() {
     <section className="px-[60px] pb-[120px] pt-[120px] bg-black xl:block hidden">
       {/* Hero Section with Partner Text */}
       <Container className="bg-black">
-        <h1 className="text-[24px] sm:text-[32px] md:text-[48px] lg:text-[72px] xl:text-[96.68px] font-alan-sans font-normal leading-tight sm:leading-normal tracking-[1px] sm:tracking-[1.28px] md:tracking-[2px] lg:tracking-[3px] xl:tracking-[3.867px] uppercase text-white max-w-[90%] sm:max-w-[95%] md:max-w-[1279px] mx-auto text-center sm:text-left">
+        <h1 className="text-[24px] sm:text-[32px] md:text-[48px] lg:text-[72px] xl:text-[64px] font-alan-sans font-bold leading-tight sm:leading-normal tracking-[1px] sm:tracking-[1.28px] md:tracking-[2px] lg:tracking-[3px] xl:tracking-[3.867px] uppercase text-white max-w-[90%] sm:max-w-[95%] md:max-w-[1279px] mx-auto text-center sm:text-left">
           Trusted by 50+ innovators and change-makers.
         </h1>
       </Container>

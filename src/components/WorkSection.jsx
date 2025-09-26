@@ -34,8 +34,15 @@ const WorkCard = ({
         {/* /* Description */}
         {!disableDescription && (
           <p
-            className="text-base text-[16px] lg:text-[26px] text-gray-300 leading-tight  mb-4 font-alan-sans"
-            style={{ letterSpacing: "0.18106rem", minHeight: "6.1rem" }}
+            className="text-base text-[16px] lg:text-[26px] text-gray-300 leading-tight mb-4 font-alan-sans"
+            style={{
+              fontSize: "16px",
+              fontStyle: "normal",
+              fontWeight: "700",
+              lineHeight: "normal",
+              letterSpacing: "1.76px",
+              minHeight: "6.1rem",
+            }}
           >
             {description}
           </p>
@@ -47,6 +54,12 @@ const WorkCard = ({
             <span
               key={i}
               className="flex justify-center items-center md:w-[118.925px] lg:w-[203px] h-[24.549px] lg:h-[42px] px-[10px] bg-[#2B2B2B] border border-white rounded-[33.393px] lg:rounded-4xl text-[clamp(9.327px,2vw,16px)]"
+              style={{
+                fontSize: "16px",
+                fontStyle: "normal",
+                fontWeight: "500",
+                lineHeight: "normal",
+              }}
             >
               {tag}
             </span>
@@ -100,7 +113,7 @@ const FeaturedWorks = ({ disableDescription = false }) => {
     <section className="bg-black py-12 px-6 md:px-12">
       <Container>
         {!disableDescription && (
-          <h2 className="text-white mb-10 font-alan-sans font-normal text-[32px] md:text-[96.68px]">
+          <h2 className="text-white mb-10 font-alan-sans font-normal text-[32px] md:text-[96.68px] xl:text-[64px] xl:font-bold">
             FEATURED WORKS
           </h2>
         )}
