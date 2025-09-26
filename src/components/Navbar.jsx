@@ -67,7 +67,7 @@ const Navbar = () => {
           {/* Logo */}
           <motion.div whileTap={{ scale: 0.95 }} className="flex items-center">
             <Link to="/" className="flex items-center hover:opacity-80">
-              <div className="flex items-center justify-center px-[10px] py-[10px] text-[29.938px] leading-normal font-rogbold">
+              <div className="flex items-center justify-center px-[10px] py-[10px] text-4xl leading-normal font-boatica font-bold">
                 <span style={{ color: "#FFFFFF" }}>STUDIO </span>
                 <span style={{ color: "#00FF26" }}>SQUANTA</span>
               </div>

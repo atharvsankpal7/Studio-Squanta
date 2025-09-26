@@ -29,7 +29,7 @@ const HeroSection = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="mb-4 md:mb-8"
             >
-              <h1 className="font-rogbold hero-title text-white/50 uppercase tracking-[0.31em]">
+              <h1 className="font-alan-sans hero-title text-white/50 uppercase tracking-[0.31em]">
                 Studio
               </h1>
             </motion.div>
@@ -41,7 +41,7 @@ const HeroSection = () => {
               transition={{ duration: 0.8, delay: 0.5 }}
               className="mb-8 md:mb-12 lg:mb-16"
             >
-              <h1 className="font-rogbold hero-title text-white/75 uppercase tracking-[0.31em]">
+              <h1 className="font-alan-sans hero-title text-white/75 uppercase tracking-[0.31em]">
                 SQUANTA
               </h1>
             </motion.div>

@@ -214,7 +214,7 @@ const ApplyForm = () => {
               textTransform: "uppercase",
               marginBottom: "clamp(1rem, 2rem, 3rem)"
             }}
-            className="text-center lg:text-left text-[2rem] sm:text-[3rem] lg:text-[6.03563rem] font-rogbold tracking-wide"
+            className="text-center lg:text-left text-[2rem] sm:text-[3rem] lg:text-[6.03563rem] font-alan-sans tracking-wide"
           >
             Apply Here
           </h1>

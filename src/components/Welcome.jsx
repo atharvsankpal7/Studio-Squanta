@@ -59,7 +59,7 @@ function Welcome() {
       <div className="relative z-20 min-h-screen flex flex-col justify-center items-center px-6 md:px-12 lg:px-24">
         <div className="max-w-6xl mx-auto text-center space-y-8 md:space-y-12">
           {/* Main heading */}
-          <h1 className="font-rogbold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold uppercase tracking-wide leading-tight">
+          <h1 className="font-alan-sans text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold uppercase tracking-wide leading-tight">
             Welcome to<br />
             <span className="text-[#00FF26]">Studio Squanta</span>
           </h1>

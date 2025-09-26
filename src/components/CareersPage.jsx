@@ -96,7 +96,7 @@ const CareersPage = () => {
     return (
         <div className="py-20 lg:py-28 bg-black font-sans antialiased text-white">
             <div className="">
-                <h1 className="text-6xl md:text-7xl font-bold tracking-wide font-rogbold" style={{ marginBottom: '4.44rem' }}>
+                <h1 className="text-6xl md:text-7xl font-bold tracking-wide font-alan-sans" style={{ marginBottom: '4.44rem' }}>
                     BE A PART OF STUDIO SQUANTA
                 </h1>
 

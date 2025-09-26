@@ -24,7 +24,7 @@ const CollaborationSection = () => {
              md:max-w-[32rem] md:mb-8
             lg:text-[4rem] lg:max-w-[50rem] lg:mb-12
             xl:text-[6.0425rem] xl:max-w-[82.375rem] xl:mb-0
-            flex items-center justify-center font-rogbold 
+            flex items-center justify-center font-alan-sans 
           "
           style={{
             fontStyle: "normal",

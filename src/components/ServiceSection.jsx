@@ -17,7 +17,7 @@ const ServiceSection = ({
     <div className={`space-y-6 ${className}`}>
       {/* Title */}
       <h2
-        className="text-white text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-rogbold font-normal uppercase leading-tight"
+        className="text-white text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-alan-sans font-normal uppercase leading-tight"
       >
         {title}
       </h2>

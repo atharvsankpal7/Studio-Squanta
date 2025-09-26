@@ -121,7 +121,7 @@ function Firefit() {
     <div className="bg-black text-white font-montserrat">
       <Container className="pt-20">
         <div>
-          <h1 className="text-5xl lg:text-[60px] xl:text-[64px] font-rogbold max-w-4xl pb-20">
+          <h1 className="text-5xl lg:text-[60px] xl:text-[64px] font-alan-sans max-w-4xl pb-20">
             <span>{c.heading.preTitle}</span>{" "}
             <span style={{ color: c.companyAccent }}>{c.heading.title}</span>{" "}
             <span>{c.heading.postTitle}</span>
@@ -170,7 +170,7 @@ function Firefit() {
           <img src={c.images.one} alt="Firefit preview" className="mb-16" />
 
           {/* Timeline Intro */}
-          <h6 className="text-xl font-rogbold pb-16 max-w-full">
+          <h6 className="text-xl font-alan-sans pb-16 max-w-full">
             {c.timeline.intro}
           </h6>
 
@@ -240,7 +240,7 @@ function Firefit() {
 
           {/* The Impact Section */}
           <div className="pt-24 pb-20">
-            <h2 className="text-5xl font-rogbold uppercase mb-20">
+            <h2 className="text-5xl font-alan-sans uppercase mb-20">
               THE IMPACT
             </h2>
             {/* Attach the ref to this container */}
@@ -265,7 +265,7 @@ function Firefit() {
             <img src={c.images.three} alt="" className="my-20 " />
             <img src={c.images.four} alt="" className="mb-20 md:px-20" />
             <div>
-              <h2 className="text-white font-rogbold font-normal text-[32px] md:text-[96.68px] mb-20">
+              <h2 className="text-white font-alan-sans font-normal text-[32px] md:text-[96.68px] mb-20">
                 Discover More
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -313,7 +313,7 @@ const WorkCard = ({
         {/* /* Description */}
         {!disableDescription && (
           <p
-            className="text-base text-[16px] lg:text-[26px] text-gray-300 leading-tight  mb-4 font-rogbold"
+            className="text-base text-[16px] lg:text-[26px] text-gray-300 leading-tight  mb-4 font-alan-sans"
             style={{ letterSpacing: "0.18106rem", minHeight: "6.1rem" }}
           >
             {description}

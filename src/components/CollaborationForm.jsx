@@ -212,7 +212,7 @@ const CollaborationForm = () => {
           {/* Right Column - Form */}
           <div className="flex flex-col flex-1 min-w-0 justify-center">
             <h3
-              className="text-[1.5rem] lg:text-[2rem] md:text-[1.8rem] mt-6 lg:mt-[3.25rem] md:mt-[2.75rem] mb-6 lg:mb-[3.25rem] md:mb-[2.75rem] text-center font-rogbold"
+              className="text-[1.5rem] lg:text-[2rem] md:text-[1.8rem] mt-6 lg:mt-[3.25rem] md:mt-[2.75rem] mb-6 lg:mb-[3.25rem] md:mb-[2.75rem] text-center font-alan-sans"
               style={{ color: "#000" }}
             >
               Got an idea? Let's build it
@@ -391,7 +391,7 @@ const CollaborationForm = () => {
                     }}
                   >
                     <span
-                      className="font-rogbold"
+                      className="font-alan-sans"
                       style={{
                         color: "#FFF",
                         fontFamily: "Rogbold",
@@ -403,7 +403,7 @@ const CollaborationForm = () => {
                       STUDIO
                     </span>
                     <span
-                      className="font-rogbold"
+                      className="font-alan-sans"
                       style={{
                         color: "#00FF26",
                         fontFamily: "Rogbold",

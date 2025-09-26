@@ -37,8 +37,9 @@ const defaultVideos = [
 ];
 
 function CircularVideoList({ selectedIndex, onVideoSelect }) {
-  const videos = defaultVideos;
+  const [isPlaying, setIsPlaying] = useState(false);
 
+  const videos = defaultVideos;
   const selectedVideo = videos[selectedIndex];
   const videoId = extractYouTubeID(selectedVideo?.source);
 
@@ -46,7 +47,7 @@ function CircularVideoList({ selectedIndex, onVideoSelect }) {
     <div className="flex items-center justify-center">
       <div className="flex items-center space-x-4">
         {/* Left Pillars */}
-        <div className="flex space-x-4">
+        <div className="flex space-x-4 items-center">
           <Pillar author={videos[3]?.author || "Winzone"} height="453px" />
           <Pillar
             author={videos[1]?.author || "Alex Hamilton"}
@@ -57,11 +58,11 @@ function CircularVideoList({ selectedIndex, onVideoSelect }) {
         {/* Center video */}
         <div className="relative">
           <div className="w-[898px] h-[552px] bg-black rounded-[32px] overflow-hidden relative">
-            {videoId ? (
+            {isPlaying && videoId ? (
               <iframe
                 width="100%"
                 height="100%"
-                src={`https://www.youtube.com/embed/${videoId}?autoplay=0&controls=1`}
+                src={`https://www.youtube.com/embed/${videoId}?autoplay=1&controls=1`}
                 title={selectedVideo?.title}
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -69,22 +70,36 @@ function CircularVideoList({ selectedIndex, onVideoSelect }) {
                 className="rounded-[32px]"
               ></iframe>
             ) : (
-              <div className="flex items-center justify-center w-full h-full text-white">
-                Invalid YouTube Link
+              <div className="w-full h-full relative">
+                <img
+                  src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
+                  alt={selectedVideo?.title}
+                  className="w-full h-full object-cover rounded-[32px]"
+                />
+                {/* Green Play Button Overlay */}
+                <button
+                  onClick={() => setIsPlaying(true)}
+                  className="absolute inset-0 flex items-center justify-center"
+                >
+                  <div className="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="w-10 h-10 text-white"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                  </div>
+                </button>
               </div>
             )}
-
-            {/* Title + Duration */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/30 text-center px-4">
-              <h3 className="text-white text-3xl md:text-4xl font-bold mb-2 drop-shadow-md">
-                {selectedVideo.title}
-              </h3>
-            </div>
           </div>
 
           {/* Navigation Arrows */}
           <button
             onClick={() => {
+              setIsPlaying(false); // reset playing state when navigating
               const prevIndex =
                 selectedIndex === 0 ? videos.length - 1 : selectedIndex - 1;
               onVideoSelect(prevIndex);
@@ -96,6 +111,7 @@ function CircularVideoList({ selectedIndex, onVideoSelect }) {
 
           <button
             onClick={() => {
+              setIsPlaying(false); // reset playing state when navigating
               const nextIndex =
                 selectedIndex === videos.length - 1 ? 0 : selectedIndex + 1;
               onVideoSelect(nextIndex);
@@ -107,7 +123,7 @@ function CircularVideoList({ selectedIndex, onVideoSelect }) {
         </div>
 
         {/* Right Pillars */}
-        <div className="flex space-x-4">
+        <div className="flex space-x-4 items-center">
           <Pillar author={videos[0]?.author || "IVANA Flores"} height="515px" />
           <Pillar author={videos[2]?.author || "Jeet Patel"} height="453px" />
         </div>
@@ -122,7 +138,7 @@ function Pillar({ author, height }) {
       className="w-[88px] bg-[#E6FFEA] rounded-[34px] flex items-center justify-center"
       style={{ height }}
     >
-      <div className="transform -rotate-90 whitespace-nowrap text-black font-rogbold text-[46px] uppercase tracking-wider">
+      <div className="transform -rotate-90 whitespace-nowrap text-black font-alan-sans text-[46px] uppercase tracking-wider">
         {author}
       </div>
     </div>
@@ -158,9 +174,7 @@ function VideoGrid() {
     <section className="px-[60px] pb-[120px] pt-[120px] bg-black xl:block hidden">
       {/* Hero Section with Partner Text */}
       <Container className="bg-black">
-        <h1
-          className="text-[24px] sm:text-[32px] md:text-[48px] lg:text-[72px] xl:text-[96.68px] font-rogbold font-normal leading-tight sm:leading-normal tracking-[1px] sm:tracking-[1.28px] md:tracking-[2px] lg:tracking-[3px] xl:tracking-[3.867px] uppercase text-white max-w-[90%] sm:max-w-[95%] md:max-w-[1279px] mx-auto text-center sm:text-left"
-        >
+        <h1 className="text-[24px] sm:text-[32px] md:text-[48px] lg:text-[72px] xl:text-[96.68px] font-alan-sans font-normal leading-tight sm:leading-normal tracking-[1px] sm:tracking-[1.28px] md:tracking-[2px] lg:tracking-[3px] xl:tracking-[3.867px] uppercase text-white max-w-[90%] sm:max-w-[95%] md:max-w-[1279px] mx-auto text-center sm:text-left">
           Trusted by 50+ innovators and change-makers.
         </h1>
       </Container>

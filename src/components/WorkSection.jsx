@@ -34,7 +34,7 @@ const WorkCard = ({
         {/* /* Description */}
         {!disableDescription && (
           <p
-            className="text-base text-[16px] lg:text-[26px] text-gray-300 leading-tight  mb-4 font-rogbold"
+            className="text-base text-[16px] lg:text-[26px] text-gray-300 leading-tight  mb-4 font-alan-sans"
             style={{ letterSpacing: "0.18106rem", minHeight: "6.1rem" }}
           >
             {description}
@@ -100,7 +100,7 @@ const FeaturedWorks = ({ disableDescription = false }) => {
     <section className="bg-black py-12 px-6 md:px-12">
       <Container>
         {!disableDescription && (
-          <h2 className="text-white mb-10 font-rogbold font-normal text-[32px] md:text-[96.68px]">
+          <h2 className="text-white mb-10 font-alan-sans font-normal text-[32px] md:text-[96.68px]">
             FEATURED WORKS
           </h2>
         )}
@@ -115,27 +115,31 @@ const FeaturedWorks = ({ disableDescription = false }) => {
             />
           ))}
         </div>
-        {!disableDescription && <div className="flex justify-center mt-12">
-          <button className="flex items-center gap-2 text-white border border-white rounded-[57px] px-6 py-2 hover:bg-white hover:text-black ">
-            <span>View All</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              className=" group-hover:translate-x-1"
-            >
-              <path
-                d="M7 17L17 7M17 7H8M17 7V16"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </button>
-        </div>}
+        {!disableDescription && (
+          <a href="/work" className="cursor-pointer">
+            <div className="flex justify-center mt-12 cursor-pointer">
+              <button className="flex items-center gap-2 text-white border border-white rounded-[57px] px-6 py-2 hover:bg-white hover:text-black ">
+                <span>View All</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  className=" group-hover:translate-x-1"
+                >
+                  <path
+                    d="M7 17L17 7M17 7H8M17 7V16"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
+          </a>
+        )}
       </Container>
     </section>
   );

@@ -10,14 +10,14 @@ const CollaborationSection1 = () => {
         style={{ marginTop: "5.63rem" }}
       >
         <h1
-          className="text-[11.59506rem] font-rogbold"
+          className="text-[11.59506rem] font-alan-sans"
           style={{
             fontWeight: "600", letterSpacing: '1.1595rem'
           }}
         >
           SERVICES
         </h1>
-        <p className="mx-auto text-center w-5xl text-[4rem] font-rogbold leading-tight">Collaborating with you to ignite progress, drive engagement, and build what’s next.</p>
+        <p className="mx-auto text-center w-5xl text-[4rem] font-alan-sans leading-tight">Collaborating with you to ignite progress, drive engagement, and build what’s next.</p>
         {/* Let's Collaborate Button - positioned to the bottom-left */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -58,7 +58,7 @@ const CollaborationSection1 = () => {
       {/* Mobile Container */}
       <div className="lg:hidden px-[1rem] py-[3rem] mt-[3.5rem] sm:mt-[3rem] md:mt-[4rem] text-white">
         <h1
-          className="text-[4rem]  md:text-[5.5rem] font-rogbold font-semibold leading-tight text-center mb-6"
+          className="text-[4rem]  md:text-[5.5rem] font-alan-sans font-semibold leading-tight text-center mb-6"
           style={{
             fontWeight: "600",
             letterSpacing: '0.2rem'
@@ -66,7 +66,7 @@ const CollaborationSection1 = () => {
         >
           SERVICES
         </h1>
-        <p className="text-center text-[2rem]  md:text-[3rem] font-rogbold leading-tight mb-8 px-2">
+        <p className="text-center text-[2rem]  md:text-[3rem] font-alan-sans leading-tight mb-8 px-2">
           Collaborating with you to ignite progress, drive engagement, and build what's next.
         </p>
 

@@ -108,7 +108,7 @@ const SoftwareSection = () => {
 
                             {/* Main text */}
                             <div
-                                className="absolute font-rogbold"
+                                className="absolute font-alan-sans"
                                 style={{
                                     bottom: 'clamp(3rem, 6vw, 4.56rem)',
                                     left: '1rem',
