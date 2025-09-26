@@ -18,8 +18,8 @@ function WorkPageFirstSection() {
           xl:max-w-[82.375rem] xl:mb-0
           flex items-center justify-center
           bg-black
-          pt-[2rem] sm:pt-[3rem] md:pt-[4rem] lg:pt-[6rem] xl:pt-[9rem]
-        pb-[2rem] sm:pb-[3rem] md:pb-[4rem] lg:pb-[5rem] xl:pb-0
+          pt-[9rem]
+        pb-0
         "
         style={{
           fontFamily: "Rogbold",

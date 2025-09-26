@@ -32,63 +32,92 @@ const CountUp = ({ end, duration = 2000, start = false }) => {
   return <>{count}</>;
 };
 
-function Firefit() {
+function AUTOMATE() {
   const c = {
     heading: {
       preTitle: "Helping",
-      title: "Firefit",
-      postTitle: "Spark a Movement in Everyday Wellness",
+      title: "AUTOMATE",
+      postTitle: "Redefine Smart Living with Connected Comfort",
     },
-    companyAccent: "#00FFEA",
+    companyAccent: "#3B82F6",
     info: {
-      about: "FIREFIT is a next-generation fitness band and smartwatch brand",
-      industry: "Health & Fitness",
+      about:
+        "Automate is a smart home brand simplifying device control for everyday comfort and beyond.",
+      industry: "Smart Home & IoT",
     },
-    services: ["App Design", "Branding"],
+    services: ["Mobile App Design"],
     images: {
-      one: "/Squanta Assets/Work/Rectangle 9664.png",
-      two: "/Squanta Assets/Work/Rectangle 64.png",
-      three: "/Squanta Assets/Work/Rectangle 9665.png",
-      four: "/Squanta Assets/Work/vinayverma.png",
+      one: "/Squanta Assets/Work/automate-1.png",
+      two: "/Squanta Assets/Work/automate-2.png",
+      three: "/Squanta Assets/Work/automate-3.png",
+      four: "/Squanta Assets/Work/automate-4.png",
     },
     timeline: {
       intro:
-        "FIREFIT is a next-generation fitness band and smartwatch brand designed to empower people of all lifestyles to move better, live smarter, and stay connected to their wellness goals. With intelligent health tracking, sleek design, and real-time coaching, FIREFIT turns everyday activity into lasting progress — no matter where you start.",
-      duration: "06 Weeks",
+        "Automate is a next-generation smart home brand designed to empower people of all lifestyles to live smarter, stay connected, and control devices effortlessly. With seamless app control, intelligent features, and sleek design, Automate turns everyday living into a connected experience – no matter where you begin.",
+      duration: "01 Weeks",
       challenge: {
         description:
-          "FIREFIT wanted to launch a new-age fitness wearable for the Indian market something more relatable than elite fitness trackers.",
+          "Automate wanted to launch as a new-age smart home brand for the Indian market – something more relatable than expensive or overly complex devices.",
         points: [
-          "Build a bold, youthful brand that resonates with both first-time users and tech-savvy fitness lovers.",
-          "Design a mobile app that’s intuitive, engaging, and motivating not intimidating like many fitness apps.",
+          "Build a bold, youthful brand that resonates with both first-time users and tech-savvy households.",
+          "Design an experience that’s intuitive, engaging, and empowering – not complicated like many control apps.",
         ],
       },
       solution: {
         description:
-          "We approached the project with a focus on emotional connection and everyday usability:",
+          "We approached the project with a focus on simplicity, connectivity, and everyday comfort:",
       },
       branding: {
         title: "BRANDING",
         points: [
-          "Created a versatile visual identity that blends energy, trust, and simplicity",
-          "Developed a color system and iconography reflecting movement, progress, and inclusivity",
-          "Crafted a voice that’s motivating but friendly, avoiding corporate or overly techy tones",
+          "Created a versatile visual identity that blends innovation, trust, and inclusivity",
+          "Developed a color system and iconography reflecting technology, lifestyle, and ease",
+          "Crafted a voice that’s smart yet approachable, avoiding overly technical or corporate tones",
         ],
       },
       appDesign: {
-        title: "APP DESIGN",
+        title: "APP & COLLATERAL DESIGN",
         points: [
-          "Designed a minimalist yet powerful interface, focused on daily goals, smart nudges, and community progress",
-          "Built scalable components for tracking activity, sleep, heart rate, and wellness habits",
-          "Integrated onboarding flows tailored for both beginners and experienced users",
+          "Designed a minimalist yet powerful app, focused on quick controls, personalization, and seamless integration",
+          "Built scalable components for managing appliances, automations, and real-time updates",
+          "Integrated onboarding flows tailored for both new adopters and experienced smart home users",
         ],
       },
     },
     impact: [
-      { percentage: 10, description: "Increase in Downloads" },
-      { percentage: 8, description: "Increase in avg. Sell" },
+      { percentage: 40, description: "More control" },
+      { percentage: 30, description: "Reduced energy waste" },
+      { percentage: 25, description: "Convenience" },
+    ],
+    works: [
+      {
+        image: "/Squanta Assets/Rectangle 65.png",
+        title: "FIREFIT",
+        countryFlag: "https://flagcdn.com/w20/in.png",
+        description:
+          "Digitizing the sales experience for a leading healthcare band maker, saving millions in print costs",
+        tags: ["Iconography", "Illustration", "Graphics"],
+      },
+      {
+        image: "/Squanta Assets/Rectangle 64.png",
+        title: "OFF-THRD",
+        countryFlag: "https://flagcdn.com/w20/in.png",
+        description:
+          "A next-generation fashion brand redefining style for Gen Z and beyond",
+        tags: ["Shopify Store Setup", "Branding"],
+      },
+      {
+        image: "/Squanta Assets/Work/trenddy-thumb.png",
+        title: "TRENDY TABLE",
+        countryFlag: "https://flagcdn.com/w20/in.png",
+        description:
+          "Relaunching a next-generation café brand with fresh menus, branding, and customer engagement strategies",
+        tags: ["Branding", "Menu & Collateral Design"],
+      },
     ],
   };
+
   let works = [
     {
       image: "/Squanta Assets/Rectangle 65.png",
@@ -106,7 +135,6 @@ function Firefit() {
         "Rebranded Cafe 10 with a fresh identity and executed targeted digital marketing, boosting visibility, footfall, and conversions across channels.",
       tags: ["Rebranding", "Digital marketing"],
     },
-   
   ];
 
   // Setup the useInView hook for the impact section
@@ -281,7 +309,6 @@ function Firefit() {
   );
 }
 
-
 const WorkCard = ({
   image,
   title,
@@ -319,10 +346,8 @@ const WorkCard = ({
             {description}
           </p>
         )}
-
-
       </div>
     </div>
   );
 };
-export default Firefit;
+export default AUTOMATE;
