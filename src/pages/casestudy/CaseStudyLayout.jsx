@@ -3,6 +3,41 @@ import React, { useState, useEffect } from "react";
 import Container from "../../components/ui/Container";
 import { useInView } from "react-intersection-observer";
 import { Link } from "react-router-dom";
+import CollaborationSection2 from "../../components/CollaborationSection2.jsx";
+
+// Reusable media renderer that auto-detects image vs video from file extension
+const Media = ({ src, alt = "", className = "", controls, autoPlay = true, loop = true, muted = true, playsInline = true, poster }) => {
+  if (!src) return null;
+  const getExt = (path) => {
+    try {
+      const clean = path.split("?")[0].split("#")[0];
+      const seg = clean.split("/").pop() || "";
+      const idx = seg.lastIndexOf(".");
+      return idx !== -1 ? seg.slice(idx + 1).toLowerCase() : "";
+    } catch {
+      return "";
+    }
+  };
+  const ext = getExt(src);
+  const videoExts = new Set(["mp4", "webm", "ogg", "ogv", "m4v", "mov"]);
+  const isVideo = videoExts.has(ext);
+
+  if (isVideo) {
+    return (
+      <video
+        className={`w-full ${className}`}
+        src={src}
+        {...(poster ? { poster } : {})}
+        {...(playsInline ? { playsInline: true } : {})}
+        {...(autoPlay ? { autoPlay: true } : {})}
+        {...(loop ? { loop: true } : {})}
+        {...(muted ? { muted: true } : {})}
+        {...(controls ? { controls: true } : {})}
+      />
+    );
+  }
+  return <img src={src} alt={alt} className={`w-full ${className}`} />;
+};
 
 const CountUp = ({ end, duration = 2000, start = false }) => {
   const [count, setCount] = useState(0);
@@ -30,7 +65,8 @@ const WorkCard = ({ image, title, countryFlag, description, disableDescription, 
   const card = (
     <div className="flex flex-col bg-black text-white overflow-hidden shadow-lg">
       <div className="w-full overflow-hidden">
-        <img src={image} alt={title} className="lg:w-[645px] lg:h-[618px]" />
+        {/* Support image or video for card media */}
+        <Media src={image} alt={title} className=" object-cover" autoPlay loop muted playsInline />
       </div>
       <div className="py-6 flex flex-col ">
         <div className="flex items-center gap-2 mb-4">
@@ -99,112 +135,117 @@ export default function CaseStudyLayout({ content, contentId }) {
   return (
     <div className="bg-black text-white font-montserrat">
       <Container className="pt-20">
-        {/* Heading */}
-        <h1 className="text-5xl lg:text-[60px] xl:text-[64px] font-alan-sans max-w-4xl pb-20">
-          <span>{data.heading.preTitle}</span>{" "}
-          <span style={{ color: data.companyAccent }}>{data.heading.title}</span>{" "}
-          <span>{data.heading.postTitle}</span>
-        </h1>
-        <hr
-          className="w-full h-[14px] flex-shrink-0 border-0 mb-6"
-          style={{ backgroundColor: data.companyAccent }}
-        />
+        {/* Ensure Media components have full-width parent containers */}
+        <div className="w-full">
+          {/* Heading */}
+          <h1 className="text-5xl lg:text-[60px] xl:text-[64px] font-alan-sans max-w-4xl pb-20">
+            <span>{data.heading.preTitle}</span>{" "}
+            <span style={{ color: data.companyAccent }}>{data.heading.title}</span>{" "}
+            <span>{data.heading.postTitle}</span>
+          </h1>
+          <hr
+            className="w-full h-[14px] flex-shrink-0 border-0 mb-6"
+            style={{ backgroundColor: data.companyAccent }}
+          />
 
-        {/* About / Industry / Services / Location */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pb-8">
-          <div className="max-w-[244px]">
-            <h5 className="text-xl font-semibold mb-12">ABOUT</h5>
-            <p className="text-[#A6A6A6] text-base font-semibold">{data.info.about}</p>
+          {/* About / Industry / Services / Location */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pb-8">
+            <div className="max-w-[244px]">
+              <h5 className="text-xl font-semibold mb-12">ABOUT</h5>
+              <p className="text-[#A6A6A6] text-base font-semibold">{data.info.about}</p>
+            </div>
+            <div className="max-w-[244px]">
+              <h5 className="text-xl font-semibold mb-12">INDUSTRY</h5>
+              <p className="text-[#A6A6A6] text-base font-semibold">{data.info.industry}</p>
+            </div>
+            <div className="max-w-[244px]">
+              <h5 className="text-xl font-semibold mb-12">SERVICES</h5>
+              <div className="flex flex-col gap-4">
+                {data.services.map((service, i) => (
+                  <div key={i} className="text-[#A6A6A6] font-semibold text-base uppercase">
+                    {service}
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="max-w-[244px]">
+              <h5 className="text-xl font-semibold mb-12">LOCATION</h5>
+              <div>
+                <img src="/Squanta Assets/India.png" alt="India Flag" />
+              </div>
+            </div>
           </div>
-          <div className="max-w-[244px]">
-            <h5 className="text-xl font-semibold mb-12">INDUSTRY</h5>
-            <p className="text-[#A6A6A6] text-base font-semibold">{data.info.industry}</p>
+
+          {/* Images + Timeline */}
+          <Media src={data.images.one} alt="preview" className="mb-16 w-full" />
+          <h6 className="text-xl font-alan-sans pb-16">{data.timeline.intro}</h6>
+
+          {/* Timeline Sections */}
+          <div className="flex flex-col md:flex-row gap-8 py-12">
+            <div className="w-full md:w-1/4 lg:w-1/5">
+              <h3 className="text-[#787878] font-medium uppercase mb-5">TIMELINE</h3>
+              <p>{data.timeline.duration}</p>
+            </div>
+            <div className="w-full md:w-3/4 lg:w-4/5 space-y-5">
+              {/* Challenge */}
+              <div>
+                <h3 className="text-[#787878] uppercase mb-5">CHALLENGE</h3>
+                <p className="text-gray-300 mb-4">{data.timeline.challenge.description}</p>
+                <p className="text-gray-300">The Challenge?</p>
+                <ul className="text-gray-300">
+                  {data.timeline.challenge.points.map((point, i) => <li key={i}>{point}</li>)}
+                </ul>
+              </div>
+
+              {/* Solution */}
+              <div>
+                <h3 className="text-[#787878] uppercase ">SOLUTION</h3>
+                <p className="text-gray-300">{data.timeline.solution.description}</p>
+              </div>
+
+              {/* Branding */}
+              <div>
+                <h3 className="text-[#787878] uppercase ">{data.timeline.branding.title}</h3>
+                <ul className="text-gray-300">
+                  {data.timeline.branding.points.map((point, i) => <li key={i}>{point}</li>)}
+                </ul>
+              </div>
+
+              {/* App Design */}
+              <div>
+                <h3 className="text-[#787878] uppercase ">{data.timeline.appDesign.title}</h3>
+                <ul className="text-gray-300">
+                  {data.timeline.appDesign.points.map((point, i) => <li key={i}>{point}</li>)}
+                </ul>
+              </div>
+            </div>
           </div>
-          <div className="max-w-[244px]">
-            <h5 className="text-xl font-semibold mb-12">SERVICES</h5>
-            <div className="flex flex-col gap-4">
-              {data.services.map((service, i) => (
-                <div key={i} className="text-[#A6A6A6] font-semibold text-base uppercase">
-                  {service}
+
+          <Media src={data.images.two} alt="" className="w-full" />
+
+          {/* Impact */}
+          <div className="pt-24 pb-20">
+            <h2 className="text-5xl font-alan-sans uppercase mb-20">THE IMPACT</h2>
+            <div ref={impactSectionRef} className="flex flex-col md:items-end gap-16">
+              {data.impact.map((item, i) => (
+                <div key={i} className="flex items-center">
+                  <span className="text-8xl font-light mr-12 w-48">
+                    <CountUp end={item.percentage} start={isImpactSectionVisible} />%
+                  </span>
+                  <p className="text-lg w-[13.13rem]">{item.description}</p>
                 </div>
               ))}
             </div>
-          </div>
-          <div className="max-w-[244px]">
-            <h5 className="text-xl font-semibold mb-12">LOCATION</h5>
-            <div>
-              <img src="/Squanta Assets/India.png" alt="India Flag" />
+            <Media src={data.images.three} alt="" className="my-20 w-full" />
+            <Media src={data.images.four} alt="" className="mb-20 md:px-20 w-full" />
+
+            {/* Discover More */}
+            <h2 className="text-white font-alan-sans text-[32px] md:text-[96.68px] mb-20">Discover More</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {data.works?.map((work, i) => <WorkCard key={i} {...work} />)}
             </div>
           </div>
-        </div>
-
-        {/* Images + Timeline */}
-        <img src={data.images.one} alt="preview" className="mb-16" />
-        <h6 className="text-xl font-alan-sans pb-16">{data.timeline.intro}</h6>
-
-        {/* Timeline Sections */}
-        <div className="flex flex-col md:flex-row gap-8 py-12">
-          <div className="w-full md:w-1/4 lg:w-1/5">
-            <h3 className="text-[#787878] font-medium uppercase mb-5">TIMELINE</h3>
-            <p>{data.timeline.duration}</p>
-          </div>
-          <div className="w-full md:w-3/4 lg:w-4/5 space-y-5">
-            {/* Challenge */}
-            <div>
-              <h3 className="text-[#787878] uppercase mb-5">CHALLENGE</h3>
-              <p className="text-gray-300 mb-4">{data.timeline.challenge.description}</p>
-              <ul className="text-gray-300">
-                {data.timeline.challenge.points.map((point, i) => <li key={i}>{point}</li>)}
-              </ul>
-            </div>
-
-            {/* Solution */}
-            <div>
-              <h3 className="text-[#787878] uppercase mb-5">SOLUTION</h3>
-              <p className="text-gray-300">{data.timeline.solution.description}</p>
-            </div>
-
-            {/* Branding */}
-            <div>
-              <h3 className="text-[#787878] uppercase mb-5">{data.timeline.branding.title}</h3>
-              <ul className="text-gray-300">
-                {data.timeline.branding.points.map((point, i) => <li key={i}>{point}</li>)}
-              </ul>
-            </div>
-
-            {/* App Design */}
-            <div>
-              <h3 className="text-[#787878] uppercase mb-5">{data.timeline.appDesign.title}</h3>
-              <ul className="text-gray-300">
-                {data.timeline.appDesign.points.map((point, i) => <li key={i}>{point}</li>)}
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <img src={data.images.two} alt="" />
-
-        {/* Impact */}
-        <div className="pt-24 pb-20">
-          <h2 className="text-5xl font-alan-sans uppercase mb-20">THE IMPACT</h2>
-          <div ref={impactSectionRef} className="flex flex-col md:items-end gap-16">
-            {data.impact.map((item, i) => (
-              <div key={i} className="flex items-center">
-                <span className="text-8xl font-light mr-4 w-48">
-                  <CountUp end={item.percentage} start={isImpactSectionVisible} />%
-                </span>
-                <p className="text-lg">{item.description}</p>
-              </div>
-            ))}
-          </div>
-          <img src={data.images.three} alt="" className="my-20" />
-          <img src={data.images.four} alt="" className="mb-20 md:px-20" />
-
-          {/* Discover More */}
-          <h2 className="text-white font-alan-sans text-[32px] md:text-[96.68px] mb-20">Discover More</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {data.works?.map((work, i) => <WorkCard key={i} {...work} />)}
-          </div>
+          <CollaborationSection2 />
         </div>
       </Container>
     </div>

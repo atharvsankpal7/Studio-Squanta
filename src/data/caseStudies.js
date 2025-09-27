@@ -89,10 +89,10 @@ export const caseStudies = {
         },
         services: ["Shopify Store Setup", "Branding"],
         images: {
-            one: "/Squanta Assets/Work/offthrd-1.png",
-            two: "/Squanta Assets/Work/offthrd-2.png",
-            three: "/Squanta Assets/Work/offthrd-3.png",
-            four: "/Squanta Assets/Work/offthrd-4.png",
+            one: "/Squanta Assets/Work/offthrd-1.mp4",
+            two: "/Squanta Assets/Work/offthrd-2.mp4",
+            three: "/Squanta Assets/Work/offthrd-3.mp4",
+            four: "/Squanta Assets/Work/image.png",
         },
         timeline: {
             intro:
@@ -158,7 +158,7 @@ export const caseStudies = {
             title: "THE TRENDDY TABLE",
             postTitle: "Accelerate Orders and Customer Engagement",
         },
-        companyAccent: "#C16E3F",
+        companyAccent: "#00B6B8",
         info: {
             about:
                 "The Trenddy Table is a café brand redefining casual dining for food lovers and beyond.",
@@ -169,7 +169,7 @@ export const caseStudies = {
             one: "/Squanta Assets/Work/trenddy-1.png",
             two: "/Squanta Assets/Work/trenddy-2.png",
             three: "/Squanta Assets/Work/trenddy-3.png",
-            four: "/Squanta Assets/Work/trenddy-4.png",
+            four: "/Squanta Assets/Work/image.png",
         },
         timeline: {
             intro:
@@ -243,7 +243,7 @@ export const caseStudies = {
             one: "/Squanta Assets/Work/automate-1.png",
             two: "/Squanta Assets/Work/automate-2.png",
             three: "/Squanta Assets/Work/automate-3.png",
-            four: "/Squanta Assets/Work/automate-4.png",
+            four: "/Squanta Assets/Work/image.png",
         },
         timeline: {
             intro:

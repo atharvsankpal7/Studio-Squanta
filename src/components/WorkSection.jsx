@@ -85,6 +85,26 @@ const WorkCard = ({
 
 // Featured Works Section
 const FeaturedWorks = ({ disableDescription = false }) => {
+  let featuredworks = [
+    {
+      image: "Squanta Assets/Rectangle 64.png",
+      title: "FIREFIT",
+      countryFlag: "https://flagcdn.com/w20/in.png", // India flag
+      description:
+        "Digitizing the sales experience for a leading healthcare band maker, saving millions in print costs",
+      tags: ["Iconography", "Illustration", "Graphics"],
+      // slug: "firefit",
+    },
+    {
+      image: "Squanta Assets/Rectangle 65.png",
+      title: "Cafe 10",
+      countryFlag: "https://flagcdn.com/w20/us.png", // USA flag
+      description:
+        "Rebranded Cafe 10 with a fresh identity and executed targeted digital marketing, boosting visibility, footfall, and conversions across channels.",
+      tags: ["Rebranding", "Digital marketing"],
+      // slug: "cafe-10", // uncomment when case study JSON is added
+    },
+  ];
   let works = [
     {
       image: "Squanta Assets/Rectangle 64.png",
@@ -96,13 +116,49 @@ const FeaturedWorks = ({ disableDescription = false }) => {
       slug: "firefit",
     },
     {
+      image: "Squanta Assets/t3.png",
+      title: "TRENDDY",
+      countryFlag: "https://flagcdn.com/w20/in.png", // India flag
+      description:
+        "Rebranded OFF-THRD with a fresh identity and executed targeted digital marketing, boosting visibility, footfall, and conversions across channels.",
+      tags: ["Branding", "Digital marketing"],
+      slug: "trenddy", // uncomment when case study JSON is added
+    },
+    {
+      image: "Squanta Assets/Rectangle 66.png",
+      title: "AUTOMATE",
+      countryFlag: "https://flagcdn.com/w20/in.png", // India flag
+      description:
+        "Curated headlines, topic follows, breaking notifications, and save-for-later reading across devices with seamless sync.",
+      tags: ["Application", "Branding"],
+      slug: "automate", // add when ready in caseStudies.js
+    },
+    {
+      image: "Squanta Assets/Rectangle 96.png",
+      title: "OFF-THRD",
+      countryFlag: "https://flagcdn.com/w20/us.png", // India flag
+      description:
+        "Curated headlines, topic follows, breaking notifications, and save-for-later reading across devices with seamless sync.",
+      tags: ["Application", "Branding"],
+      slug: "off-thrd", // add when ready in caseStudies.js
+    },
+    {
+      image: "Squanta Assets/Rectangle 64.png",
+      title: "FIREFIT",
+      countryFlag: "https://flagcdn.com/w20/in.png", // India flag
+      description:
+        "Digitizing the sales experience for a leading healthcare band maker, saving millions in print costs",
+      tags: ["Iconography", "Illustration", "Graphics"],
+      // slug: "firefit",
+    },
+    {
       image: "Squanta Assets/Rectangle 65.png",
       title: "Cafe 10",
       countryFlag: "https://flagcdn.com/w20/us.png", // USA flag
       description:
         "Rebranded Cafe 10 with a fresh identity and executed targeted digital marketing, boosting visibility, footfall, and conversions across channels.",
       tags: ["Rebranding", "Digital marketing"],
-      slug: "cafe-10", // uncomment when case study JSON is added
+      // slug: "cafe-10", // uncomment when case study JSON is added
     },
     {
       image: "Squanta Assets/CHRONICAL.png",
@@ -110,8 +166,8 @@ const FeaturedWorks = ({ disableDescription = false }) => {
       countryFlag: "https://flagcdn.com/w20/in.png", // India flag
       description:
         "Curated headlines, topic follows, breaking notifications, and save-for-later reading across devices with seamless sync.",
-      tags: ["Iconography", "Illustration", "Graphics"],
-      slug: "chronical", // add when ready in caseStudies.js
+      tags: ["Application", "Branding"],
+      // slug: "chronical", // add when ready in caseStudies.js
     },
     {
       image: "Squanta Assets/Rectangle 67.png",
@@ -119,12 +175,12 @@ const FeaturedWorks = ({ disableDescription = false }) => {
       countryFlag: "https://flagcdn.com/w20/us.png", // USA flag
       description:
         "Designed and developed a stock trading app with real-time data, advanced charts, alerts, and seamless order execution.",
-      tags: ["Rebranding", "Digital marketing"],
-      slug: "trade-craft", // add when ready in caseStudies.js
+      tags: ["Application", "Branding"],
+      // slug: "trade-craft", // add when ready in caseStudies.js
     },
   ];
 
-  works = disableDescription ? works : works.slice(0, 4);
+  works = disableDescription ? works : featuredworks;
 
   return (
     <section className="bg-black py-12 px-6 md:px-12">
