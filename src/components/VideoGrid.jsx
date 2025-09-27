@@ -18,25 +18,31 @@ const defaultVideos = [
     title: "How to stay productive",
     author: "IVANA Flores",
     duration: "5:23",
-    source: "https://www.youtube.com/watch?v=ysz5S6PUM-U",
+    source: "https://youtu.be/rBKh4zpD-30",
   },
   {
     title: "Morning Routine Tips",
     author: "Alex Hamilton",
     duration: "8:41",
-    source: "https://www.youtube.com/watch?v=jNQXAC9IVRw",
+    source: "https://youtu.be/Go8ILyzi8xI",
   },
   {
     title: "Creative Workspace Setup",
     author: "Jeet Patel",
     duration: "6:11",
-    source: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    source: "https://youtu.be/qV91g9g6eyU",
   },
   {
     title: "Design Thinking Explained",
     author: "Winzone",
     duration: "7:00",
-    source: "https://www.youtube.com/watch?v=3fumBcKC6RE",
+    source: "https://youtu.be/82IDZPr2c_Q",
+  },
+  {
+    title: "Design Thinking Explained",
+    author: "Winzone",
+    duration: "7:00",
+    source: "https://youtu.be/kXTIuXuBlCY",
   },
 ];
 
