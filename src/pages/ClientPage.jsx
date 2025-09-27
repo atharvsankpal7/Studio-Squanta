@@ -1,6 +1,7 @@
 import CollaborationSection from "../components/CollaborationSection";
 import Container from "../components/ui/Container";
 import FirstSectionWrapper from "../components/FirstSectionWrapper";
+import SoftwareSection2 from "../components/SoftwareSection2";
 
 const KnowMorePage = () => {
   return (
@@ -35,6 +36,7 @@ const KnowMorePage = () => {
         </FirstSectionWrapper>
       </Container>
       {/* TODO: add Grid here */}
+      <SoftwareSection2 />
       <div></div>
       <CollaborationSection />
     </div>
