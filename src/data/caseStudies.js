@@ -56,22 +56,22 @@ export const caseStudies = {
         ],
         works: [
             {
-                image: "/Squanta Assets/Rectangle 65.png",
-                title: "FIREFIT",
-                countryFlag: "https://flagcdn.com/w20/in.png",
+                image: "\\Squanta Assets\\CHRONICAL.png",
+                title: "Chronical",
+                countryFlag: "https://flagcdn.com/w20/in.png", // India flag
                 description:
-                    "Digitizing the sales experience for a leading healthcare band maker, saving millions in print costs",
-                tags: ["Iconography", "Illustration", "Graphics"],
-                slug: "firefit",
+                    "Curated headlines, topic follows, breaking notifications, and save-for-later reading across devices with seamless sync.",
+                tags: ["Application", "Branding"],
+                // slug: "chronical", // add when ready in caseStudies.js
             },
             {
-                image: "/Squanta Assets/Rectangle 64.png",
-                title: "Cafe 10",
-                countryFlag: "https://flagcdn.com/w20/us.png",
+                image: "\\Squanta Assets\\Rectangle 67.png",
+                title: "Trade Craft",
+                countryFlag: "https://flagcdn.com/w20/us.png", // USA flag
                 description:
-                    "Rebranded Cafe 10 with a fresh identity and executed targeted digital marketing, boosting visibility, footfall, and conversions across channels.",
-                tags: ["Rebranding", "Digital marketing"],
-                // slug to be added once Cafe 10 case study is available
+                    "Designed and developed a stock trading app with real-time data, advanced charts, alerts, and seamless order execution.",
+                tags: ["Application", "Branding"],
+                // slug: "trade-craft", // add when ready in caseStudies.js
             },
         ],
     },
@@ -133,22 +133,22 @@ export const caseStudies = {
         ],
         works: [
             {
-                image: "/Squanta Assets/Rectangle 65.png",
-                title: "FIREFIT",
-                countryFlag: "https://flagcdn.com/w20/in.png",
+                image: "\\Squanta Assets\\CHRONICAL.png",
+                title: "Chronical",
+                countryFlag: "https://flagcdn.com/w20/in.png", // India flag
                 description:
-                    "Digitizing the sales experience for a leading healthcare band maker, saving millions in print costs",
-                tags: ["Iconography", "Illustration", "Graphics"],
-                slug: "firefit",
+                    "Curated headlines, topic follows, breaking notifications, and save-for-later reading across devices with seamless sync.",
+                tags: ["Application", "Branding"],
+                // slug: "chronical", // add when ready in caseStudies.js
             },
             {
-                image: "/Squanta Assets/Rectangle 64.png",
-                title: "Cafe 10",
-                countryFlag: "https://flagcdn.com/w20/us.png",
+                image: "\\Squanta Assets\\Rectangle 67.png",
+                title: "Trade Craft",
+                countryFlag: "https://flagcdn.com/w20/us.png", // USA flag
                 description:
-                    "Rebranded Cafe 10 with a fresh identity and executed targeted digital marketing, boosting visibility, footfall, and conversions across channels.",
-                tags: ["Rebranding", "Digital marketing"],
-                // slug to be added once Cafe 10 case study is available
+                    "Designed and developed a stock trading app with real-time data, advanced charts, alerts, and seamless order execution.",
+                tags: ["Application", "Branding"],
+                // slug: "trade-craft", // add when ready in caseStudies.js
             },
         ],
     },
@@ -209,31 +209,31 @@ export const caseStudies = {
         ],
         works: [
             {
-                image: "/Squanta Assets/Rectangle 65.png",
-                title: "FIREFIT",
-                countryFlag: "https://flagcdn.com/w20/in.png",
+                image: "\\Squanta Assets\\CHRONICAL.png",
+                title: "Chronical",
+                countryFlag: "https://flagcdn.com/w20/in.png", // India flag
                 description:
-                    "Digitizing the sales experience for a leading healthcare band maker, saving millions in print costs",
-                tags: ["Iconography", "Illustration", "Graphics"],
-                slug: "firefit",
+                    "Curated headlines, topic follows, breaking notifications, and save-for-later reading across devices with seamless sync.",
+                tags: ["Application", "Branding"],
+                // slug: "chronical", // add when ready in caseStudies.js
             },
             {
-                image: "/Squanta Assets/Rectangle 64.png",
-                title: "OFF-THRD",
-                countryFlag: "https://flagcdn.com/w20/in.png",
-                description: "A next-generation fashion brand redefining style for Gen Z and beyond",
-                tags: ["Shopify Store Setup", "Branding"],
-                slug: "off-thrd",
+                image: "\\Squanta Assets\\Rectangle 67.png",
+                title: "Trade Craft",
+                countryFlag: "https://flagcdn.com/w20/us.png", // USA flag
+                description:
+                    "Designed and developed a stock trading app with real-time data, advanced charts, alerts, and seamless order execution.",
+                tags: ["Application", "Branding"],
+                // slug: "trade-craft", // add when ready in caseStudies.js
             },
         ],
     },
     "automate": {
         heading: {
-            preTitle: "Helping",
-            title: "AUTOMATE",
-            postTitle: "Redefine Smart Living with Connected Comfort",
+            title: "Automate",
+            postTitle: "is a smart home brand redefining control for connected living and beyond.",
         },
-        companyAccent: "#3B82F6",
+        companyAccent: "#7658F1",
         info: {
             about: "Automate is a smart home brand simplifying device control for everyday comfort and beyond.",
             industry: "Smart Home & IoT",
@@ -284,31 +284,22 @@ export const caseStudies = {
         ],
         works: [
             {
-                image: "/Squanta Assets/Rectangle 65.png",
-                title: "FIREFIT",
-                countryFlag: "https://flagcdn.com/w20/in.png",
+                image: "\\Squanta Assets\\CHRONICAL.png",
+                title: "Chronical",
+                countryFlag: "https://flagcdn.com/w20/in.png", // India flag
                 description:
-                    "Digitizing the sales experience for a leading healthcare band maker, saving millions in print costs",
-                tags: ["Iconography", "Illustration", "Graphics"],
-                slug: "firefit",
+                    "Curated headlines, topic follows, breaking notifications, and save-for-later reading across devices with seamless sync.",
+                tags: ["Application", "Branding"],
+                // slug: "chronical", // add when ready in caseStudies.js
             },
             {
-                image: "/Squanta Assets/Rectangle 64.png",
-                title: "OFF-THRD",
-                countryFlag: "https://flagcdn.com/w20/in.png",
+                image: "\\Squanta Assets\\Rectangle 67.png",
+                title: "Trade Craft",
+                countryFlag: "https://flagcdn.com/w20/us.png", // USA flag
                 description:
-                    "A next-generation fashion brand redefining style for Gen Z and beyond",
-                tags: ["Shopify Store Setup", "Branding"],
-                slug: "off-thrd",
-            },
-            {
-                image: "/Squanta Assets/Work/trenddy-thumb.png",
-                title: "TRENDY TABLE",
-                countryFlag: "https://flagcdn.com/w20/in.png",
-                description:
-                    "Relaunching a next-generation café brand with fresh menus, branding, and customer engagement strategies",
-                tags: ["Branding", "Menu & Collateral Design"],
-                slug: "trenddy",
+                    "Designed and developed a stock trading app with real-time data, advanced charts, alerts, and seamless order execution.",
+                tags: ["Application", "Branding"],
+                // slug: "trade-craft", // add when ready in caseStudies.js
             },
         ],
     },

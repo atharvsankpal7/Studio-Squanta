@@ -104,6 +104,24 @@ const FeaturedWorks = ({ disableDescription = false }) => {
       tags: ["Rebranding", "Digital marketing"],
       // slug: "cafe-10", // uncomment when case study JSON is added
     },
+    {
+      image: "Squanta Assets/CHRONICAL.png",
+      title: "Chronical",
+      countryFlag: "https://flagcdn.com/w20/in.png", // India flag
+      description:
+        "Curated headlines, topic follows, breaking notifications, and save-for-later reading across devices with seamless sync.",
+      tags: ["Application", "Branding"],
+      // slug: "chronical", // add when ready in caseStudies.js
+    },
+    {
+      image: "Squanta Assets/Rectangle 67.png",
+      title: "Trade Craft",
+      countryFlag: "https://flagcdn.com/w20/us.png", // USA flag
+      description:
+        "Designed and developed a stock trading app with real-time data, advanced charts, alerts, and seamless order execution.",
+      tags: ["Application", "Branding"],
+      // slug: "trade-craft", // add when ready in caseStudies.js
+    },
   ];
   let works = [
     {
