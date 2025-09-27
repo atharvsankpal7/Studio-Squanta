@@ -176,8 +176,9 @@
 
 /* Hero title sizing: fluid up to a hard max on large screens */
 .hero-title {
-    font-size: clamp(3rem, 8vw + 2rem, 14rem);
+    font-size: clamp(3.5rem, 8vw, 14rem);
     line-height: normal;
+    text-align: center;
 }
 
 /* Force the exact max on very ladrge desktop viewports (common 1920px and above) */
