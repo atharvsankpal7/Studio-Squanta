@@ -1,5 +1,6 @@
 import React from "react";
 import Container from "./ui/Container";
+import { Link } from "react-router-dom";
 
 // Reusable Card Component
 const WorkCard = ({
@@ -9,8 +10,9 @@ const WorkCard = ({
   description,
   tags,
   disableDescription,
+  slug,
 }) => {
-  return (
+  const card = (
     <div className="flex flex-col bg-black text-white overflow-hidden shadow-lg">
       {/* Image */}
       <div className="w-full overflow-hidden">
@@ -67,6 +69,14 @@ const WorkCard = ({
       </div>
     </div>
   );
+
+  return slug ? (
+    <Link to={`/casestudy/${slug}`} className="block group">
+      {card}
+    </Link>
+  ) : (
+    card
+  );
 };
 
 // Featured Works Section
@@ -79,6 +89,7 @@ const FeaturedWorks = ({ disableDescription = false }) => {
       description:
         "Digitizing the sales experience for a leading healthcare band maker, saving millions in print costs",
       tags: ["Iconography", "Illustration", "Graphics"],
+      slug: "firefit",
     },
     {
       image: "Squanta Assets/Rectangle 65.png",
@@ -87,6 +98,7 @@ const FeaturedWorks = ({ disableDescription = false }) => {
       description:
         "Rebranded Cafe 10 with a fresh identity and executed targeted digital marketing, boosting visibility, footfall, and conversions across channels.",
       tags: ["Rebranding", "Digital marketing"],
+      slug: "cafe-10", // uncomment when case study JSON is added
     },
     {
       image: "Squanta Assets/CHRONICAL.png",
@@ -95,6 +107,7 @@ const FeaturedWorks = ({ disableDescription = false }) => {
       description:
         "Curated headlines, topic follows, breaking notifications, and save-for-later reading across devices with seamless sync.",
       tags: ["Iconography", "Illustration", "Graphics"],
+      slug: "chronical", // add when ready in caseStudies.js
     },
     {
       image: "Squanta Assets/Rectangle 67.png",
@@ -103,6 +116,7 @@ const FeaturedWorks = ({ disableDescription = false }) => {
       description:
         "Designed and developed a stock trading app with real-time data, advanced charts, alerts, and seamless order execution.",
       tags: ["Rebranding", "Digital marketing"],
+      slug: "trade-craft", // add when ready in caseStudies.js
     },
   ];
 

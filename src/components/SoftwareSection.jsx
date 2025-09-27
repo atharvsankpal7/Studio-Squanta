@@ -11,63 +11,64 @@ const SoftwareSection = () => {
         },
         {
             id: 2,
-            image: '/Squanta Assets/Adobe Photoshop.png',
-            title: 'Adobe Photoshop',
-            description: 'Image Editing & Design'
+            image: '/Squanta Assets/Adobe Firefly.png',
+            title: 'Firefly',
+            description: 'Generative Fill'
         },
         {
             id: 3,
             image: '/Squanta Assets/Adobe Illustrator.png',
             title: 'Adobe Illustrator',
-            description: 'Vector Graphics & Logos'
+            description: 'Vector graphics'
         },
         {
             id: 4,
-            image: '/Squanta Assets/Adobe After Effects.png',
-            title: 'After Effects',
-            description: 'Motion Graphics & Animation'
+
+            image: '/Squanta Assets/Figma.png',
+            title: 'Figma',
+            description: 'Web/app Design'
         },
         {
             id: 5,
-            image: '/Squanta Assets/Adobe Premiere Pro.png',
-            title: 'Premiere Pro',
-            description: 'Video Editing & Production'
+            image: '/Squanta Assets/Runway.png',
+            title: 'Runway',
+            description: 'Enhanced video creation'
         },
         {
             id: 6,
-            image: '/Squanta Assets/Figma.png',
-            title: 'Figma',
-            description: 'UI/UX Design & Prototyping'
+            image: '/Squanta Assets/Adobe After Effects.png',
+            title: 'After Effects',
+            description: 'Motion Graphics'
         },
         {
             id: 7,
-            image: '/Squanta Assets/Framer.png',
-            title: 'Framer',
-            description: 'Interactive Design & Development'
+            image: '/Squanta Assets/Adobe Premiere Pro.png',
+            title: 'Premiere Pro',
+            description: 'Advanced video editing'
         },
         {
             id: 8,
-            image: '/Squanta Assets/Notion.png',
-            title: 'Notion',
-            description: 'Project Management & Documentation'
+            image: '/Squanta Assets/Midjourney.png',
+            title: 'Midjourney',
+            description: 'Unique video generation'
         },
         {
             id: 9,
-            image: '/Squanta Assets/Midjourney.png',
-            title: 'Midjourney',
-            description: 'AI Image Generation'
+            image: '/Squanta Assets/Adobe Photoshop.png',
+            title: 'Photoshop',
+            description: 'Image manipulation'
         },
         {
             id: 10,
-            image: '/Squanta Assets/Adobe Firefly.png',
-            title: 'Adobe Firefly',
-            description: 'AI Creative Tools'
+            image: '/Squanta Assets/Framer.png',
+            title: 'Framer',
+            description: 'Brainstorming Ideas'
         },
         {
             id: 11,
-            image: '/Squanta Assets/Disney Plus.png',
-            title: 'Disney Plus',
-            description: 'Entertainment & Media'
+            image: '/Squanta Assets/SURFER.png',
+            title: 'SURFER',
+            description: 'SEO optimization'
         },
         {
             id: 12,

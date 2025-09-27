@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useParams } from 'react-router-dom';
 import LandingPage from './pages/LandingPage';
 import ServicesPage from './pages/ServicesPage';
 import KnowMorePage from './pages/KnowMorePage';
@@ -9,10 +9,12 @@ import ClientPage from './pages/ClientPage';
 import FuturePage from './pages/FuturePage';
 import PageWrapper from './layouts/PageWrapper';
 import CareersPageContainer from './pages/CareersPageContainer';
-import Firefit from './pages/casestudy/Firefit';
-import OFFTHRD from './pages/casestudy/OFF-THRD';
-import Trenddy from './pages/casestudy/TheTrenddyTable';
-import AUTOMATE from './pages/casestudy/Automate';
+import CaseStudyLayout from './pages/casestudy/CaseStudyLayout';
+
+const CaseStudyRoute = () => {
+  const { slug } = useParams();
+  return <CaseStudyLayout contentId={slug} />;
+};
 
 const App = () => {
   return (
@@ -27,10 +29,9 @@ const App = () => {
           <Route path="/work" element={<WorkPage />} />
           <Route path="/client" element={<ClientPage />} />
           <Route path="/careers" element={<CareersPageContainer />} />
-          <Route path="/casestudy/firefit" element={<Firefit />} />
-          <Route path="/casestudy/off-thrd" element={<OFFTHRD />} />
-          <Route path="/casestudy/trenddy" element={<Trenddy />} />
-          <Route path="/casestudy/automate" element={<AUTOMATE />} />
+
+          {/* dynamic case study route */}
+          <Route path="/casestudy/:slug" element={<CaseStudyRoute />} />
         </Routes>
       </PageWrapper>
     </Router>

@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Container from "../../components/ui/Container";
 import { useInView } from "react-intersection-observer";
+import { Link } from "react-router-dom";
 
 const CountUp = ({ end, duration = 2000, start = false }) => {
   const [count, setCount] = useState(0);
@@ -25,39 +26,49 @@ const CountUp = ({ end, duration = 2000, start = false }) => {
   return <>{count}</>;
 };
 
-const WorkCard = ({ image, title, countryFlag, description, disableDescription }) => (
-  <div className="flex flex-col bg-black text-white overflow-hidden shadow-lg">
-    <div className="w-full overflow-hidden">
-      <img src={image} alt={title} className="lg:w-[645px] lg:h-[618px]" />
-    </div>
-    <div className="py-6 flex flex-col ">
-      <div className="flex items-center gap-2 mb-4">
-        <h3 className="text-xl font-semibold">{title}</h3>
-        {countryFlag && <img src={countryFlag} alt="flag" className="w-5 h-5 object-cover rounded-full" />}
+const WorkCard = ({ image, title, countryFlag, description, disableDescription, slug }) => {
+  const card = (
+    <div className="flex flex-col bg-black text-white overflow-hidden shadow-lg">
+      <div className="w-full overflow-hidden">
+        <img src={image} alt={title} className="lg:w-[645px] lg:h-[618px]" />
       </div>
-      {!disableDescription && (
-        <p
-          className="text-base lg:text-[26px] text-gray-300 leading-tight mb-4 font-alan-sans"
-          style={{ letterSpacing: "0.18106rem", minHeight: "6.1rem" }}
-        >
-          {description}
-        </p>
-      )}
+      <div className="py-6 flex flex-col ">
+        <div className="flex items-center gap-2 mb-4">
+          <h3 className="text-xl font-semibold">{title}</h3>
+          {countryFlag && <img src={countryFlag} alt="flag" className="w-5 h-5 object-cover rounded-full" />}
+        </div>
+        {!disableDescription && (
+          <p
+            className="text-base lg:text-[26px] text-gray-300 leading-tight mb-4 font-alan-sans"
+            style={{ letterSpacing: "0.18106rem", minHeight: "6.1rem" }}
+          >
+            {description}
+          </p>
+        )}
+      </div>
     </div>
-  </div>
-);
+  );
+  return slug ? <Link to={`/casestudy/${slug}`} className="block">{card}</Link> : card;
+};
 
 export default function CaseStudyLayout({ content, contentId }) {
   const [resolvedContent, setResolvedContent] = useState(content);
+  const [loaded, setLoaded] = useState(!!content);
 
   useEffect(() => {
     let mounted = true;
     if (!content && contentId) {
       import("../../data/caseStudies.js")
         .then((m) => {
-          if (mounted) setResolvedContent(m.caseStudies[contentId]);
+          if (!mounted) return;
+          setResolvedContent(m.caseStudies[contentId]);
+          setLoaded(true);
         })
-        .catch(() => { });
+        .catch(() => {
+          if (!mounted) return;
+          setResolvedContent(undefined);
+          setLoaded(true);
+        });
     }
     return () => {
       mounted = false;
@@ -67,7 +78,23 @@ export default function CaseStudyLayout({ content, contentId }) {
   const data = resolvedContent || content;
   const { ref: impactSectionRef, inView: isImpactSectionVisible } = useInView({ triggerOnce: true, threshold: 0.5 });
 
-  if (!data) return null;
+  if (!data) {
+    // If we are still loading dynamic content, render nothing (or a lightweight placeholder)
+    if (!loaded) return null;
+    // Loaded but not found -> render Not Found handler
+    return (
+      <div className="bg-black text-white min-h-screen flex items-center justify-center px-6">
+        <div className="max-w-xl text-center">
+          <h1 className="text-4xl md:text-5xl font-alan-sans mb-4">Case study not found</h1>
+          <p className="text-gray-400 mb-8">The case study you are looking for doesn’t exist or has been moved.</p>
+          <div className="flex gap-4 justify-center">
+            <Link className="border border-white rounded-[57px] px-6 py-2 hover:bg-white hover:text-black" to="/work">Back to Work</Link>
+            <Link className="border border-white rounded-[57px] px-6 py-2 hover:bg-white hover:text-black" to="/">Go Home</Link>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="bg-black text-white font-montserrat">

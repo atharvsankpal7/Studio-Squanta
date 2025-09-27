@@ -62,6 +62,7 @@ export const caseStudies = {
                 description:
                     "Digitizing the sales experience for a leading healthcare band maker, saving millions in print costs",
                 tags: ["Iconography", "Illustration", "Graphics"],
+                slug: "firefit",
             },
             {
                 image: "/Squanta Assets/Rectangle 64.png",
@@ -70,6 +71,7 @@ export const caseStudies = {
                 description:
                     "Rebranded Cafe 10 with a fresh identity and executed targeted digital marketing, boosting visibility, footfall, and conversions across channels.",
                 tags: ["Rebranding", "Digital marketing"],
+                // slug to be added once Cafe 10 case study is available
             },
         ],
     },
@@ -137,6 +139,7 @@ export const caseStudies = {
                 description:
                     "Digitizing the sales experience for a leading healthcare band maker, saving millions in print costs",
                 tags: ["Iconography", "Illustration", "Graphics"],
+                slug: "firefit",
             },
             {
                 image: "/Squanta Assets/Rectangle 64.png",
@@ -145,6 +148,7 @@ export const caseStudies = {
                 description:
                     "Rebranded Cafe 10 with a fresh identity and executed targeted digital marketing, boosting visibility, footfall, and conversions across channels.",
                 tags: ["Rebranding", "Digital marketing"],
+                // slug to be added once Cafe 10 case study is available
             },
         ],
     },
@@ -211,6 +215,7 @@ export const caseStudies = {
                 description:
                     "Digitizing the sales experience for a leading healthcare band maker, saving millions in print costs",
                 tags: ["Iconography", "Illustration", "Graphics"],
+                slug: "firefit",
             },
             {
                 image: "/Squanta Assets/Rectangle 64.png",
@@ -218,6 +223,7 @@ export const caseStudies = {
                 countryFlag: "https://flagcdn.com/w20/in.png",
                 description: "A next-generation fashion brand redefining style for Gen Z and beyond",
                 tags: ["Shopify Store Setup", "Branding"],
+                slug: "off-thrd",
             },
         ],
     },
@@ -284,6 +290,7 @@ export const caseStudies = {
                 description:
                     "Digitizing the sales experience for a leading healthcare band maker, saving millions in print costs",
                 tags: ["Iconography", "Illustration", "Graphics"],
+                slug: "firefit",
             },
             {
                 image: "/Squanta Assets/Rectangle 64.png",
@@ -292,6 +299,7 @@ export const caseStudies = {
                 description:
                     "A next-generation fashion brand redefining style for Gen Z and beyond",
                 tags: ["Shopify Store Setup", "Branding"],
+                slug: "off-thrd",
             },
             {
                 image: "/Squanta Assets/Work/trenddy-thumb.png",
@@ -300,6 +308,7 @@ export const caseStudies = {
                 description:
                     "Relaunching a next-generation café brand with fresh menus, branding, and customer engagement strategies",
                 tags: ["Branding", "Menu & Collateral Design"],
+                slug: "trenddy",
             },
         ],
     },
