@@ -35,7 +35,7 @@ const Navbar = () => {
 
   const menuItems = [
     { label: "WORK", path: "/work" },
-    // { label: "ABOUT", path: "/know-more" },
+    { label: "ABOUT", path: "/" },
     { label: "SERVICES", path: "/services" },
     // { label: "CLIENTS", path: "/client" },
   ];
