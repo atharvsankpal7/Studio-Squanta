@@ -3,80 +3,82 @@ import { useRef } from "react";
 import Container from "./ui/Container";
 
 function Welcome() {
-  // Use a single observer for both sides so they animate together.
-  // Set once: false and amount: 1 so the animation triggers whenever the
-  // section becomes fully visible and reverses when it leaves the viewport.
   const barsRef = useRef(null);
-  // Trigger when ~50% of the section is visible; allow repeated enter/exit events
   const isInView = useInView(barsRef, { once: false, amount: 0.5 });
 
   return (
     <div
       ref={barsRef}
-      className="min-h-screen bg-black text-white relative overflow-hidden "
+      className="min-h-[33rem] md:min-h-[29rem] lg:min-h-[52.56rem] bg-black text-white relative overflow-hidden"
     >
       {/* Decorative bars - Left side */}
-      <div className=" absolute left-4 md:left-16 bottom-0 hidden lg:flex items-end gap-4 z-10 ">
+      <div className="absolute left-2 sm:left-4 md:left-16 bottom-0 flex items-end gap-2 sm:gap-3 lg:gap-4 z-10 ">
         <motion.div
-          initial={{ height: 0 }}
-          animate={isInView ? { height: "24rem" } : { height: 0 }}
+          initial={{ scaleY: 0 }}
+          animate={isInView ? { scaleY: 1 } : { scaleY: 0 }}
           transition={{ duration: 0.9, delay: 0.6 }}
-          className="w-8 h-72 md:h-96 bg-[#00FF26] rounded-t-2xl"
+          className="origin-bottom w-4 sm:w-5 lg:w-8 h-34 sm:h-48 md:h-42 lg:h-74 bg-[#00FF26] rounded-t-2xl"
         ></motion.div>
         <motion.div
-          initial={{ height: 0 }}
-          animate={isInView ? { height: "20rem" } : { height: 0 }}
+          initial={{ scaleY: 0 }}
+          animate={isInView ? { scaleY: 1 } : { scaleY: 0 }}
           transition={{ duration: 0.7, delay: 0.4 }}
-          className="w-8 h-64 md:h-80 bg-white rounded-t-2xl"
+          className="origin-bottom w-4 sm:w-5 lg:w-8 h-28 sm:h-40 md:h-36 lg:h-64 bg-white rounded-t-2xl"
         ></motion.div>
         <motion.div
-          initial={{ height: 0 }}
-          animate={isInView ? { height: "10rem" } : { height: 0 }}
+          initial={{ scaleY: 0 }}
+          animate={isInView ? { scaleY: 1 } : { scaleY: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="w-8 h-32 md:h-40 bg-[#00FF26] rounded-t-2xl"
+          className="origin-bottom w-4 sm:w-5 lg:w-8 h-20 sm:h-28 md:h-22 lg:h-34 bg-[#00FF26] rounded-t-2xl"
         ></motion.div>
       </div>
 
       {/* Decorative bars - Right side */}
-      <div className="absolute right-4 md:right-16  hidden lg:flex items-start gap-4 z-10">
+      <div className="absolute right-2 sm:right-4 md:right-16 flex items-start gap-2 sm:gap-3 lg:gap-4 z-10">
         <motion.div
-          initial={{ height: 0 }}
-          animate={isInView ? { height: "10rem" } : { height: 0 }}
+          initial={{ scaleY: 0 }}
+          animate={isInView ? { scaleY: 1 } : { scaleY: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="w-8 h-32 md:h-40 bg-[#00FF26] rounded-b-2xl"
+          className="origin-top w-4 sm:w-5 lg:w-8 h-20 sm:h-28 md:h-22 lg:h-34 bg-[#00FF26] rounded-b-2xl"
         ></motion.div>
         <motion.div
-          initial={{ height: 0 }}
-          animate={isInView ? { height: "20rem" } : { height: 0 }}
+          initial={{ scaleY: 0 }}
+          animate={isInView ? { scaleY: 1 } : { scaleY: 0 }}
           transition={{ duration: 0.7, delay: 0.4 }}
-          className="w-8 h-64 md:h-80 bg-white rounded-b-2xl"
+          className="origin-top w-4 sm:w-5 lg:w-8 h-28 sm:h-40 md:h-36 lg:h-64 bg-white rounded-b-2xl"
         ></motion.div>
         <motion.div
-          initial={{ height: 0 }}
-          animate={isInView ? { height: "24rem" } : { height: 0 }}
+          initial={{ scaleY: 0 }}
+          animate={isInView ? { scaleY: 1 } : { scaleY: 0 }}
           transition={{ duration: 0.9, delay: 0.6 }}
-          className="w-8 h-72 md:h-96 bg-[#00FF26] rounded-b-2xl"
+          className="origin-top w-4 sm:w-5 lg:w-8 h-34 sm:h-48 md:h-42 lg:h-74 bg-[#00FF26] rounded-b-2xl"
         ></motion.div>
       </div>
+      <div className="flex items-center md:block min-h-[30rem] md:min-h-[25rem]">
+        <div className="relative z-20  px-6 md:px-12 lg:px-24  ">
+          <div className="max-w-6xl mx-auto text-center space-y-8 md:space-y-12 xl:flex xl:flex-col">
+            {/* Main heading - 6.56rem from top on desktop, responsive elsewhere */}
+            <h1
+              className="font-alan-sans text-lg sm:text-lg md:text-xl lg:text-2xl xl:text-[35px] text-start font-bold uppercase tracking-wide leading-normal"
+              style={{ marginTop: "clamp(3rem, 9vw, 6.56rem)" }}
+            >
+              Welcome to Studio Squanta
+            </h1>
 
-      {/* Main content */}
-      <div className="relative z-20 min-h-screen flex flex-col justify-center items-center px-6 md:px-12 lg:px-24 ">
-        <Container className="max-w-6xl mx-auto text-center space-y-8 md:space-y-12 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 xl:h-[50vh] xl:flex xl:flex-col ">
-          {/* Main heading */}
-          <h1 className="font-alan-sans text-lg sm:text-lg md:text-xl lg:text-2xl xl:text-[35px] text-start font-bold uppercase tracking-wide leading-normal  lg:ml-10">
-            Welcome to Studio Squanta
-          </h1>
-
-          {/* Description */}
-          <div className="max-w-4xl mx-auto xl:my-auto">
-            <p className="font-montserrat text-lg sm:text-6xl md:text-lg lg:text-xl xl:text-2xl font-normal leading-relaxed text-white/90">
-              We are a strategic brand and design partner that helps thoughtful
-              consumers evolve into market-leading brands through intelligent
-              branding, performance-driven marketing, and user-centered digital
-              design.
-            </p>
+            {/* Description - 12.62rem below heading on desktop, responsive elsewhere */}
+            <div className="max-w-[70.75rem] mx-auto">
+              <p
+                className="font-alan-sans text-lg sm:text-6xl md:text-xl lg:text-[2rem] font-normal  text-white/90"
+                style={{ marginTop: "clamp(2rem, 10vw, 12.62rem)" }}
+              >
+                We are a strategic brand and design partner that helps thoughtful
+                consumers evolve into market-leading brands through intelligent
+                branding, performance-driven marketing, and user-centered digital
+                design.
+              </p>
+            </div>
           </div>
-        </Container>
+        </div>
       </div>
 
       {/* Background gradient overlay for better text readability */}
