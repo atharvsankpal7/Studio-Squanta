@@ -1,6 +1,6 @@
-// components/CaseStudyWrapper.tsx
+// components/CaseStudyLayout.tsx
 import React, { useState, useEffect } from "react";
-import Container from "./ui/Container";
+import Container from "../../components/ui/Container";
 import { useInView } from "react-intersection-observer";
 
 const CountUp = ({ end, duration = 2000, start = false }) => {
@@ -47,37 +47,56 @@ const WorkCard = ({ image, title, countryFlag, description, disableDescription }
   </div>
 );
 
-export default function CaseStudyWrapper({ content }) {
+export default function CaseStudyLayout({ content, contentId }) {
+  const [resolvedContent, setResolvedContent] = useState(content);
+
+  useEffect(() => {
+    let mounted = true;
+    if (!content && contentId) {
+      import("../../data/caseStudies.js")
+        .then((m) => {
+          if (mounted) setResolvedContent(m.caseStudies[contentId]);
+        })
+        .catch(() => { });
+    }
+    return () => {
+      mounted = false;
+    };
+  }, [content, contentId]);
+
+  const data = resolvedContent || content;
   const { ref: impactSectionRef, inView: isImpactSectionVisible } = useInView({ triggerOnce: true, threshold: 0.5 });
+
+  if (!data) return null;
 
   return (
     <div className="bg-black text-white font-montserrat">
       <Container className="pt-20">
         {/* Heading */}
         <h1 className="text-5xl lg:text-[60px] xl:text-[64px] font-alan-sans max-w-4xl pb-20">
-          <span>{content.heading.preTitle}</span>{" "}
-          <span style={{ color: content.companyAccent }}>{content.heading.title}</span>{" "}
-          <span>{content.heading.postTitle}</span>
+          <span>{data.heading.preTitle}</span>{" "}
+          <span style={{ color: data.companyAccent }}>{data.heading.title}</span>{" "}
+          <span>{data.heading.postTitle}</span>
         </h1>
         <hr
           className="w-full h-[14px] flex-shrink-0 border-0 mb-6"
-          style={{ backgroundColor: content.companyAccent }}
+          style={{ backgroundColor: data.companyAccent }}
         />
 
         {/* About / Industry / Services / Location */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pb-8">
           <div className="max-w-[244px]">
             <h5 className="text-xl font-semibold mb-12">ABOUT</h5>
-            <p className="text-[#A6A6A6] text-base font-semibold">{content.info.about}</p>
+            <p className="text-[#A6A6A6] text-base font-semibold">{data.info.about}</p>
           </div>
           <div className="max-w-[244px]">
             <h5 className="text-xl font-semibold mb-12">INDUSTRY</h5>
-            <p className="text-[#A6A6A6] text-base font-semibold">{content.info.industry}</p>
+            <p className="text-[#A6A6A6] text-base font-semibold">{data.info.industry}</p>
           </div>
           <div className="max-w-[244px]">
             <h5 className="text-xl font-semibold mb-12">SERVICES</h5>
             <div className="flex flex-col gap-4">
-              {content.services.map((service, i) => (
+              {data.services.map((service, i) => (
                 <div key={i} className="text-[#A6A6A6] font-semibold text-base uppercase">
                   {service}
                 </div>
@@ -93,56 +112,56 @@ export default function CaseStudyWrapper({ content }) {
         </div>
 
         {/* Images + Timeline */}
-        <img src={content.images.one} alt="preview" className="mb-16" />
-        <h6 className="text-xl font-alan-sans pb-16">{content.timeline.intro}</h6>
+        <img src={data.images.one} alt="preview" className="mb-16" />
+        <h6 className="text-xl font-alan-sans pb-16">{data.timeline.intro}</h6>
 
         {/* Timeline Sections */}
         <div className="flex flex-col md:flex-row gap-8 py-12">
           <div className="w-full md:w-1/4 lg:w-1/5">
             <h3 className="text-[#787878] font-medium uppercase mb-5">TIMELINE</h3>
-            <p>{content.timeline.duration}</p>
+            <p>{data.timeline.duration}</p>
           </div>
           <div className="w-full md:w-3/4 lg:w-4/5 space-y-5">
             {/* Challenge */}
             <div>
               <h3 className="text-[#787878] uppercase mb-5">CHALLENGE</h3>
-              <p className="text-gray-300 mb-4">{content.timeline.challenge.description}</p>
+              <p className="text-gray-300 mb-4">{data.timeline.challenge.description}</p>
               <ul className="text-gray-300">
-                {content.timeline.challenge.points.map((point, i) => <li key={i}>{point}</li>)}
+                {data.timeline.challenge.points.map((point, i) => <li key={i}>{point}</li>)}
               </ul>
             </div>
 
             {/* Solution */}
             <div>
               <h3 className="text-[#787878] uppercase mb-5">SOLUTION</h3>
-              <p className="text-gray-300">{content.timeline.solution.description}</p>
+              <p className="text-gray-300">{data.timeline.solution.description}</p>
             </div>
 
             {/* Branding */}
             <div>
-              <h3 className="text-[#787878] uppercase mb-5">{content.timeline.branding.title}</h3>
+              <h3 className="text-[#787878] uppercase mb-5">{data.timeline.branding.title}</h3>
               <ul className="text-gray-300">
-                {content.timeline.branding.points.map((point, i) => <li key={i}>{point}</li>)}
+                {data.timeline.branding.points.map((point, i) => <li key={i}>{point}</li>)}
               </ul>
             </div>
 
             {/* App Design */}
             <div>
-              <h3 className="text-[#787878] uppercase mb-5">{content.timeline.appDesign.title}</h3>
+              <h3 className="text-[#787878] uppercase mb-5">{data.timeline.appDesign.title}</h3>
               <ul className="text-gray-300">
-                {content.timeline.appDesign.points.map((point, i) => <li key={i}>{point}</li>)}
+                {data.timeline.appDesign.points.map((point, i) => <li key={i}>{point}</li>)}
               </ul>
             </div>
           </div>
         </div>
 
-        <img src={content.images.two} alt="" />
+        <img src={data.images.two} alt="" />
 
         {/* Impact */}
         <div className="pt-24 pb-20">
           <h2 className="text-5xl font-alan-sans uppercase mb-20">THE IMPACT</h2>
           <div ref={impactSectionRef} className="flex flex-col md:items-end gap-16">
-            {content.impact.map((item, i) => (
+            {data.impact.map((item, i) => (
               <div key={i} className="flex items-center">
                 <span className="text-8xl font-light mr-4 w-48">
                   <CountUp end={item.percentage} start={isImpactSectionVisible} />%
@@ -151,13 +170,13 @@ export default function CaseStudyWrapper({ content }) {
               </div>
             ))}
           </div>
-          <img src={content.images.three} alt="" className="my-20" />
-          <img src={content.images.four} alt="" className="mb-20 md:px-20" />
+          <img src={data.images.three} alt="" className="my-20" />
+          <img src={data.images.four} alt="" className="mb-20 md:px-20" />
 
           {/* Discover More */}
           <h2 className="text-white font-alan-sans text-[32px] md:text-[96.68px] mb-20">Discover More</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {content.works.map((work, i) => <WorkCard key={i} {...work} />)}
+            {data.works?.map((work, i) => <WorkCard key={i} {...work} />)}
           </div>
         </div>
       </Container>
