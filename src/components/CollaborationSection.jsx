@@ -19,10 +19,12 @@ const CollaborationSection = () => {
         <h2
           className="
             text-center font-montserrat font-medium
-            text-[48px] leading-tight h-auto w-full max-w-[18rem] mx-auto mb-4
+            lg:text-[48px] leading-tight h-auto w-full max-w-[18rem] mx-auto mb-4
            sm:max-w-[24rem] sm:mb-6
              md:max-w-[32rem] md:mb-8
-            lg:text-[4rem] lg:max-w-[50rem] lg:mb-12
+            md:text-[32px]
+            text-[20px]
+            lg:max-w-[50rem] lg:mb-12
              xl:max-w-[82.375rem] xl:mb-0
             flex items-center justify-center font-alan-sans 
           "
