@@ -71,7 +71,11 @@ const WorkCard = ({
   );
 
   return slug ? (
-    <Link to={`/casestudy/${slug}`} className="block group">
+    <Link
+      to={`/casestudy/${slug}`}
+      className="block group "
+      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+    >
       {card}
     </Link>
   ) : (

@@ -36,7 +36,7 @@ const Footer = () => {
           {/* Left Column */}
           <div className="flex flex-col items-start flex-1">
             {/* Let's Discuss Text */}
-            <h2 className="text-white text-left text-[18.778px] md:text-[27px] lg:text-[41.778px] font-[700] md:w-[357px] break-auto" >
+            <h2 className="text-white text-left text-[18.778px] md:text-[27px] lg:text-[38px] font-[700] md:w-[357px] break-auto">
               Let's Discuss Your Vision. With US
             </h2>
 
@@ -146,7 +146,7 @@ const Footer = () => {
                   <Link
                     key={index}
                     to={link.path}
-                    className="text-white font-medium leading-normal hover:opacity-75 transition-opacity duration-200 py-1 md:text-[24px] text-[14px]"
+                    className="text-white font-medium leading-normal md:text-left text-center hover:opacity-75 transition-opacity duration-200 py-1 md:text-[24px] text-[14px]"
                     style={{
                       fontStyle: "normal",
                       fontWeight: 500,
