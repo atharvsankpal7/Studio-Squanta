@@ -53,15 +53,14 @@ const WorkCard = ({
           {tags.map((tag, i) => (
             <span
               key={i}
-              className="flex justify-center items-center md:w-[118.925px] lg:w-[203px] h-[24.549px] lg:h-[42px] px-[10px] bg-[#2B2B2B] border border-white rounded-[33.393px] lg:rounded-4xl text-[clamp(9.327px,2vw,16px)]"
+              className="flex justify-center items-center w-[118.925px] md:w-[159.925px] lg:w-[203px] h-[24.549px] lg:h-[42px] px-[10px] bg-[#2B2B2B] border border-white rounded-[33.393px] lg:rounded-4xl text-[clamp(9.327px,1.5vw,16px)]"
               style={{
-                fontSize: "16px",
                 fontStyle: "normal",
                 fontWeight: "500",
                 lineHeight: "normal",
               }}
             >
-              {tag}
+              {tag} 
             </span>
           ))}
         </div>
