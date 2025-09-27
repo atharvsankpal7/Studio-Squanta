@@ -9,7 +9,7 @@ const CollaborationSection = () => {
   return (
     <div className="bg-black text-white">
       <div className="
-        w-full max-w-[90rem] h-auto  mx-auto 
+        w-full max-w-[50rem] h-auto  mx-auto 
         flex flex-col items-center px-[1rem] sm:px-[2rem] md:px-[3rem] lg:px-[4rem] xl:px-[0.25rem]
         pt-[2rem] sm:pt-[3rem] md:pt-[4rem] lg:pt-[6rem] xl:pt-[9rem]
         pb-[2rem] sm:pb-[3rem] md:pb-[4rem] lg:pb-[5rem] xl:pb-0
@@ -19,11 +19,11 @@ const CollaborationSection = () => {
         <h2
           className="
             text-center font-montserrat font-medium
-            text-[2rem] leading-tight h-auto w-full max-w-[18rem] mx-auto mb-4
+            text-[48px] leading-tight h-auto w-full max-w-[18rem] mx-auto mb-4
            sm:max-w-[24rem] sm:mb-6
              md:max-w-[32rem] md:mb-8
             lg:text-[4rem] lg:max-w-[50rem] lg:mb-12
-            xl:text-[6.0425rem] xl:max-w-[82.375rem] xl:mb-0
+             xl:max-w-[82.375rem] xl:mb-0
             flex items-center justify-center font-alan-sans 
           "
           style={{
@@ -33,7 +33,7 @@ const CollaborationSection = () => {
             margin: "0 auto 1rem auto",
           }}
         >
-         Excited to create? We are too. Let’s get started with Squanta.
+         Not just a project - a partnership. Built with intent, delivered with impact.
         </h2>
 
         {/* Motion Button */}
