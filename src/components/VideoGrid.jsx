@@ -38,12 +38,7 @@ const defaultVideos = [
     duration: "7:00",
     source: "https://youtu.be/82IDZPr2c_Q",
   },
-  {
-    title: "Design Thinking Explained",
-    author: "Winzone",
-    duration: "7:00",
-    source: "https://youtu.be/kXTIuXuBlCY",
-  },
+
 ];
 
 function CircularVideoList({ selectedIndex, onVideoSelect }) {
