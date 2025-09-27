@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+"use client";
+
+import { useState } from "react";
 import Container from "./ui/Container";
-import { motion, AnimatePresence } from "framer-motion"; // Import motion and AnimatePresence
+import { motion, AnimatePresence } from "framer-motion";
 
 // Helper to extract YouTube video ID
 const extractYouTubeID = (url) => {
-  if (!url) return null; // Add null check for url
+  if (!url) return null;
   const regExp =
-    /^.*(?:youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=)([^#\&\?]{11}).*/;
+    /^.*(?:youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=)([^#&?]{11}).*/;
   const match = url.match(regExp);
   return match && match[1] ? match[1] : null;
 };
@@ -40,10 +42,10 @@ const defaultVideos = [
 
 function CircularVideoList({ selectedIndex, onVideoSelect }) {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [direction, setDirection] = useState(0); // For animating video slide
+  const [direction, setDirection] = useState(0);
 
   const videos = defaultVideos;
-  const n = videos.length; // Number of videos
+  const n = videos.length;
 
   const selectedVideo = videos[selectedIndex];
   const videoId = extractYouTubeID(selectedVideo?.source);
@@ -62,61 +64,126 @@ function CircularVideoList({ selectedIndex, onVideoSelect }) {
 
   const videoVariants = {
     enter: (direction) => ({
-      x: direction > 0 ? 500 : -500, // Enters from right if direction is positive (next), from left if negative (prev)
+      x: direction > 0 ? 800 : -800,
       opacity: 0,
+      scale: 0.8,
+      rotateY: direction > 0 ? 15 : -15,
     }),
     center: {
       zIndex: 1,
       x: 0,
       opacity: 1,
+      scale: 1,
+      rotateY: 0,
     },
     exit: (direction) => ({
       zIndex: 0,
-      x: direction < 0 ? 500 : -500, // Exits to right if direction is negative (prev), to left if positive (next)
+      x: direction < 0 ? 800 : -800,
       opacity: 0,
+      scale: 0.8,
+      rotateY: direction < 0 ? -15 : 15,
     }),
   };
 
+  const containerVariants = {
+    animate: {
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.05,
+      },
+    },
+  };
+
   return (
-    <div className="flex items-center justify-center">
+    <motion.div
+      className="flex items-center justify-center"
+      variants={containerVariants}
+      animate="animate"
+    >
       <div className="flex items-center space-x-4">
         {/* Left Pillars with Navigation */}
-        <div className="flex space-x-4 items-center">
+        <motion.div
+          className="flex space-x-4 items-center"
+          initial={{ x: -50, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+        >
           {/* Far Left Pillar */}
-          <Pillar author={farLeftPillarData?.author || "Unknown"} height="453px" />
+          <Pillar
+            author={farLeftPillarData?.author || "Unknown"}
+            height="453px"
+          />
           <div className="relative">
             {/* Near Left Pillar */}
-            <Pillar author={nearLeftPillarData?.author || "Unknown"} height="515px" />
-            <button
+            <Pillar
+              author={nearLeftPillarData?.author || "Unknown"}
+              height="515px"
+            />
+            <motion.button
               onClick={() => {
-                const prevIndex = selectedIndex === 0 ? n - 1 : selectedIndex - 1;
-                handleNavigation(prevIndex, -1); // -1 for previous direction
+                const prevIndex =
+                  selectedIndex === 0 ? n - 1 : selectedIndex - 1;
+                handleNavigation(prevIndex, -1);
               }}
-              className="absolute bottom-3 right-3.5 w-[58px] h-[58px] cursor-pointer flex items-center justify-center z-10 transition-transform duration-300 hover:scale-110"
+              className="absolute bottom-3 right-3.5 w-[58px] h-[58px] cursor-pointer flex items-center justify-center z-10"
+              whileHover={{
+                scale: 1.15,
+                rotate: -5,
+                transition: { type: "spring", stiffness: 400, damping: 10 },
+              }}
+              whileTap={{
+                scale: 0.95,
+                rotate: -2,
+                transition: { duration: 0.1 },
+              }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.5 }}
             >
               <ArrowIcon direction="left" />
-            </button>
+            </motion.button>
           </div>
-        </div>
+        </motion.div>
 
         {/* Center video */}
-        <div className="relative w-[898px] h-[552px] rounded-[32px] overflow-hidden bg-black">
-          <AnimatePresence initial={false} custom={direction}>
+        <motion.div
+          className="relative w-[898px] h-[552px] rounded-[32px] overflow-hidden bg-black"
+          initial={{ scale: 0.9, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+        >
+          <AnimatePresence initial={false} custom={direction} mode="wait">
             <motion.div
-              key={selectedIndex} // Key is crucial for AnimatePresence to detect changes
+              key={selectedIndex}
               custom={direction}
               variants={videoVariants}
               initial="enter"
               animate="center"
               exit="exit"
               transition={{
-                x: { type: "spring", stiffness: 300, damping: 30 },
-                opacity: { duration: 0.2 },
+                x: {
+                  type: "spring",
+                  stiffness: 200,
+                  damping: 25,
+                  mass: 0.8,
+                },
+                opacity: { duration: 0.4, ease: "easeInOut" },
+                scale: {
+                  type: "spring",
+                  stiffness: 300,
+                  damping: 20,
+                },
+                rotateY: {
+                  type: "spring",
+                  stiffness: 200,
+                  damping: 20,
+                },
               }}
               className="w-full h-full absolute"
+              style={{ perspective: "1000px" }}
             >
               {isPlaying && videoId ? (
-                <iframe
+                <motion.iframe
                   width="100%"
                   height="100%"
                   src={`https://www.youtube.com/embed/${videoId}?autoplay=1&controls=1`}
@@ -125,57 +192,122 @@ function CircularVideoList({ selectedIndex, onVideoSelect }) {
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                   className="rounded-[32px]"
-                ></iframe>
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.5 }}
+                />
               ) : (
                 <div className="w-full h-full relative">
-                  <img
-                    // Ensure videoId is available before attempting to construct the URL
-                    src={videoId ? `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg` : ''}
+                  <motion.img
+                    src={
+                      videoId
+                        ? `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`
+                        : ""
+                    }
                     alt={selectedVideo?.title}
                     className="w-full h-full object-cover rounded-[32px]"
+                    initial={{ scale: 1.1 }}
+                    animate={{ scale: 1 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
                   />
                   {/* Green Play Button Overlay */}
-                  <button
+                  <motion.button
                     onClick={() => setIsPlaying(true)}
                     className="absolute inset-0 flex items-center justify-center bg-black/20"
+                    whileHover={{ backgroundColor: "rgba(0, 0, 0, 0.3)" }}
+                    transition={{ duration: 0.3 }}
                   >
-                    <div className="w-20 h-20 bg-[#00FF26] rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
-                      <svg
+                    <motion.div
+                      className="w-20 h-20 bg-[#00FF26] rounded-full flex items-center justify-center shadow-lg"
+                      whileHover={{
+                        scale: 1.2,
+                        boxShadow: "0 0 30px rgba(0, 255, 38, 0.4)",
+                        transition: {
+                          type: "spring",
+                          stiffness: 400,
+                          damping: 10,
+                        },
+                      }}
+                      whileTap={{
+                        scale: 0.9,
+                        transition: { duration: 0.1 },
+                      }}
+                      initial={{ scale: 0, rotate: -180 }}
+                      animate={{ scale: 1, rotate: 0 }}
+                      transition={{
+                        delay: 0.5,
+                        type: "spring",
+                        stiffness: 200,
+                        damping: 15,
+                      }}
+                    >
+                      <motion.svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="w-10 h-10 text-black ml-1" // Changed text-white to text-black
+                        className="w-10 h-10 text-black ml-1"
                         fill="currentColor"
                         viewBox="0 0 24 24"
+                        whileHover={{ x: 2 }}
+                        transition={{
+                          type: "spring",
+                          stiffness: 400,
+                          damping: 10,
+                        }}
                       >
                         <path d="M8 5v14l11-7z" />
-                      </svg>
-                    </div>
-                  </button>
+                      </motion.svg>
+                    </motion.div>
+                  </motion.button>
                 </div>
               )}
             </motion.div>
           </AnimatePresence>
-        </div>
+        </motion.div>
 
         {/* Right Pillars with Navigation */}
-        <div className="flex space-x-4 items-center">
+        <motion.div
+          className="flex space-x-4 items-center"
+          initial={{ x: 50, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+        >
           <div className="relative">
             {/* Near Right Pillar */}
-            <Pillar author={nearRightPillarData?.author || "Unknown"} height="515px" />
-            <button
+            <Pillar
+              author={nearRightPillarData?.author || "Unknown"}
+              height="515px"
+            />
+            <motion.button
               onClick={() => {
-                const nextIndex = selectedIndex === n - 1 ? 0 : selectedIndex + 1;
-                handleNavigation(nextIndex, 1); // 1 for next direction
+                const nextIndex =
+                  selectedIndex === n - 1 ? 0 : selectedIndex + 1;
+                handleNavigation(nextIndex, 1);
               }}
-              className="absolute bottom-3 left-3.5 w-[58px] h-[58px] flex items-center cursor-pointer justify-center z-10 transition-transform duration-300 hover:scale-110"
+              className="absolute bottom-3 left-3.5 w-[58px] h-[58px] flex items-center cursor-pointer justify-center z-10"
+              whileHover={{
+                scale: 1.15,
+                rotate: 5,
+                transition: { type: "spring", stiffness: 400, damping: 10 },
+              }}
+              whileTap={{
+                scale: 0.95,
+                rotate: 2,
+                transition: { duration: 0.1 },
+              }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.5 }}
             >
               <ArrowIcon direction="right" />
-            </button>
+            </motion.button>
           </div>
           {/* Far Right Pillar */}
-          <Pillar author={farRightPillarData?.author || "Unknown"} height="453px" />
-        </div>
+          <Pillar
+            author={farRightPillarData?.author || "Unknown"}
+            height="453px"
+          />
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
@@ -184,17 +316,47 @@ function Pillar({ author, height }) {
     <motion.div
       className="w-[88px] bg-[#E6FFEA] rounded-[34px] flex items-center justify-center overflow-hidden"
       style={{ height }}
-      layout // Animates layout changes (like height)
-      transition={{ duration: 0.5, ease: "easeInOut" }}
+      layout
+      transition={{
+        duration: 0.6,
+        ease: [0.25, 0.46, 0.45, 0.94],
+        layout: { duration: 0.6 },
+      }}
+      whileHover={{
+        scale: 1.02,
+        backgroundColor: "#D4F7D9",
+        transition: { duration: 0.3 },
+      }}
+      initial={{ scaleY: 0, opacity: 0 }}
+      animate={{ scaleY: 1, opacity: 1 }}
     >
-      <AnimatePresence mode="wait"> {/* Ensures only one text element is mounted at a time */}
+      <AnimatePresence mode="wait">
         <motion.div
-          key={author} // Key changes when author changes, triggering animation
-          className="transform -rotate-90 whitespace-nowrap font-[700] text-black font-alan-sans text-[36px] uppercase tracking-wider"
-          initial={{ opacity: 0, y: 25 }} // Initial state for new text entering
-          animate={{ opacity: 1, y: 0 }} // Animate to this state
-          exit={{ opacity: 0, y: -25 }} // Exit state for old text leaving
-          transition={{ duration: 0.4, ease: "easeInOut" }}
+          key={author}
+          className="transform  whitespace-nowrap font-[700] text-black font-alan-sans text-[36px] uppercase tracking-wider "
+          initial={{
+            opacity: 0,
+            y: 40,
+            rotateZ: -90,
+            scale: 0.8,
+          }}
+          animate={{
+            opacity: 1,
+            y: 0,
+            rotateZ: -90,
+            scale: 1,
+          }}
+          exit={{
+            opacity: 0,
+            y: -40,
+            rotateZ: -90,
+            scale: 0.8,
+          }}
+          transition={{
+            duration: 0.5,
+            ease: [0.25, 0.46, 0.45, 0.94],
+            scale: { type: "spring", stiffness: 300, damping: 20 },
+          }}
         >
           {author}
         </motion.div>
@@ -206,22 +368,29 @@ function Pillar({ author, height }) {
 function ArrowIcon({ direction = "left" }) {
   const isLeft = direction === "left";
   return (
-    <svg
+    <motion.svg
       width="59"
       height="59"
       viewBox="0 0 59 59"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       style={isLeft ? { transform: "rotate(180deg)" } : {}}
+      whileHover={{
+        filter: "drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2))",
+        transition: { duration: 0.2 },
+      }}
     >
-      <path
+      <motion.path
         d="M15.4513 29.7091H44.4836M44.4836 29.7091L32.3868 17.6123M44.4836 29.7091L32.3868 41.8059"
         stroke="black"
         strokeWidth="2.90322"
         strokeLinecap="round"
         strokeLinejoin="round"
+        initial={{ pathLength: 0, opacity: 0 }}
+        animate={{ pathLength: 1, opacity: 1 }}
+        transition={{ duration: 0.8, ease: "easeInOut", delay: 0.4 }}
       />
-    </svg>
+    </motion.svg>
   );
 }
 
@@ -229,20 +398,35 @@ function VideoGrid() {
   const [selectedVideoIndex, setSelectedVideoIndex] = useState(0);
 
   return (
-    <section className="px-[60px] pb-[120px] pt-[120px] bg-black xl:block hidden">
+    <motion.section
+      className="px-[60px] pb-[120px] pt-[120px] bg-black xl:block hidden"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1, ease: "easeOut" }}
+    >
       {/* Hero Section with Partner Text */}
       <Container className="bg-black">
-        <h1 className="text-[24px] sm:text-[32px] md:text-[48px] lg:text-[72px] xl:text-[64px] font-alan-sans font-bold leading-tight sm:leading-normal tracking-[1px] sm:tracking-[1.28px] md:tracking-[2px] lg:tracking-[3px] xl:tracking-[3.867px] uppercase text-white max-w-[90%] sm:max-w-[95%] md:max-w-[1279px] mx-auto text-center sm:text-left">
+        <motion.h1
+          className="text-[24px] sm:text-[32px] md:text-[48px] lg:text-[72px] xl:text-[64px] font-alan-sans font-bold leading-tight sm:leading-normal tracking-[1px] sm:tracking-[1.28px] md:tracking-[2px] lg:tracking-[3px] xl:tracking-[3.867px] uppercase text-white max-w-[90%] sm:max-w-[95%] md:max-w-[1279px] mx-auto text-center sm:text-left"
+          initial={{ y: 50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+        >
           Trusted by 50+ innovators and change-makers.
-        </h1>
+        </motion.h1>
       </Container>
-      <div className="flex justify-center">
+      <motion.div
+        className="flex justify-center"
+        initial={{ y: 100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.3 }}
+      >
         <CircularVideoList
           selectedIndex={selectedVideoIndex}
           onVideoSelect={setSelectedVideoIndex}
         />
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 }
 
