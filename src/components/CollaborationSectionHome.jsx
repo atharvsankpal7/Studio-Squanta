@@ -47,7 +47,8 @@ const CollaborationSectionHome = () => {
           whileTap={{ scale: 0.97 }}
           transition={{ type: "spring", stiffness: 300, damping: 20 }}
           className="
-        group flex justify-center items-center
+        hidden 
+        group md:flex justify-center items-center
         w-[18rem] h-[3rem] p-[0.375rem] gap-[0.75rem] rounded-[1.5rem] mt-6
         sm:w-[24rem] sm:h-[3.5rem] sm:p-[0.5rem] sm:gap-[0.875rem] sm:rounded-[2rem] sm:mt-8
         md:w-[32rem] md:h-[4rem] md:p-[0.625rem] md:gap-[1rem] md:rounded-[2.5rem] md:mt-10

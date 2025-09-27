@@ -16,7 +16,7 @@ const Footer = () => {
   };
 
   return (
-    <div className="w-full z-50 bg-black">
+    <div className="w-full z-50 bg-black md:border-0 border-t-2 border-[#00FF26]">
       <footer
         className="w-full max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-[3.75rem] bg-black text-white"
         style={{
@@ -36,7 +36,7 @@ const Footer = () => {
           {/* Left Column */}
           <div className="flex flex-col items-start flex-1">
             {/* Let's Discuss Text */}
-            <h2 className="text-white text-left text-lg sm:text-xl md:text-2xl lg:text-[2.61113rem] font-bold max-w-full lg:max-w-[19.4375rem] leading-normal">
+            <h2 className="text-white text-left text-[18.778px] md:text-[27px] lg:text-[41.778px] font-[700] md:w-[357px] break-auto" >
               Let's Discuss Your Vision. With US
             </h2>
 
@@ -62,11 +62,11 @@ const Footer = () => {
             </button>
 
             {/* Email and Button */}
-            <div className="flex flex-col sm:flex-row items-start sm:items-center mt-6 md:mt-8 lg:mt-[7.5rem] gap-3 sm:gap-4">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center mt-6 md:mt-8 lg:mt-[7.5rem] gap-3 sm:gap-4 font-alan-sans">
               <span
-                className="text-white text-[2rem] font-medium break-all sm:break-normal"
+                className="text-white font-medium break-all md:text-[32px] text-[24px]"
                 style={{
-                  fontSize: "32px",
+                  fontSize: "",
                   fontStyle: "normal",
                   fontWeight: 500,
                   lineHeight: "normal",
@@ -127,9 +127,8 @@ const Footer = () => {
                   <Link
                     key={index}
                     to={link.path}
-                    className="text-white font-medium leading-normal hover:opacity-75 transition-opacity duration-200 py-1"
+                    className="text-white font-medium leading-normal hover:opacity-75 transition-opacity duration-200 py-1 md:text-[24px] text-[14px]"
                     style={{
-                      fontSize: "24px",
                       fontStyle: "normal",
                       fontWeight: 500,
                       lineHeight: "normal",
@@ -147,9 +146,8 @@ const Footer = () => {
                   <Link
                     key={index}
                     to={link.path}
-                    className="text-white font-medium leading-normal hover:opacity-75 transition-opacity duration-200 py-1"
+                    className="text-white font-medium leading-normal hover:opacity-75 transition-opacity duration-200 py-1 md:text-[24px] text-[14px]"
                     style={{
-                      fontSize: "24px",
                       fontStyle: "normal",
                       fontWeight: 500,
                       lineHeight: "normal",
