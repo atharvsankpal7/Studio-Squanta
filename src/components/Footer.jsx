@@ -249,42 +249,48 @@ const Footer = () => {
           </div>
 
           {/* Right - Footer Links */}
-          <div className="flex flex-col sm:flex-row justify-end items-center gap-3 sm:gap-6 text-white text-center sm:text-right mt-6 sm:mt-8">
-            <a
-              href="#"
-              className="hover:opacity-75 transition-opacity duration-200"
-              style={{
-                fontSize: "12px",
-                fontStyle: "normal",
-                fontWeight: 500,
-                lineHeight: "normal",
-              }}
-            >
-              Privacy Policy
-            </a>
-            <a
-              href="#"
-              className="hover:opacity-75 transition-opacity duration-200"
-              style={{
-                fontSize: "12px",
-                fontStyle: "normal",
-                fontWeight: 500,
-                lineHeight: "normal",
-              }}
-            >
-              SiteMap
-            </a>
-            <span
-              style={{
-                fontSize: "12px",
-                fontStyle: "normal",
-                fontWeight: 500,
-                lineHeight: "normal",
-              }}
-              className="mt-2 sm:mt-0"
-            >
-              @{new Date().getFullYear()}, Altecht. All Rights Reserved.
-            </span>
+          <div className="flex justify-between items-center">
+            <div className="flex gap-3 sm:gap-6">
+              <img src="/icons/dribble_svgrepo.com.svg" alt="" />
+              <img src="/icons/insta_svgrepo.com.svg" alt="" />
+            </div>
+            <div className="flex flex-col sm:flex-row justify-end items-center gap-3 sm:gap-6 text-white text-center sm:text-right ">
+              <a
+                href="#"
+                className="hover:opacity-75 transition-opacity duration-200"
+                style={{
+                  fontSize: "12px",
+                  fontStyle: "normal",
+                  fontWeight: 500,
+                  lineHeight: "normal",
+                }}
+              >
+                Privacy Policy
+              </a>
+              <a
+                href="#"
+                className="hover:opacity-75 transition-opacity duration-200"
+                style={{
+                  fontSize: "12px",
+                  fontStyle: "normal",
+                  fontWeight: 500,
+                  lineHeight: "normal",
+                }}
+              >
+                SiteMap
+              </a>
+              <span
+                style={{
+                  fontSize: "12px",
+                  fontStyle: "normal",
+                  fontWeight: 500,
+                  lineHeight: "normal",
+                }}
+                className="mt-2 sm:mt-0"
+              >
+                @{new Date().getFullYear()}, Altecht. All Rights Reserved.
+              </span>
+            </div>
           </div>
         </div>
 
