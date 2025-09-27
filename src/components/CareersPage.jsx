@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 // Data for the job postings
 const jobs = [
@@ -84,9 +85,9 @@ const JobPosting = ({ job }) => {
                 <DetailSection title="Requirements" items={job.requirements} />
             </div>
             <div className="col-span-12 md:col-span-2 mt-4 md:mt-0 flex md:justify-end items-start">
-                <a href="#apply-form" className="bg-[#1C1C1C] text-white font-semibold rounded-full  border px-6 py-2 hover:bg-white hover:text-black transition-colors duration-200">
+                <Link to="#apply-form" className="bg-[#1C1C1C] text-white font-semibold rounded-full  border px-6 py-2 hover:bg-white hover:text-black transition-colors duration-200">
                     Apply Now
-                </a>
+                </Link>
             </div>
         </div>
     );

@@ -10,6 +10,7 @@ import FuturePage from './pages/FuturePage';
 import PageWrapper from './layouts/PageWrapper';
 import CareersPageContainer from './pages/CareersPageContainer';
 import CaseStudyLayout from './pages/casestudy/CaseStudyLayout';
+import ScrollToTop from './components/ScrollToTop';
 
 const CaseStudyRoute = () => {
   const { slug } = useParams();
@@ -19,6 +20,7 @@ const CaseStudyRoute = () => {
 const App = () => {
   return (
     <Router>
+      <ScrollToTop />
       <PageWrapper>
         <Routes>
           <Route path="/" element={<LandingPage />} />

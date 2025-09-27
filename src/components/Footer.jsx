@@ -165,8 +165,8 @@ const Footer = () => {
             {/* Social Media Links */}
             <div className="flex justify-center mt-8 sm:mt-10 lg:mt-[5.59rem]">
               <div className="w-full max-w-[17.75rem] h-12 sm:h-14 lg:h-[3rem] border border-white rounded-[3.125rem] bg-black flex justify-center items-center gap-6 sm:gap-8 lg:gap-[3.125rem] px-4">
-                <a
-                  href="#"
+                <Link
+                  to="#"
                   aria-label="Our Google page"
                   className="hover:opacity-75 transition-opacity duration-200"
                 >
@@ -175,9 +175,9 @@ const Footer = () => {
                     alt="Google"
                     className="w-6 h-6 sm:w-7 sm:h-7 lg:w-[2.375rem] lg:h-[2.375rem]"
                   />
-                </a>
-                <a
-                  href="https://www.instagram.com/altecht_/"
+                </Link>
+                <Link
+                  to="https://www.instagram.com/altecht_/"
                   aria-label="Our Instagram profile"
                   className="hover:opacity-75 transition-opacity duration-200"
                 >
@@ -186,9 +186,9 @@ const Footer = () => {
                     alt="Instagram"
                     className="w-6 h-6 sm:w-7 sm:h-7 lg:w-[2.375rem] lg:h-[2.375rem]"
                   />
-                </a>
-                <a
-                  href="https://www.linkedin.com/company/altecht/"
+                </Link>
+                <Link
+                  to="https://www.linkedin.com/company/altecht/"
                   aria-label="Our LinkedIn profile"
                   className="hover:opacity-75 transition-opacity duration-200"
                 >
@@ -197,7 +197,7 @@ const Footer = () => {
                     alt="LinkedIn"
                     className="w-6 h-6 sm:w-7 sm:h-7 lg:w-[2.375rem] lg:h-[2.375rem]"
                   />
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -255,8 +255,8 @@ const Footer = () => {
               <img src="/icons/insta_svgrepo.com.svg" alt="" />
             </div>
             <div className="flex flex-col sm:flex-row justify-end items-center gap-3 sm:gap-6 text-white text-center sm:text-right ">
-              <a
-                href="#"
+              <Link
+                to="#"
                 className="hover:opacity-75 transition-opacity duration-200"
                 style={{
                   fontSize: "12px",
@@ -266,9 +266,9 @@ const Footer = () => {
                 }}
               >
                 Privacy Policy
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                to="#"
                 className="hover:opacity-75 transition-opacity duration-200"
                 style={{
                   fontSize: "12px",
@@ -278,7 +278,7 @@ const Footer = () => {
                 }}
               >
                 SiteMap
-              </a>
+              </Link>
               <span
                 style={{
                   fontSize: "12px",

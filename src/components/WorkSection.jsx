@@ -220,7 +220,7 @@ const FeaturedWorks = ({ disableDescription = false }) => {
           ))}
         </div>
         {!disableDescription && (
-          <a href="/work" className="cursor-pointer">
+          <Link to="/work" className="cursor-pointer">
             <div className="flex justify-center mt-12 cursor-pointer">
               <button className="flex items-center gap-2 text-white border border-white rounded-[57px] px-6 py-2 hover:bg-white hover:text-black ">
                 <span>View All</span>
@@ -242,7 +242,7 @@ const FeaturedWorks = ({ disableDescription = false }) => {
                 </svg>
               </button>
             </div>
-          </a>
+          </Link>
         )}
       </Container>
     </section>
