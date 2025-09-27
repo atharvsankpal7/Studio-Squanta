@@ -22,6 +22,7 @@ const App = () => {
       <PageWrapper>
         <Routes>
           <Route path="/" element={<LandingPage />} />
+          <Route path="/about" element={<KnowMorePage />} />
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/know-more" element={<KnowMorePage />} />
           <Route path="/collaboration" element={<CollaborationPage />} />
