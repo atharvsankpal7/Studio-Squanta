@@ -83,64 +83,62 @@ const SoftwareSection = () => {
             <div className="max-w-[90rem] mx-auto">
                 {/* Responsive grid: 1 col on mobile, 2 cols on tablet, 3 cols on desktop */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-                    {softwareData.map((item) => (
-                        <div
-                            key={item.id}
-                            className="relative mx-auto w-full max-w-[25.625rem]"
-                            style={{
-                                height: 'clamp(14rem, 16vw, 18rem)',
-                                flexShrink: 0,
-                                background: 'linear-gradient(0deg, #1C1C1C 0%, #1C1C1C 100%), #1C1C1C',
-                                borderRadius: '0.5rem'
-                            }}
-                        >
-                            {/* Image at top left corner */}
-                            <img
-                                src={item.image}
-                                alt={item.title}
-                                className="absolute top-2 left-2 sm:top-3 sm:left-3 lg:top-0 lg:left-0"
-                                style={{
-                                    width: 'clamp(4rem, 8vw, 6.25rem)',
-                                    height: 'clamp(4rem, 8vw, 6.25rem)',
-                                    flexShrink: 0,
-                                    objectFit: 'contain'
-                                }}
-                            />
+  {softwareData.map((item) => (
+    <div
+      key={item.id}
+      className="relative w-full max-w-[25.625rem] mx-auto rounded-lg"
+      style={{
+        height: "clamp(14rem, 16vw, 18rem)",
+        background:
+          "linear-gradient(0deg, #1C1C1C 0%, #1C1C1C 100%), #1C1C1C",
+      }}
+    >
+      {/* Image at top left corner */}
+      <img
+        src={item.image}
+        alt={item.title}
+        className="absolute top-2 left-2 sm:top-3 sm:left-3 lg:top-4 lg:left-4 object-contain"
+        style={{
+          width: "clamp(4rem, 8vw, 6.25rem)",
+          height: "clamp(4rem, 8vw, 6.25rem)",
+        }}
+      />
 
-                            {/* Main text */}
-                            <div
-                                className="absolute font-alan-sans"
-                                style={{
-                                    bottom: 'clamp(3rem, 6vw, 4.56rem)',
-                                    left: '1rem',
-                                    color: '#FFF',
-                                    fontSize: 'clamp(1rem, 2.5vw, 1.25rem)',
-                                    fontWeight: '400',
-                                    lineHeight: 'normal',
-                                    letterSpacing: '0.05rem'
-                                }}
-                            >
-                                {item.title}
-                            </div>
+      {/* Main text */}
+      <div
+        className="absolute font-alan-sans"
+        style={{
+          bottom: "clamp(3rem, 6vw, 4.56rem)",
+          left: "1rem",
+          color: "#FFF",
+          fontSize: "clamp(1rem, 2.5vw, 1.25rem)",
+          fontWeight: 400,
+          lineHeight: "normal",
+          letterSpacing: "0.05rem",
+        }}
+      >
+        {item.title}
+      </div>
 
-                            {/* Secondary text */}
-                            <div
-                                className="absolute font-montserrat"
-                                style={{
-                                    bottom: 'clamp(1rem, 2.5vw, 2.31rem)',
-                                    left: '1rem',
-                                    color: '#FFF',
-                                    fontSize: 'clamp(0.875rem, 2vw, 1rem)',
-                                    fontWeight: '400',
-                                    lineHeight: 'normal',
-                                    letterSpacing: '0.04rem'
-                                }}
-                            >
-                                {item.description}
-                            </div>
-                        </div>
-                    ))}
-                </div>
+      {/* Secondary text */}
+      <div
+        className="absolute font-montserrat"
+        style={{
+          bottom: "clamp(1rem, 2.5vw, 2.31rem)",
+          left: "1rem",
+          color: "#FFF",
+          fontSize: "clamp(0.875rem, 2vw, 1rem)",
+          fontWeight: 400,
+          lineHeight: "1.5rem",
+          letterSpacing: "0.04rem",
+        }}
+      >
+        {item.description}
+      </div>
+    </div>
+  ))}
+</div>
+
             </div>
         </div>
     );
