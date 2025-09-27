@@ -19,17 +19,17 @@ const KnowMorePage = () => {
             experiences
           </p>
           <img
-            src="/public/Squanta Assets/client1.png"
+            src="/Squanta Assets/client1.png"
             alt=""
             className="py-12 lg:px-60"
           />
           <img
-            src="/public/Squanta Assets/client2.png"
+            src="/Squanta Assets/client2.png"
             alt=""
             className="py-12 lg:px-60"
           />
           <img
-            src="/public/Squanta Assets/client3.png"
+            src="/Squanta Assets/client3.png"
             alt=""
             className="py-12 lg:px-60"
           />

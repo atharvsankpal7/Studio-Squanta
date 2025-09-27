@@ -17,7 +17,7 @@ const KnowMorePage = () => {
             We’re an independent creative studio, shaping brands with design,
             Creativity & marketing that inspire growth.
           </p>
-          <img src="/public/Squanta Assets/team.png" alt="" className="py-44" />
+          <img src="/Squanta Assets/team.png" alt="" className="py-44" />
         </FirstSectionWrapper>
       </Container>
       <div className="bg-black text-white">
