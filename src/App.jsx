@@ -12,7 +12,7 @@ import CareersPageContainer from './pages/CareersPageContainer';
 import Firefit from './pages/casestudy/Firefit';
 import OFFTHRD from './pages/casestudy/OFF-THRD';
 import Trenddy from './pages/casestudy/TheTrenddyTable';
-import AUTOMATE from './pages/casestudy/TheTrenddyTable copy';
+import AUTOMATE from './pages/casestudy/Automate';
 
 const App = () => {
   return (

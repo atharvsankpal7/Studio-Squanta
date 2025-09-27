@@ -60,7 +60,7 @@ const WorkCard = ({
                 lineHeight: "normal",
               }}
             >
-              {tag} 
+              {tag}
             </span>
           ))}
         </div>
@@ -89,8 +89,8 @@ const FeaturedWorks = ({ disableDescription = false }) => {
       tags: ["Rebranding", "Digital marketing"],
     },
     {
-      image: "Squanta Assets/Rectangle 64.png",
-      title: "FIREFIT",
+      image: "Squanta Assets/CHRONICAL.png",
+      title: "Chronical",
       countryFlag: "https://flagcdn.com/w20/in.png", // India flag
       description:
         "Curated headlines, topic follows, breaking notifications, and save-for-later reading across devices with seamless sync.",
@@ -98,7 +98,7 @@ const FeaturedWorks = ({ disableDescription = false }) => {
     },
     {
       image: "Squanta Assets/Rectangle 67.png",
-      title: "Cafe 10",
+      title: "Trade Craft",
       countryFlag: "https://flagcdn.com/w20/us.png", // USA flag
       description:
         "Designed and developed a stock trading app with real-time data, advanced charts, alerts, and seamless order execution.",
@@ -106,7 +106,7 @@ const FeaturedWorks = ({ disableDescription = false }) => {
     },
   ];
 
-  works = disableDescription ? [...works, ...works] : works;
+  works = disableDescription ? works : works.slice(0, 4);
 
   return (
     <section className="bg-black py-12 px-6 md:px-12">
