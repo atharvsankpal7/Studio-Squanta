@@ -62,7 +62,7 @@ const Footer = () => {
             </button>
 
             {/* Email and Button */}
-            <div className="flex flex-col sm:flex-row items-start sm:items-center mt-6 md:mt-8 lg:mt-[7.5rem] gap-3 sm:gap-4 font-alan-sans">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center mt-6 md:mt-8 lg:mt-[5rem] gap-3 sm:gap-4 font-alan-sans">
               <span
                 className="text-white font-medium break-all md:text-[32px] text-[20px]"
                 style={{

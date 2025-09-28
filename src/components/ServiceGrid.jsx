@@ -76,7 +76,7 @@ const ServiceGrid = () => {
   ];
 
   return (
-    <section className="bg-black py-16 md:py-24 lg:py-32">
+    <section className="bg-black pt-16 md:py-24 lg:py-32">
       {sections.map((section, idx) => (
         <Container key={idx} className="flex flex-col w-full text-white mb-[120px] md:mb-[330px] lg:mb[850px]  ">
           <h2

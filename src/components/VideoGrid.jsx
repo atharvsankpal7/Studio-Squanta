@@ -129,7 +129,7 @@ function CircularVideoList({ selectedIndex, onVideoSelect }) {
               className="absolute bottom-3 right-3.5 w-[58px] h-[58px] cursor-pointer flex items-center justify-center z-10"
               whileHover={{
                 scale: 1.15,
-                rotate: -5,
+                // rotate: -5,
                 transition: { type: "spring", stiffness: 400, damping: 10 },
               }}
               whileTap={{
@@ -286,7 +286,7 @@ function CircularVideoList({ selectedIndex, onVideoSelect }) {
               className="absolute bottom-3 left-3.5 w-[58px] h-[58px] flex items-center cursor-pointer justify-center z-10"
               whileHover={{
                 scale: 1.15,
-                rotate: 5,
+                // rotate: 5,
                 transition: { type: "spring", stiffness: 400, damping: 10 },
               }}
               whileTap={{
@@ -406,16 +406,43 @@ function VideoGrid() {
       transition={{ duration: 1, ease: "easeOut" }}
     >
       {/* Hero Section with Partner Text */}
-      <Container className="bg-black">
+      <div className="bg-black w-full max-w-[90rem] mx-auto ">
         <motion.h1
-          className="text-[24px] sm:text-[32px] md:text-[48px] lg:text-[72px] xl:text-[64px] font-alan-sans font-bold leading-tight sm:leading-normal tracking-[1px] sm:tracking-[1.28px] md:tracking-[2px] lg:tracking-[3px] xl:tracking-[3.867px] uppercase text-white max-w-[90%] sm:max-w-[95%] md:max-w-[1279px] mx-auto text-center sm:text-left"
+          className="text-[24px] sm:text-[32px] md:text-[48px] lg:text-[72px] xl:text-[64px] font-alan-sans font-bold leading-tight sm:leading-normal tracking-[1px] sm:tracking-[1.28px] md:tracking-[2px] lg:tracking-[3px] xl:tracking-[3.867px] uppercase text-white  mx-auto text-center sm:text-left "
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
         >
-          Trusted by 50+ innovators and change-makers.
+          Trusted by 50+ innovators and
         </motion.h1>
-      </Container>
+        <div className="">
+          <motion.h1
+            className="text-[24px] sm:text-[32px] md:text-[48px] lg:text-[72px] xl:text-[64px] font-alan-sans font-bold leading-tight sm:leading-normal tracking-[1px] sm:tracking-[1.28px] md:tracking-[2px] lg:tracking-[3px] xl:tracking-[3.867px] uppercase text-white  mx-auto text-center sm:text-left mb-[2rem] md:mb-[6rem] lg:mb-[8.2rem] flex"
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+          >
+            change-makers.
+            {/* SVG Checkmark Icon */}
+            <div className="flex justify-center ml-4 mt-1">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="5.625rem"
+                height="5.625rem"
+                viewBox="0 0 90 90"
+                fill="none"
+              >
+                <path
+                  d="M45 7.5C24.3375 7.5 7.5 24.3375 7.5 45C7.5 65.6625 24.3375 82.5 45 82.5C65.6625 82.5 82.5 65.6625 82.5 45C82.5 24.3375 65.6625 7.5 45 7.5ZM62.925 36.375L41.6625 57.6375C41.1375 58.1625 40.425 58.4625 39.675 58.4625C38.925 58.4625 38.2125 58.1625 37.6875 57.6375L27.075 47.025C25.9875 45.9375 25.9875 44.1375 27.075 43.05C28.1625 41.9625 29.9625 41.9625 31.05 43.05L39.675 51.675L58.95 32.4C60.0375 31.3125 61.8375 31.3125 62.925 32.4C64.0125 33.4875 64.0125 35.25 62.925 36.375Z"
+                  fill="white"
+                />
+              </svg>
+            </div>
+
+          </motion.h1>
+        </div>
+
+      </div>
       <motion.div
         className="flex justify-center"
         initial={{ y: 100, opacity: 0 }}
@@ -427,6 +454,7 @@ function VideoGrid() {
           onVideoSelect={setSelectedVideoIndex}
         />
       </motion.div>
+
     </motion.section>
   );
 }

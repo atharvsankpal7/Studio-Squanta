@@ -19,7 +19,7 @@ const HeroSection = () => {
         />
 
         {/* Main Content Container */}
-        <Container className="mt-[4.625rem] lg:mt-0 relative z-10 w-full h-[22rem] lg:h-[59rem] flex flex-col items-center justify-center">
+        <Container className="mt-[4.625rem] lg:mt-0 relative z-10 w-full h-[22rem] md:h-[38rem] lg:h-[59rem] flex flex-col items-center justify-center">
 
           {/* Studio and SQUANTA Text */}
           <div className="flex flex-col items-center justify-center font-[700] ">
@@ -66,6 +66,7 @@ const HeroSection = () => {
               <span
                 className="font-montserrat font-semibold leading-normal"
                 style={{
+                  width: 'clamp(5.6rem, 10vw, 8.81rem)', // Responsive width
                   fontSize: 'clamp(0.63494rem, 1vw, 16px)', // Responsive font size
                 }}
               >

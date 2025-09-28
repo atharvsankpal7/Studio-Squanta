@@ -220,17 +220,19 @@ const FeaturedWorks = ({ disableDescription = false }) => {
           ))}
         </div>
         {!disableDescription && (
-          <Link to="/work" className="cursor-pointer">
+          <a href="/work" className="cursor-pointer group">
             <div className="flex justify-center mt-12 cursor-pointer">
-              <button className="flex items-center gap-2 text-white border border-white rounded-[57px] px-6 py-2 hover:bg-white hover:text-black ">
-                <span>View All</span>
+              <button className="flex justify-center items-center gap-2 text-white border border-white rounded-[57px] px-6 py-2 hover:bg-white hover:text-black  transition-all duration-300 hover:scale-105"
+                style={{ width: 'clamp(10rem,20vw,12.3rem)', height: 'clamp(1.3rem,12vw,3.75rem)' }}
+              >
+                <span style={{ fontSize: 'clamp(14px, 2vw, 1rem)' }}>View All</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
                   height="24"
                   viewBox="0 0 24 24"
                   fill="none"
-                  className=" group-hover:translate-x-1"
+                  className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
                 >
                   <path
                     d="M7 17L17 7M17 7H8M17 7V16"
@@ -242,7 +244,7 @@ const FeaturedWorks = ({ disableDescription = false }) => {
                 </svg>
               </button>
             </div>
-          </Link>
+          </a>
         )}
       </Container>
     </section>

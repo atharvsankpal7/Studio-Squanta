@@ -176,7 +176,7 @@
 
 /* Hero title sizing: fluid up to a hard max on large screens */
 .hero-title {
-    font-size: clamp(3rem, 13vw, 14rem);
+    font-size: clamp(3rem, 11vw, 11rem);
     line-height: normal;
     text-align: center;
 }
@@ -184,7 +184,7 @@
 /* Force the exact max on very ladrge desktop viewports (common 1920px and above) */
 @media (min-width: 1920px) {
     .hero-title {
-        font-size: 208.671px !important;
+        font-size: 11rem !important;
         font-style: normal;
         font-weight: 700;
         line-height: normal;
