@@ -166,7 +166,7 @@ const Navbar = () => {
               animate="visible"
               exit="exit"
               variants={dropdownVariants}
-              className="bg-black text-white border-t border-gray-800"
+              className="bg-black text-white border-t lg:hidden border-gray-800 w-full"
             >
               <div className="lg:hidden py-4 px-4 space-y-3">
                 {menuItems.map((item) => (
