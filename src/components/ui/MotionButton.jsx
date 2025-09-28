@@ -1,11 +1,12 @@
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom"; // Make sure to import this
 
-const MotionButton = () => {
+const MotionButton = ({className}) => {
   const navigate = useNavigate();
 
+  className = `py-6 sm:py-8 md:py-10 lg:py-12 xl:pt-[6.6rem] xl:pb-[3rem] ${className}`
   return (
-    <div className="py-6 sm:py-8 md:py-10 lg:py-12 xl:pt-[6.6rem] xl:pb-[3rem]">
+    <div className={className}>
 
       <motion.button
         // 1. Removed the 'whileHover' prop to prevent scaling and shadow changes.

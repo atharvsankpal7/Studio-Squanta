@@ -15,11 +15,11 @@ const FuturePage = () => {
 
     return (
         <div className="bg-black">
-            <Container className=" pt-25 md:pt-36">
+            <Container className="">
                 <FutureHeroSection />
                 <SoftwareSection />
                 <ServicesGrid2 />
-                <MotionButton />
+                <MotionButton className="xl:pt-[0rem]"/>
             </Container>
         </div>
     );

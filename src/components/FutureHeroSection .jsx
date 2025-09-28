@@ -2,14 +2,14 @@ import React from 'react';
 
 const FutureHeroSection = () => {
     return (
-        <div className="bg-black flex items-center justify-center  py-8 sm:py-12 lg:py-16">
+        <div className="bg-black flex items-center justify-center  pt-[5.4rem]">
             <h1
-                className="text-white font-alan-sans  leading-tight sm:leading-normal"
+                className="text-white font-alan-sans  leading-tight sm:leading-normal pt-14 pb-[8.25rem]"
                 style={{
                     maxWidth: '82.5rem',
                     width: '100%',
-                    fontSize: 'clamp(2rem, 8vw, 6.0425rem)',
-                    fontWeight: '400',
+                    fontSize: 'clamp(2rem, 8vw, 4rem)',
+                    fontWeight: '700',
                     lineHeight: 'clamp(1.1, 1.2, normal)'
                 }}
             >

@@ -26,7 +26,7 @@ const ServiceGrid2 = () => {
   ];
 
   return (
-    <section className="bg-black pt-16 md:pt-24 lg:pt-32">
+    <section className="bg-black pt-16 md:pt-24 lg:pt-[13.75rem]">
       {sections.map((section, idx) => (
         <div key={idx} className="flex flex-col w-full text-white pb-[120px] md:pb-[330px] lg:pb[850px]  ">
           <h2

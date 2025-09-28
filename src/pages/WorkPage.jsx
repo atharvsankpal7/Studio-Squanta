@@ -17,8 +17,8 @@ const WorkPage = () => {
         <FirstSectionWrapper>
           <WorkPageFirstSection />
         </FirstSectionWrapper>
-      </Container>
       <FeaturedWorks disableDescription={true} />
+      </Container>
 
       <Container>
         <div

@@ -201,7 +201,7 @@ const FeaturedWorks = ({ disableDescription = false }) => {
   works = disableDescription ? works : featuredworks;
 
   return (
-    <section className="bg-black pt-24 px-6 md:px-12 font-alan-sans">
+    <section className="bg-black pt-24 font-alan-sans">
       <Container>
         {!disableDescription && (
           <h2 className="text-white mb-10 font-alan-sans font-normal text-[32px] md:text-[96.68px] xl:text-[64px] xl:font-bold">

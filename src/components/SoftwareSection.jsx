@@ -79,7 +79,7 @@ const SoftwareSection = () => {
   ];
 
   return (
-    <div className="bg-black py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8">
+    <div className="bg-black  px-4 sm:px-6 lg:px-8">
       <div className="max-w-[90rem] mx-auto">
         {/* Responsive grid: 1 col on mobile, 2 cols on tablet, 3 cols on desktop */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-[0.75rem] gap-x-[1.88rem]">
