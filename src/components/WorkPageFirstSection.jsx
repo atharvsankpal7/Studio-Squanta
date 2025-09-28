@@ -18,7 +18,7 @@ function WorkPageFirstSection() {
           xl:max-w-[82.375rem] xl:mb-0
           flex items-center justify-center
           bg-black
-          pt-[9rem]
+          pt-[8.9rem]
         pb-0
         font-alan-sans
         "

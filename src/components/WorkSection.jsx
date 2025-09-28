@@ -201,7 +201,7 @@ const FeaturedWorks = ({ disableDescription = false }) => {
   works = disableDescription ? works : featuredworks;
 
   return (
-    <section className="bg-black pt-21 px-6 md:px-12 font-alan-sans">
+    <section className="bg-black pt-24 px-6 md:px-12 font-alan-sans">
       <Container>
         {!disableDescription && (
           <h2 className="text-white mb-10 font-alan-sans font-normal text-[32px] md:text-[96.68px] xl:text-[64px] xl:font-bold">
@@ -210,7 +210,7 @@ const FeaturedWorks = ({ disableDescription = false }) => {
         )}
 
         {/* Responsive Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 gap-y-[65px] md:gap-y-[221px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 gap-y-[65px] md:gap-y-[154px]">
           {works.map((work, i) => (
             <WorkCard
               key={i}
