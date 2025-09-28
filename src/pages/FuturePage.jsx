@@ -5,7 +5,8 @@ import Footer from '../components/Footer';
 import Container from '../components/ui/Container';
 import FutureHeroSection from '../components/FutureHeroSection ';
 import SoftwareSection from '../components/SoftwareSection';
-import ServicesGrid from "../components/ServiceGrid";
+import ServicesGrid2 from "../components/ServiceGrid2";
+import MotionButton from '../components/ui/MotionButton';
 
 const FuturePage = () => {
     useEffect(() => {
@@ -17,7 +18,8 @@ const FuturePage = () => {
             <Container className=" pt-25 md:pt-36">
                 <FutureHeroSection />
                 <SoftwareSection />
-                <ServicesGrid />
+                <ServicesGrid2 />
+                <MotionButton />
             </Container>
         </div>
     );

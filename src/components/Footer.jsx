@@ -5,13 +5,13 @@ const Footer = () => {
   const navLinks = {
     col1: [
       { name: "About", path: "/know-more" },
-      { name: "Work", path: "/work" },
-      { name: "Careers", path: "/careers" },
-    ],
-    col2: [
-      { name: "Contact", path: "/collaboration" },
       { name: "Services", path: "/services" },
       { name: "Clients", path: "/client" },
+    ],
+    col2: [
+      { name: "Work", path: "/work" },
+      { name: "Contact", path: "/collaboration" },
+      { name: "Careers", path: "/careers" },
     ],
   };
 
@@ -26,13 +26,13 @@ const Footer = () => {
       >
         {/* CONTACT US Text */}
         <div className="pt-8 md:pt-10 lg:pt-[6.19rem] px-10">
-          <h1 className="text-white text-left text-xl sm:text-2xl lg:text-3xl font-semibold">
+          <h1 className="text-white text-left text-md font-alan-sans ">
             CONTACT US
           </h1>
         </div>
 
         {/* Main Content Section */}
-        <div className="flex flex-col lg:flex-row justify-between mt-6 md:mt-8 lg:mt-[2.06rem] px-10 gap-8 lg:gap-12 xl:gap-0">
+        <div className="font-alan-sans flex flex-col lg:flex-row justify-between mt-6 md:mt-8 lg:mt-[2.06rem] px-10 gap-8 lg:gap-12 xl:gap-0">
           {/* Left Column */}
           <div className="flex flex-col items-start flex-1">
             {/* Let's Discuss Text */}
@@ -64,17 +64,16 @@ const Footer = () => {
             {/* Email and Button */}
             <div className="flex flex-col sm:flex-row items-start sm:items-center mt-6 md:mt-8 lg:mt-[5rem] gap-3 sm:gap-4 font-alan-sans">
               <span
-                className="text-white font-medium break-all md:text-[32px] text-[20px]"
+                className="text-white break-all md:text-[32px] text-[20px]"
                 style={{
                   fontSize: "",
                   fontStyle: "normal",
-                  fontWeight: 500,
                   lineHeight: "normal",
                 }}
               >
                 hello@studiosquanta.com
               </span>
-              <button className="hover:cursor-pointer sm:ml-[1.69rem] w-12 h-12 sm:w-16 sm:h-16 lg:w-[4.05156rem] lg:h-[2.10369rem] transform hover:scale-105 transition-transform">
+              <button className="hover:cursor-pointer sm:ml-[1.69rem] w-12 sm:w-16 sm:h-16 lg:w-[4.05156rem] lg:h-[2.10369rem] transform hover:scale-105 transition-transform self-end">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 65 34"
@@ -121,7 +120,7 @@ const Footer = () => {
 
           {/* Right Column - Navigation Links */}
           <div className="text-left w-full lg:w-auto flex-1 lg:flex-none">
-            <div className="grid grid-cols-2 gap-x-6 sm:gap-x-8 lg:gap-x-16 gap-y-4 sm:gap-y-6">
+            <div className="grid grid-cols-2 gap-x-6 sm:gap-x-8 lg:gap-x-16 gap-y-4 sm:gap-y-6 justify-items-center">
               <div className="flex flex-col space-y-4 sm:space-y-6">
                 {navLinks.col1.map((link, index) => (
                   <Link
@@ -164,7 +163,7 @@ const Footer = () => {
 
             {/* Social Media Links */}
             <div className="flex justify-center mt-8 sm:mt-10 lg:mt-[5.59rem]">
-              <div className="w-full max-w-[17.75rem] h-12 sm:h-14 lg:h-[3rem] border border-white rounded-[3.125rem] bg-black flex justify-center items-center gap-6 sm:gap-8 lg:gap-[3.125rem] px-4">
+              <div className=" w-[11.875rem] md:w-[14.5rem] lg:w-[18.875rem] h-12 sm:h-14 lg:h-[3rem] border border-white rounded-[3.125rem] bg-black flex justify-center items-center gap-6 sm:gap-8 lg:gap-[3.125rem] px-4">
                 <Link
                   to="#"
                   aria-label="Our Google page"
@@ -251,8 +250,8 @@ const Footer = () => {
           {/* Right - Footer Links */}
           <div className="flex justify-between items-center flex-col md:flex-row">
             <div className="flex gap-3 sm:gap-6  py-3 md:py-0">
-              <img src="/icons/dribble_svgrepo.com.svg" alt="" />
-              <img src="/icons/insta_svgrepo.com.svg" alt="" />
+              {/* <img src="/icons/dribble_svgrepo.com.svg" alt="" />
+              <img src="/icons/insta_svgrepo.com.svg" alt="" /> */}
             </div>
             <div className="flex flex-col sm:flex-row justify-end items-center gap-3 sm:gap-6 text-white text-center sm:text-right ">
               <Link

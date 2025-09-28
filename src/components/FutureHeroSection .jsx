@@ -2,7 +2,7 @@ import React from 'react';
 
 const FutureHeroSection = () => {
     return (
-        <div className="bg-black flex items-center justify-center  px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
+        <div className="bg-black flex items-center justify-center  py-8 sm:py-12 lg:py-16">
             <h1
                 className="text-white font-alan-sans  leading-tight sm:leading-normal"
                 style={{

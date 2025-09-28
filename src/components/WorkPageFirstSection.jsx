@@ -20,11 +20,11 @@ function WorkPageFirstSection() {
           bg-black
           pt-[9rem]
         pb-0
+        font-alan-sans
         "
         style={{
-          fontFamily: "Rogbold",
           fontStyle: "normal",
-          fontWeight: "400",
+          fontWeight: "500",
           lineHeight: "normal",
         }}
       >

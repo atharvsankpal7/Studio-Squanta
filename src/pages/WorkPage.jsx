@@ -23,10 +23,9 @@ const WorkPage = () => {
       <Container>
         <div
           className="
-        w-full max-w-[90rem] h-auto xl:h-[32.6875rem] mx-auto 
+        w-full max-w-[90rem] mx-auto 
         flex flex-col items-center px-[1rem] sm:px-[2rem] md:px-[3rem] lg:px-[4rem] xl:px-[0.25rem]
-        pt-[2rem] sm:pt-[3rem] md:pt-[4rem] lg:pt-[6rem] xl:pt-[9rem]
-        pb-[2rem] sm:pb-[3rem] md:pb-[4rem] lg:pb-[5rem] xl:pb-0
+        pb-[2rem] sm:pb-[3rem] md:pb-[4rem] lg:pb-[5rem] xl:pb-0 font-alan-sans
       "
         >
           <h2
@@ -42,7 +41,6 @@ const WorkPage = () => {
             flex items-center justify-center
           "
             style={{
-              fontFamily: "Rogbold",
               fontStyle: "normal",
               fontWeight: "500",
               lineHeight: "normal",

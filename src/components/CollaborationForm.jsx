@@ -15,21 +15,20 @@ const InputField = ({
   isDescription = false,
 }) => (
   <div
-    className="flex flex-col w-full mt-[1.5rem] md:mt-[3.25rem]"
+    className="flex flex-col w-full mt-[1.5rem] md:mt-[3.25rem] font-alan-sans"
     style={{
       height: isDescription ? "auto" : "6.1875rem",
       paddingBottom: "1.0625rem",
       justifyContent: "center",
       alignItems: "center",
       flexShrink: 0,
+      fontWeight: 500,
     }}
   >
     <label
       style={{
         color: "#000",
-        fontFamily: "Montserrat",
         fontSize: "1.0625rem",
-        fontWeight: 700,
         marginBottom: "0.44rem",
         alignSelf: "flex-start",
       }}
@@ -51,7 +50,6 @@ const InputField = ({
           border: "1px solid #787878",
           background: "#FFF",
           height: "7.25rem",
-          fontFamily: "Montserrat",
           fontSize: "1rem",
           outline: "none",
           resize: "none",
@@ -72,7 +70,6 @@ const InputField = ({
           borderRadius: "0.3125rem",
           border: "1px solid #787878",
           background: "#FFF",
-          fontFamily: "Montserrat",
           fontSize: "1rem",
           outline: "none",
         }}
@@ -213,7 +210,7 @@ const CollaborationForm = () => {
           <div className="flex flex-col flex-1 min-w-0 justify-center">
             <h3
               className="text-[1.5rem] lg:text-[2rem] md:text-[1.8rem] mt-6 lg:mt-[3.25rem] md:mt-[2.75rem] mb-6 lg:mb-[3.25rem] md:mb-[2.75rem] text-center font-alan-sans"
-              style={{ color: "#000" }}
+              style={{ color: "#404040" , fontWeight: 700}}
             >
               Got an idea? Let's build it
             </h3>
@@ -269,15 +266,14 @@ const CollaborationForm = () => {
                 isDescription={true}
               />
               <div
-                style={{ marginBottom: "clamp(1.25rem, 1.93rem, 1.93rem)" }}
-                className="mt-[1.5rem] md:mt-[3.25rem]"
+                style={{ marginBottom: "clamp(1.25rem, 1.93rem, 1.93rem)", fontWeight: 500 }}
+                className="mt-[1.5rem] md:mt-[3.25rem] font-alan-sans"
               >
                 <label
                   style={{
-                    fontFamily: "Montserrat",
                     fontSize: "clamp(0.875rem, 1.06131rem, 1.06131rem)",
                     fontStyle: "normal",
-                    fontWeight: 700,
+                    fontWeight: 500,
                     lineHeight: "normal",
                     marginBottom: "clamp(0.25rem, 0.44rem, 0.44rem)",
                     display: "block",
@@ -312,7 +308,7 @@ const CollaborationForm = () => {
                     }}
                   >
                     <span
-                      className="bg-black text-white text-md font-semibold "
+                      className="bg-black text-white text-md  "
                       style={{
                         padding:
                           "clamp(0.75rem, 1.03006rem, 1.03006rem) clamp(0.75rem, 1.04856rem, 1.04856rem)",
@@ -337,7 +333,6 @@ const CollaborationForm = () => {
                   type="submit"
                   className="w-[13.6875rem] h-[3.9375rem] rounded-[3.5625rem] bg-black text-white font-semibold text-[1rem] lg:text-[1.125rem] md:text-[1.0625rem] cursor-pointer "
                   style={{
-                    fontFamily: "Montserrat",
                     border: "1px solid #FFF",
                   }}
                 >
@@ -348,7 +343,7 @@ const CollaborationForm = () => {
             {/* Success modal overlay (responsive + animations) */}
             {showModal && (
               <div
-                className="fixed inset-0 z-50 flex items-center justify-center"
+                className="fixed inset-0 z-50 flex items-center justify-center font-alan-sans"
                 onClick={() => setShowModal(false)}
                 style={{ animation: "overlay-fade 240ms ease forwards" }}
               >
@@ -527,9 +522,8 @@ const CollaborationForm = () => {
                     }}
                   >
                     <p
-                      className="font-montserrat text-white"
+                      className=" text-white font-alan-sans" 
                       style={{
-                        fontFamily: "Montserrat",
                         fontSize: "clamp(1rem, 2.4vw, 2rem)",
                         fontWeight: 500,
                         lineHeight: "normal",

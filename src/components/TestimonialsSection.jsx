@@ -20,10 +20,10 @@ function TestimonialCard({ testimonial }) {
         </p>
 
         <div>
-          <h3 className="text-black font-rogbold text-[20px] font-normal leading-normal tracking-[0.79px]">
+          <h3 className="text-black font-alan-sans text-[20px] font-normal leading-normal tracking-[0.79px]">
             {testimonial.name}
           </h3>
-          <p className="text-black font-rogbold text-[20px] font-normal leading-normal tracking-[0.79px]">
+          <p className="text-black font-alan-sans text-[20px] font-normal leading-normal tracking-[0.79px]">
             {testimonial.title}
           </p>
         </div>

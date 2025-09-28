@@ -92,7 +92,7 @@ const ServiceGrid = () => {
             }}
           ></div>
 
-          <p className="text-[#9E9E9E] font-montserrat text-[16px] font-semibold leading-normal sm:max-w-[568px]">
+          <p className="text-[#9E9E9E] font-alan-sans text-[16px] font-semibold leading-normal sm:max-w-[568px]">
             {section.description}
           </p>
 
@@ -101,7 +101,7 @@ const ServiceGrid = () => {
               {section.leftColumnServices.map((service, i) => (
                 <div
                   key={i}
-                  className="text-white font-montserrat text-base font-semibold uppercase leading-normal hover:text-squanta-green transition-colors duration-300 cursor-pointer"
+                  className="text-white font-alan-sans text-base font-semibold uppercase leading-normal hover:text-squanta-green transition-colors duration-300 cursor-pointer"
                 >
                   {service}
                 </div>
@@ -112,7 +112,7 @@ const ServiceGrid = () => {
               {section.rightColumnServices.map((service, i) => (
                 <div
                   key={i}
-                  className="text-white font-montserrat text-base font-semibold uppercase leading-normal hover:text-squanta-green transition-colors duration-300 cursor-pointer"
+                  className="text-white font-alan-sans text-base font-semibold uppercase leading-normal hover:text-squanta-green transition-colors duration-300 cursor-pointer"
                 >
                   {service}
                 </div>

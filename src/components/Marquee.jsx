@@ -17,20 +17,18 @@ export default function Marquee() {
    * @param {{text: string}} props - The text content to display.
    */
   const MarqueeItem = ({ text }) => (
-    <p className="font-semibold text-base lg:text-lg whitespace-nowrap pr-[12.6rem]">
+    <p className="font-medium text-base lg:text-lg whitespace-nowrap pr-[12.6rem]">
       {text}
     </p>
   );
 
   return (
     // Wrapper to center the component on the page for demonstration
-    <main className="antialiased  flex items-center justify-center bg-black">
+    <main className="antialiased  flex items-center justify-center bg-black font-alan-sans">
 
       {/* --- Style block for Google Fonts and custom animations --- */}
       <style>
         {`
-          /* Import Montserrat font from Google Fonts */
-          @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
           
           /* Keyframes for the left-to-right marquee animation */
           @keyframes marquee {
@@ -56,7 +54,6 @@ export default function Marquee() {
 
       {/* --- Marquee Component --- */}
       <div
-        style={{ fontFamily: "'Montserrat', sans-serif" }}
         // The 'group' class enables the pause-on-hover functionality
         className="group  mx-auto bg-black text-white h-[6.25rem] flex flex-col justify-center overflow-hidden"
       >

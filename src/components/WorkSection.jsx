@@ -13,7 +13,7 @@ const WorkCard = ({
   slug,
 }) => {
   const card = (
-    <div className="flex flex-col bg-black text-white overflow-hidden shadow-lg">
+    <div className="flex flex-col bg-black text-white overflow-hidden shadow-lg font-alan-sans">
       {/* Image */}
       <div className="w-full overflow-hidden">
         <img src={image} alt={title} className="lg:w-[645px] lg:h-[618px]" />
@@ -201,7 +201,7 @@ const FeaturedWorks = ({ disableDescription = false }) => {
   works = disableDescription ? works : featuredworks;
 
   return (
-    <section className="bg-black py-12 px-6 md:px-12">
+    <section className="bg-black py-12 px-6 md:px-12 font-alan-sans">
       <Container>
         {!disableDescription && (
           <h2 className="text-white mb-10 font-alan-sans font-normal text-[32px] md:text-[96.68px] xl:text-[64px] xl:font-bold">

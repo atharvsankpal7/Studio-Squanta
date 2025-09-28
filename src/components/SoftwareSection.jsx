@@ -72,9 +72,9 @@ const SoftwareSection = () => {
     },
     {
       id: 12,
-      image: "/Squanta Assets/Google.png",
-      title: "Google Workspace",
-      description: "Productivity & Collaboration",
+      image: "/Squanta Assets/Notion.png",
+      title: "Notion",
+      description: "Content Planning",
     },
   ];
 
@@ -82,13 +82,14 @@ const SoftwareSection = () => {
     <div className="bg-black py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-[90rem] mx-auto">
         {/* Responsive grid: 1 col on mobile, 2 cols on tablet, 3 cols on desktop */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-[0.75rem] gap-x-[1.88rem]">
           {softwareData.map((item) => (
             <div
               key={item.id}
-              className="relative w-full max-w-[25.625rem] mx-auto rounded-lg"
+              className="relative mx-auto "
               style={{
-                height: "clamp(14rem, 16vw, 18rem)",
+                height: "clamp(14rem, 20vw, 18rem)",
+                width: "clamp(14rem, 27vw, 25.625rem)",
                 background:
                   "linear-gradient(0deg, #1C1C1C 0%, #1C1C1C 100%), #1C1C1C",
               }}
@@ -97,7 +98,7 @@ const SoftwareSection = () => {
               <img
                 src={item.image}
                 alt={item.title}
-                className="absolute top-2 left-2 sm:top-3 sm:left-3 lg:top-4 lg:left-4 object-contain"
+                className=" sm:top-3 sm:left-3 lg:top-4 lg:left-4 object-contain"
                 style={{
                   width: "clamp(4rem, 8vw, 6.25rem)",
                   height: "clamp(4rem, 8vw, 6.25rem)",
@@ -108,7 +109,7 @@ const SoftwareSection = () => {
               <div
                 className="absolute font-alan-sans"
                 style={{
-                  bottom: "clamp(3rem, 6vw, 4.56rem)",
+                  bottom: "clamp(3rem, 6vw, 3.69rem)",
                   left: "1rem",
                   color: "#FFF",
                   fontSize: "clamp(1rem, 2.5vw, 1.25rem)",
@@ -124,7 +125,7 @@ const SoftwareSection = () => {
               <div
                 className="absolute font-montserrat"
                 style={{
-                  bottom: "clamp(1rem, 2.5vw, 2.31rem)",
+                  bottom: "clamp(1rem, 2.5vw, 1.63rem)",
                   left: "1rem",
                   color: "#FFF",
                   fontSize: "clamp(0.875rem, 2vw, 1rem)",
