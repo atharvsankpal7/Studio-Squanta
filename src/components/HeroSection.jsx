@@ -19,7 +19,7 @@ const HeroSection = () => {
         />
 
         {/* Main Content Container */}
-        <Container className="relative z-10 w-full h-screen flex flex-col items-center justify-center">
+        <Container className="mt-[4.625rem] lg:mt-0 relative z-10 w-full h-[22rem] lg:h-[59rem] flex flex-col items-center justify-center">
 
           {/* Studio and SQUANTA Text */}
           <div className="flex flex-col items-center justify-center font-[700] ">
@@ -52,22 +52,28 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
-            className="absolute bottom-8 left-8"
+            className="md:self-start"
           >
             <Link
               to="/collaboration"
-              className="group inline-flex items-center justify-center gap-1 px-[10px] py-[10px] bg-black border border-white rounded-[57px] text-white hover:bg-white hover:text-black transition-all duration-300 hover:scale-105"
+              className="group inline-flex items-center justify-center gap-[0.15875rem] bg-black border border-white rounded-[57px] text-white hover:bg-white hover:text-black transition-all duration-300 hover:scale-105"
               style={{
-                width: '250px',
-                height: '63px',
+                width: 'clamp(9.92063rem, 15vw, 250px)', // Responsive width
+                height: 'clamp(2.5rem, 10vw, 63px)', // Responsive height
+                padding: 'clamp(0.39681rem, 1vw, 10px)', // Responsive padding
               }}
             >
-              <span className="font-montserrat font-semibold text-[16px] leading-normal">
+              <span
+                className="font-montserrat font-semibold leading-normal"
+                style={{
+                  fontSize: 'clamp(0.63494rem, 1vw, 16px)', // Responsive font size
+                }}
+              >
                 Let's Collaborate
               </span>
               <svg
-                width="24"
-                height="24"
+                width="clamp(0.95238rem, 2vw, 24px)" // Responsive icon size
+                height="clamp(0.95238rem, 2vw, 24px)"
                 viewBox="0 0 25 25"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"

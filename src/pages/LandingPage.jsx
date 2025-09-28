@@ -10,7 +10,7 @@ import CollaborationSectionHome from "../components/CollaborationSectionHome";
 
 const StudioSquantaVer01LandingPage = ({ className }) => {
   return (
-    <>
+    <div className={`bg-black text-white `}>
       <HeroSection />
       <Welcome />
       <BrandHero />
@@ -20,7 +20,7 @@ const StudioSquantaVer01LandingPage = ({ className }) => {
       <VideoGrid />
       <FeaturedWorks />
       <CollaborationSectionHome />
-    </>
+    </div>
   );
 };
 export default StudioSquantaVer01LandingPage;
