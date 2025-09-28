@@ -5,7 +5,7 @@ const MotionButton = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="py-6 sm:py-8 md:py-10 lg:py-12 xl:py-[4.95rem]">
+    <div className="py-6 sm:py-8 md:py-10 lg:py-12 xl:pt-[6.6rem] xl:pb-[3rem]">
 
       <motion.button
         // 1. Removed the 'whileHover' prop to prevent scaling and shadow changes.

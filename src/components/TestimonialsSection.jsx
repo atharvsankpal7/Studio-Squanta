@@ -34,7 +34,7 @@ function TestimonialCard({ testimonial }) {
 
 export default function TestimonialsSection() {
   return (
-    <section className="bg-black pb-16 md:py-24 lg:py-32">
+    <section className="bg-black pb-16 md:py-24 lg:pt-20 lg:pb-35">
 
       {/* Hero Section with Partner Text */}
       <Container className="bg-black">

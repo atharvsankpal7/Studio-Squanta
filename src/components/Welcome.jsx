@@ -61,7 +61,7 @@ function Welcome() {
             <div className="max-w-6xl mx-auto text-center space-y-8 md:space-y-12 xl:flex xl:flex-col">
               {/* Main heading - 6.56rem from top on desktop, responsive elsewhere */}
               <h1
-                className="font-alan-sans text-lg sm:text-lg md:text-xl lg:text-2xl xl:text-[35px] text-start font-bold uppercase tracking-wide leading-normal"
+                className="font-alan-sans text-lg sm:text-lg md:text-xl lg:text-2xl xl:text-[48px] text-start font-bold uppercase tracking-wide leading-normal"
                 style={{ marginTop: "clamp(3rem, 9vw, 6.56rem)" }}
               >
                 Welcome to Studio Squanta

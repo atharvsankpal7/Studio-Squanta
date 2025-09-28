@@ -26,6 +26,7 @@ const WorkPage = () => {
         w-full max-w-[90rem] mx-auto 
         flex flex-col items-center px-[1rem] sm:px-[2rem] md:px-[3rem] lg:px-[4rem] xl:px-[0.25rem]
         pb-[2rem] sm:pb-[3rem] md:pb-[4rem] lg:pb-[5rem] xl:pb-0 font-alan-sans
+        mt-[2rem] sm:mt-[3rem] md:mt-[4rem] lg:mt-[5rem] xl:mt-[26.05rem]
       "
         >
           <h2
@@ -44,7 +45,6 @@ const WorkPage = () => {
               fontStyle: "normal",
               fontWeight: "500",
               lineHeight: "normal",
-              margin: "0 auto 1rem auto",
             }}
           >
             Up next - your brand, your story, our craft.

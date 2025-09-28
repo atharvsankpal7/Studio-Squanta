@@ -36,7 +36,7 @@ const Footer = () => {
           {/* Left Column */}
           <div className="flex flex-col items-start flex-1">
             {/* Let's Discuss Text */}
-            <h2 className="text-white text-left text-[18.778px] md:text-[27px] lg:text-[38px] font-[700] md:w-[357px] break-auto">
+            <h2 className="text-white text-left text-[18.778px] md:text-[27px] lg:text-[38px] font-[700] md:w-[357px] break-auto leading-tight ">
               Let's Discuss Your Vision. With US
             </h2>
 
@@ -62,7 +62,7 @@ const Footer = () => {
             </button>
 
             {/* Email and Button */}
-            <div className="flex flex-col sm:flex-row items-start sm:items-center mt-6 md:mt-8 lg:mt-[5rem] gap-3 sm:gap-4 font-alan-sans">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center mt-6 md:mt-8 lg:mt-[6.1rem] gap-3 sm:gap-4 font-alan-sans">
               <span
                 className="text-white break-all md:text-[32px] text-[20px]"
                 style={{

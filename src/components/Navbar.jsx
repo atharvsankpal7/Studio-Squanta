@@ -61,7 +61,7 @@ const Navbar = () => {
       }`}>
       <nav
         className="w-full lg:max-w-[90rem] mx-auto lg:px-10 px-2 md:px-[3.75rem] max-w-[100vw] flex flex-col lg:flex-row items-center justify-center font-alan-sans"
-        style={{ minHeight: "4.625rem" }}
+        style={{ minHeight: "5.44rem" }}
       >
         <div className="flex justify-between items-center text-white h-full w-full relative ">
           {/* Logo */}

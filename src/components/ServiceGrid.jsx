@@ -76,9 +76,9 @@ const ServiceGrid = () => {
   ];
 
   return (
-    <section className="bg-black pt-16 md:py-24 lg:py-32">
+    <Container className="bg-black pt-16 md:pt-24 lg:pt-[9.62rem]">
       {sections.map((section, idx) => (
-        <div key={idx} className="flex flex-col w-full text-white mb-[120px] md:mb-[330px] lg:mb[850px]  ">
+        <div key={idx} className="flex flex-col w-full text-white mb-[120px] md:mb-[435px] lg:mb[850px]  ">
           <h2
             className=" font-alan-sans  uppercase text-[40px] md:text-[55px] font-[700] xl:text-[86.011px] leading-normal"
           >
@@ -121,7 +121,7 @@ const ServiceGrid = () => {
           </div>
         </div>
       ))}
-    </section>
+    </Container>
   );
 };
 

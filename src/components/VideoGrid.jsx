@@ -400,7 +400,7 @@ function VideoGrid() {
 
   return (
     <motion.section
-      className="px-[60px] pb-[120px] pt-[120px] bg-black xl:block hidden"
+      className="px-[60px] pb-[249px] pt-[160px] bg-black xl:block hidden"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1, ease: "easeOut" }}
