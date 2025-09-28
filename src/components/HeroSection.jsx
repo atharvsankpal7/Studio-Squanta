@@ -56,11 +56,10 @@ const HeroSection = () => {
           >
             <Link
               to="/collaboration"
-              className="group inline-flex items-center justify-center gap-[0.15875rem] bg-black border border-white rounded-[57px] text-white hover:bg-white hover:text-black transition-all duration-300 hover:scale-105"
+              className="group inline-flex items-center justify-center gap-[0.15875rem] bg-black border border-white rounded-[57px] text-white hover:bg-white hover:text-black transition-all duration-300 hover:scale-105 p-3 xl:ml-16"
               style={{
                 width: 'clamp(9.92063rem, 15vw, 250px)', // Responsive width
-                height: 'clamp(2.5rem, 10vw, 63px)', // Responsive height
-                padding: 'clamp(0.39681rem, 1vw, 10px)', // Responsive padding
+
               }}
             >
               <span
