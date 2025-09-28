@@ -34,7 +34,7 @@ const WorkPage = () => {
             text-center font-montserrat font-medium
             text-[40px]
             md:text-[60px]
-            lg:text-[99px] ] leading-tight h-auto w-full max-w-[18rem] mx-auto mb-4
+            lg:text-[97px] ] leading-tight h-auto w-full max-w-[18rem] mx-auto mb-4
             sm:max-w-[24rem] sm:mb-6
             md:max-w-[32rem] md:mb-8
             lg:max-w-[976px] lg:mb-12
