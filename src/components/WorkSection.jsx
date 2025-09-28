@@ -222,8 +222,8 @@ const FeaturedWorks = ({ disableDescription = false }) => {
         {!disableDescription && (
           <a href="/work" className="cursor-pointer group">
             <div className="flex justify-center mt-12 cursor-pointer">
-              <button className="flex justify-center items-center gap-2 text-white border border-white rounded-[57px] px-6 py-2 hover:bg-white hover:text-black  transition-all duration-300 hover:scale-105"
-                style={{ width: 'clamp(10rem,20vw,12.3rem)', height: 'clamp(1.3rem,12vw,3.75rem)' }}
+              <button className="flex justify-center items-center gap-2 text-white border border-white rounded-[57px] px-6 py-2 hover:bg-white hover:text-black  transition-all duration-300 hover:scale-105 p-3"
+                style={{ width: 'clamp(10rem,20vw,12.3rem)' }}
               >
                 <span style={{ fontSize: 'clamp(14px, 2vw, 1rem)' }}>View All</span>
                 <svg

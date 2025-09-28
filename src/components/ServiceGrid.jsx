@@ -1,5 +1,6 @@
 import React from "react";
 import Container from "./ui/Container";
+import { motion } from "framer-motion";
 
 const ServiceGrid = () => {
   const sections = [
@@ -78,19 +79,21 @@ const ServiceGrid = () => {
   return (
     <Container className="bg-black pt-16 md:pt-24 lg:pt-[9.62rem]">
       {sections.map((section, idx) => (
-        <div key={idx} className="flex flex-col w-full text-white mb-[120px] md:mb-[435px] lg:mb[850px]  ">
-          <h2
-            className=" font-alan-sans  uppercase text-[40px] md:text-[55px] font-[700] xl:text-[86.011px] leading-normal"
-          >
+        <div
+          key={idx}
+          className="flex flex-col w-full text-white mb-[120px] md:mb-[435px] lg:mb[850px]  "
+        >
+          <h2 className=" font-alan-sans  uppercase text-[40px] md:text-[55px] font-[700] xl:text-[86.011px] leading-normal">
             {section.title}
           </h2>
 
-          <div
-            className="w-full h-[2px] mb-[16px]"
-            style={{
-              background: "linear-gradient(90deg, #444 0%, #FFF 50%, #444 100%)",
-            }}
-          ></div>
+          <motion.div
+      initial={{ scaleX: 0, originX: 0.5 }}
+      whileInView={{ scaleX: 1 }}
+      transition={{ duration: 1, ease: "easeOut" }}
+      viewport={{ once: true }}
+      className="w-full h-[2px] mb-4 bg-gradient-to-r from-[#444] via-white to-[#444]"
+    />
 
           <p className="text-[#9E9E9E] font-alan-sans text-[16px] font-semibold leading-normal sm:max-w-[568px]">
             {section.description}
