@@ -19,7 +19,7 @@ const FuturePage = () => {
                 <FutureHeroSection />
                 <SoftwareSection />
                 <ServicesGrid2 />
-                <MotionButton className="xl:pt-[0rem]"/>
+                <MotionButton className="pt-0!"/>
             </Container>
         </div>
     );

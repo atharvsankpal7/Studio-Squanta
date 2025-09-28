@@ -43,14 +43,14 @@ const SoftwareSection2 = () => {
     ];
 
     return (
-        <div className="bg-black py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8">
+        <div className="bg-black py-8 sm:py-12 lg:pt-32 lg:pb-48 px-4 sm:px-6 lg:px-8">
             <div className="max-w-[90rem] mx-auto overflow-hidden">
                 {/* Responsive grid: 1 col on mobile, 2 cols on tablet, 3 cols on desktop */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
   {softwareData.map((item) => (
     <div
       key={item.id}
-      className="relative w-full max-w-[26.25rem] h-[18rem] mx-auto rounded-lg"
+      className="relative w-full max-w-[26.25rem] h-[18rem] mx-auto "
       style={{
         background:
           "linear-gradient(0deg, #1C1C1C 0%, #1C1C1C 100%), #1C1C1C",
@@ -60,7 +60,7 @@ const SoftwareSection2 = () => {
       <img
         src={item.image}
         alt={item.title}
-        className="absolute top-2 left-2 sm:top-3 sm:left-3 lg:top-4 lg:left-4 object-contain"
+        className="sm:top-3 sm:left-3 lg:top-4 lg:left-4 object-contain"
         style={{
           width: "clamp(4rem, 8vw, 6.25rem)",
           height: "clamp(4rem, 8vw, 6.25rem)",
