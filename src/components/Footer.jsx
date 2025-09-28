@@ -64,7 +64,7 @@ const Footer = () => {
             {/* Email and Button */}
             <div className="flex flex-col sm:flex-row items-start sm:items-center mt-6 md:mt-8 lg:mt-[7.5rem] gap-3 sm:gap-4 font-alan-sans">
               <span
-                className="text-white font-medium break-all md:text-[32px] text-[24px]"
+                className="text-white font-medium break-all md:text-[32px] text-[20px]"
                 style={{
                   fontSize: "",
                   fontStyle: "normal",
@@ -249,8 +249,8 @@ const Footer = () => {
           </div>
 
           {/* Right - Footer Links */}
-          <div className="flex justify-between items-center">
-            <div className="flex gap-3 sm:gap-6">
+          <div className="flex justify-between items-center flex-col md:flex-row">
+            <div className="flex gap-3 sm:gap-6  py-3 md:py-0">
               <img src="/icons/dribble_svgrepo.com.svg" alt="" />
               <img src="/icons/insta_svgrepo.com.svg" alt="" />
             </div>
