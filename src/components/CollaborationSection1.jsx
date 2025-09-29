@@ -1,40 +1,51 @@
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { fadeInUp } from "./ui/animations";
 
 const CollaborationSection1 = () => {
   return (
     <div className="bg-black overflow-hidden">
       {/* Desktop Container */}
       <div
-        className="hidden lg:flex h-[43.875rem]  mx-auto items-center justify-evenly flex-col text-white "
+        className="hidden lg:flex h-[43.875rem] mx-auto items-center justify-evenly flex-col text-white"
         style={{ marginTop: "5.63rem" }}
       >
-        <h1
+        <motion.h1
           className="text-[11.59506rem] font-alan-sans"
-          style={{
-            fontWeight: "600", letterSpacing: '1.1595rem'
-          }}
+          style={{ fontWeight: "600", letterSpacing: "1.1595rem" }}
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
         >
           SERVICES
-        </h1>
-        <p className="mx-auto text-center w-5xl text-[4rem] font-alan-sans leading-tight">Collaborating with you to ignite progress, drive engagement, and build what’s next.</p>
-        {/* Let's Collaborate Button - positioned to the bottom-left */}
-        <div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
+        </motion.h1>
+
+        <motion.p
+          className="mx-auto text-center w-5xl text-[4rem] font-alan-sans leading-tight"
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          transition={{ delay: 0.2 }}
+          viewport={{ once: true }}
+        >
+          Collaborating with you to ignite progress, drive engagement, and build
+          what’s next.
+        </motion.p>
+
+        <motion.div
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          transition={{ delay: 0.4 }}
+          viewport={{ once: true }}
         >
           <Link
             to="/collaboration"
             className="group inline-flex items-center justify-center gap-1 w-[12.3125rem] bg-black border border-white rounded-[57px] text-white hover:bg-white hover:text-black transition-all duration-300 hover:scale-105"
-            style={{
-
-              height: '40px',
-            }}
+            style={{ height: "40px" }}
           >
-            <span className="font-montserrat text-[16px] ">
-              Get in touch
-            </span>
+            <span className="font-montserrat text-[16px]">Get in touch</span>
             <svg
               width="24"
               height="24"
@@ -52,37 +63,46 @@ const CollaborationSection1 = () => {
               />
             </svg>
           </Link>
-        </div>
+        </motion.div>
       </div>
 
       {/* Mobile Container */}
       <div className="lg:hidden px-[1rem] py-[3rem] mt-[3.5rem] sm:mt-[3rem] md:mt-[4rem] text-white">
-        <h1
-          className="text-[4rem]  md:text-[5.5rem] font-alan-sans font-semibold leading-tight text-center mb-6"
-          style={{
-            fontWeight: "600",
-            letterSpacing: '0.2rem'
-          }}
+        <motion.h1
+          className="text-[4rem] md:text-[5.5rem] font-alan-sans font-semibold leading-tight text-center mb-6"
+          style={{ fontWeight: "600", letterSpacing: "0.2rem" }}
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
         >
           SERVICES
-        </h1>
-        <p className="text-center text-[2rem]  md:text-[3rem] font-alan-sans leading-tight mb-8 px-2">
-          Collaborating with you to ignite progress, drive engagement, and build what's next.
-        </p>
+        </motion.h1>
 
-        {/* Get in touch Button for mobile */}
+        <motion.p
+          className="text-center text-[2rem] md:text-[3rem] font-alan-sans leading-tight mb-8 px-2"
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          transition={{ delay: 0.2 }}
+          viewport={{ once: true }}
+        >
+          Collaborating with you to ignite progress, drive engagement, and build
+          what's next.
+        </motion.p>
+
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          transition={{ delay: 0.4 }}
+          viewport={{ once: true }}
           className="flex justify-center"
         >
           <Link
             to="/collaboration"
             className="group inline-flex items-center justify-center gap-1 w-[8.3125rem] md:w-[12.3125rem] bg-black border border-white rounded-[57px] text-white hover:bg-white hover:text-black transition-all duration-300 hover:scale-105"
-            style={{
-              height: '40px',
-            }}
+            style={{ height: "40px" }}
           >
             <span className="font-montserrat text-[12px] md:text-[16px]">
               Get in touch
