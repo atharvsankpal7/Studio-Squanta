@@ -41,14 +41,14 @@ const Footer = () => {
             </h2>
 
             {/* Schedule Call Button */}
-            <Link to="/collaboration">
+            <Link to="/collaboration" className="mx-auto md:mx-0">
               <button
                 className="flex justify-center items-center bg-black border border-[#00FF26] rounded-full hover:cursor-pointer group mt-4 px-4 sm:px-6 py-2 w-full sm:w-auto lg:w-[18rem] lg:h-[2.75rem] transition-all duration-300"
                 onClick={() => (window.location.href = "/collaboration")}
               >
-                <span className="text-white text-sm sm:text-base lg:text-[1.15281rem] font-semibold">
+                <p className="text-white text-sm sm:text-base lg:text-[1.15281rem] font-semibold">
                   Let's schedule a call
-                </span>
+                </p>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="w-4 h-4 sm:w-5 sm:h-5 lg:w-[1.441rem] lg:h-[1.441rem] ml-2 group-hover:rotate-[42.597deg] transition-transform duration-300 ease-in-out"
