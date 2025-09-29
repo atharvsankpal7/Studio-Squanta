@@ -6,7 +6,7 @@ const CollaborationSectionHome = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="bg-black text-white font-alan-sans">
+    <div className="bg-black text-white font-alan-sans py-[5.63rem]">
       <div
         className="
             w-full max-w-[90rem]mx-auto 

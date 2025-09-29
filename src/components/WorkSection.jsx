@@ -221,7 +221,7 @@ const FeaturedWorks = ({ disableDescription = false }) => {
         </div>
         {!disableDescription && (
           <a href="/work" className="cursor-pointer group">
-            <div className="flex justify-center mt-12 cursor-pointer">
+            <div className="flex justify-center lg:mt-12 cursor-pointer">
               <button className="flex justify-center items-center gap-2 text-white border border-white rounded-[57px] px-6 py-2 hover:bg-white hover:text-black  transition-all duration-300 hover:scale-105 p-3"
                 style={{ width: 'clamp(10rem,20vw,12.3rem)' }}
               >

@@ -11,19 +11,18 @@ const CollaborationSection = () => {
     <Container className="bg-black text-white">
       <div
         className="
-        w-full  h-auto  mx-auto 
-        flex flex-col items-center 
-        pt-[2rem] sm:pt-[3rem] md:pt-[4rem] lg:pt-[4.7rem]
-        pb-[2rem] sm:pb-[3rem] md:pb-[4rem] lg:pb-[5rem] xl:pb-0
+        w-full   mx-auto 
+        flex flex-col items-center  justify-center
+        py-[2rem] sm:py-[3rem] md:py-[4rem] lg:py-[5rem] xl:py-0
       "
       >
         {/* Heading */}
         <h2
           className="
             text-center font-montserrat font-medium
-            lg:text-[48px] leading-tight h-auto w-full max-w-[18rem] mx-auto mb-4
-           sm:max-w-[24rem] sm:mb-6
-             md:max-w-[32rem] md:mb-8
+            lg:text-[48px] leading-tight h-auto w-full max-w-[18rem] mx-auto
+           sm:max-w-[24rem] 
+             md:max-w-[32rem] 
             md:text-[32px]
             text-[32px]
             lg:max-w-[50rem] lg:mb-12
@@ -40,7 +39,7 @@ const CollaborationSection = () => {
         </h2>
 
         {/* Motion Button */}
-        <MotionButton className="pt-[4.6rem]!" />
+        <MotionButton  />
       </div>
     </Container>
   );
