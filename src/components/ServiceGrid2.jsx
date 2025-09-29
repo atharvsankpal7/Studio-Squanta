@@ -34,7 +34,7 @@ const ServiceGrid2 = () => {
           >
             {section.title}
           </h2>
-          <div className="flex flex-col self-end text-[1.25rem] w-[33.5rem]">
+          <div className="flex flex-col self-end text-base md:text-lg lg:text-xl w-full max-w-[33.5rem]">
             {section.description.map((para, pIdx) => (
               <p key={pIdx} className="">
                 {para}

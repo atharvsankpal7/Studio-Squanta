@@ -1,6 +1,7 @@
 import React from "react";
 import Container from "./ui/Container";
 import { motion } from "framer-motion";
+import { containerVariants, fadeInUp } from "./ui/animations";
 
 const ServiceGrid = () => {
   const sections = [
@@ -88,40 +89,48 @@ const ServiceGrid = () => {
           </h2>
 
           <motion.div
-      initial={{ scaleX: 0, originX: 0.5 }}
-      whileInView={{ scaleX: 1 }}
-      transition={{ duration: 1, ease: "easeOut" }}
-      viewport={{ once: true }}
-      className="w-full h-[2px] mb-4 bg-gradient-to-r from-[#444] via-white to-[#444]"
-    />
+            initial={{ scaleX: 0, originX: 0.5 }}
+            whileInView={{ scaleX: 1 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="w-full h-[2px] mb-4 bg-gradient-to-r from-[#444] via-white to-[#444]"
+          />
 
           <p className="text-[#9E9E9E] font-alan-sans text-[16px] font-semibold leading-normal sm:max-w-[568px]">
             {section.description}
           </p>
 
-          <div className="flex flex-col md:flex-row-reverse md:gap-8 mt-10 gap-3">
-            <div className="flex flex-col gap-y-3">
-              {section.leftColumnServices.map((service, i) => (
-                <div
-                  key={i}
-                  className="text-white font-alan-sans text-base font-semibold uppercase leading-normal hover:text-squanta-green transition-colors duration-300 cursor-pointer"
-                >
-                  {service}
-                </div>
-              ))}
-            </div>
+         <motion.div
+      className="flex flex-col md:flex-row-reverse md:gap-8 mt-10 gap-3"
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+    >
+      <motion.div className="flex flex-col gap-y-3" variants={containerVariants}>
+        {section.leftColumnServices.map((service, i) => (
+          <motion.div
+            key={i}
+            className="text-white font-alan-sans text-base font-semibold uppercase leading-normal hover:text-squanta-green transition-colors duration-300 cursor-pointer"
+            variants={fadeInUp}
+          >
+            {service}
+          </motion.div>
+        ))}
+      </motion.div>
 
-            <div className="flex flex-col gap-y-3">
-              {section.rightColumnServices.map((service, i) => (
-                <div
-                  key={i}
-                  className="text-white font-alan-sans text-base font-semibold uppercase leading-normal hover:text-squanta-green transition-colors duration-300 cursor-pointer"
-                >
-                  {service}
-                </div>
-              ))}
-            </div>
-          </div>
+      <motion.div className="flex flex-col gap-y-3" variants={containerVariants}>
+        {section.rightColumnServices.map((service, i) => (
+          <motion.div
+            key={i}
+            className="text-white font-alan-sans text-base font-semibold uppercase leading-normal hover:text-squanta-green transition-colors duration-300 cursor-pointer"
+            variants={fadeInUp}
+          >
+            {service}
+          </motion.div>
+        ))}
+      </motion.div>
+    </motion.div>
         </div>
       ))}
     </Container>

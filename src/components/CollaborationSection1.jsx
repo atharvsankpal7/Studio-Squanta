@@ -19,7 +19,7 @@ const CollaborationSection1 = () => {
         </h1>
         <p className="mx-auto text-center w-5xl text-[4rem] font-alan-sans leading-tight">Collaborating with you to ignite progress, drive engagement, and build what’s next.</p>
         {/* Let's Collaborate Button - positioned to the bottom-left */}
-        <motion.div
+        <div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.8 }}
@@ -52,7 +52,7 @@ const CollaborationSection1 = () => {
               />
             </svg>
           </Link>
-        </motion.div>
+        </div>
       </div>
 
       {/* Mobile Container */}

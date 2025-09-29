@@ -9,13 +9,21 @@ import FirstSectionWrapper from "../components/FirstSectionWrapper";
 import MotionButton from "../components/ui/MotionButton";
 import WorkPageFirstSection from "../components/WorkPageFirstSection";
 import FeaturedWorks from "../components/WorkSection";
-
+import { fadeInUp } from "../components/ui/animations";
+import { motion } from "framer-motion";
 const WorkPage = () => {
   return (
     <section className="bg-black text-white">
       <Container>
         <FirstSectionWrapper>
-          <WorkPageFirstSection />
+          <motion.div
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <WorkPageFirstSection />
+          </motion.div>
         </FirstSectionWrapper>
       <FeaturedWorks disableDescription={true} />
       </Container>

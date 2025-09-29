@@ -8,13 +8,15 @@ const CollaborationSection = () => {
 
   return (
     <div className="bg-black text-white">
-      <div className="
+      <div
+        className="
         w-full max-w-[50rem] h-auto  mx-auto 
         flex flex-col items-center px-[1rem] sm:px-[2rem] md:px-[3rem] lg:px-[4rem] xl:px-[0.25rem]
         pt-[2rem] sm:pt-[3rem] md:pt-[4rem] lg:pt-[6rem] xl:pt-[9rem]
         pb-[2rem] sm:pb-[3rem] md:pb-[4rem] lg:pb-[5rem] xl:pb-0
         gap-[1rem] sm:gap-[1.5rem] md:gap-[2rem] lg:gap-[3rem] xl:gap-[4.95rem]
-      ">
+      "
+      >
         {/* Heading */}
         <h2
           className="
@@ -35,7 +37,8 @@ const CollaborationSection = () => {
             margin: "0 auto 1rem auto",
           }}
         >
-         Not just a project - a partnership. Built with intent, delivered with impact.
+          Not just a project - a partnership. Built with intent, delivered with
+          impact.
         </h2>
 
         {/* Motion Button */}
