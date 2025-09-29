@@ -138,7 +138,7 @@ export default function CaseStudyLayout({ content, contentId }) {
         {/* Ensure Media components have full-width parent containers */}
         <div className="w-full">
           {/* Heading */}
-          <h1 className="text-5xl lg:text-[60px] xl:text-[64px] font-alan-sans max-w-4xl pb-20">
+          <h1 className="text-5xl lg:text-[60px] xl:text-[64px] font-alan-sans max-w-7xl pb-20">
             <span>{data.heading.preTitle}</span>{" "}
             <span style={{ color: data.companyAccent }}>{data.heading.title}</span>{" "}
             <span>{data.heading.postTitle}</span>
