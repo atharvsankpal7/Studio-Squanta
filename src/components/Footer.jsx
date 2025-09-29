@@ -41,26 +41,30 @@ const Footer = () => {
             </h2>
 
             {/* Schedule Call Button */}
-            <button className="flex justify-center items-center bg-black border border-[#00FF26] rounded-full hover:cursor-pointer group mt-4 px-4 sm:px-6 py-2 w-full sm:w-auto lg:w-[18rem] lg:h-[2.75rem] transition-all duration-300" onClick={() => window.location.href = '/collaboration'}>
-              <span className="text-white text-sm sm:text-base lg:text-[1.15281rem] font-semibold">
-                Let's schedule a call
-              </span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-4 h-4 sm:w-5 sm:h-5 lg:w-[1.441rem] lg:h-[1.441rem] ml-2 group-hover:rotate-[42.597deg] transition-transform duration-300 ease-in-out"
-                viewBox="0 0 24 24"
-                fill="none"
+            <Link to="/collaboration">
+              <button
+                className="flex justify-center items-center bg-black border border-[#00FF26] rounded-full hover:cursor-pointer group mt-4 px-4 sm:px-6 py-2 w-full sm:w-auto lg:w-[18rem] lg:h-[2.75rem] transition-all duration-300"
+                onClick={() => (window.location.href = "/collaboration")}
               >
-                <path
-                  d="M7.23074 16.8021L16.8376 7.19531M16.8376 7.19531H8.19143M16.8376 7.19531V15.8415"
-                  stroke="white"
-                  strokeWidth="1.92137"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </button>
-
+                <span className="text-white text-sm sm:text-base lg:text-[1.15281rem] font-semibold">
+                  Let's schedule a call
+                </span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-4 h-4 sm:w-5 sm:h-5 lg:w-[1.441rem] lg:h-[1.441rem] ml-2 group-hover:rotate-[42.597deg] transition-transform duration-300 ease-in-out"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M7.23074 16.8021L16.8376 7.19531M16.8376 7.19531H8.19143M16.8376 7.19531V15.8415"
+                    stroke="white"
+                    strokeWidth="1.92137"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </button>
+            </Link>
             {/* Email and Button */}
             <div className="flex flex-col sm:flex-row items-start sm:items-center mt-6 md:mt-8 lg:mt-[6.1rem] gap-3 sm:gap-4 font-alan-sans">
               <span
@@ -73,48 +77,50 @@ const Footer = () => {
               >
                 hello@studiosquanta.com
               </span>
-              <button className="hover:cursor-pointer sm:ml-[1.69rem] w-12 sm:w-16 sm:h-16 lg:w-[4.05156rem] lg:h-[2.10369rem] transform hover:scale-105 transition-transform self-end">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 65 34"
-                  fill="none"
-                  className="w-full h-full"
-                >
-                  <g clipPath="url(#clip0_394_629)">
-                    <rect
-                      width="64.8251"
-                      height="33.6592"
-                      rx="16.8296"
-                      fill="black"
-                    />
-                    <path
-                      fillRule="evenodd"
-                      clipRule="evenodd"
-                      d="M37.798 11.3872L25.3296 24.1641C24.8374 24.6689 24.8046 25.5247 25.2566 26.0731C25.7092 26.6221 26.4765 26.6586 26.9681 26.1545L39.5309 13.2819C39.5542 13.4526 39.5591 13.6275 39.5468 13.8028C39.2096 18.4335 38.6848 25.639 38.6848 25.639C38.6305 26.3823 39.1272 27.0341 39.7936 27.0946C40.46 27.1552 41.0449 26.6005 41.0992 25.8573C41.0992 25.8573 41.6241 18.653 41.9618 14.0217C42.0604 12.6615 41.6527 11.3165 40.8335 10.3028C40.0138 9.28978 38.857 8.69825 37.634 8.66777L26.8926 8.40078C26.2246 8.38353 25.6691 8.97523 25.6542 9.721C25.6398 10.4662 26.1698 11.0851 26.8384 11.1017L37.5798 11.3687C37.6528 11.3709 37.7258 11.3768 37.798 11.3872Z"
-                      fill="white"
-                    />
-                  </g>
-                  <rect
-                    x="0.623318"
-                    y="0.623318"
-                    width="63.5785"
-                    height="32.4126"
-                    rx="16.2063"
-                    stroke="#00FF26"
-                    strokeWidth="1.24664"
-                  />
-                  <defs>
-                    <clipPath id="clip0_394_629">
+              <Link to="mailto:hello@studiosquanta.com">
+                <button className="hover:cursor-pointer sm:ml-[1.69rem] w-12 sm:w-16 sm:h-16 lg:w-[4.05156rem] lg:h-[2.10369rem] transform hover:scale-105 transition-transform self-end">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 65 34"
+                    fill="none"
+                    className="w-full h-full"
+                  >
+                    <g clipPath="url(#clip0_394_629)">
                       <rect
                         width="64.8251"
                         height="33.6592"
                         rx="16.8296"
+                        fill="black"
+                      />
+                      <path
+                        fillRule="evenodd"
+                        clipRule="evenodd"
+                        d="M37.798 11.3872L25.3296 24.1641C24.8374 24.6689 24.8046 25.5247 25.2566 26.0731C25.7092 26.6221 26.4765 26.6586 26.9681 26.1545L39.5309 13.2819C39.5542 13.4526 39.5591 13.6275 39.5468 13.8028C39.2096 18.4335 38.6848 25.639 38.6848 25.639C38.6305 26.3823 39.1272 27.0341 39.7936 27.0946C40.46 27.1552 41.0449 26.6005 41.0992 25.8573C41.0992 25.8573 41.6241 18.653 41.9618 14.0217C42.0604 12.6615 41.6527 11.3165 40.8335 10.3028C40.0138 9.28978 38.857 8.69825 37.634 8.66777L26.8926 8.40078C26.2246 8.38353 25.6691 8.97523 25.6542 9.721C25.6398 10.4662 26.1698 11.0851 26.8384 11.1017L37.5798 11.3687C37.6528 11.3709 37.7258 11.3768 37.798 11.3872Z"
                         fill="white"
                       />
-                    </clipPath>
-                  </defs>
-                </svg>
-              </button>
+                    </g>
+                    <rect
+                      x="0.623318"
+                      y="0.623318"
+                      width="63.5785"
+                      height="32.4126"
+                      rx="16.2063"
+                      stroke="#00FF26"
+                      strokeWidth="1.24664"
+                    />
+                    <defs>
+                      <clipPath id="clip0_394_629">
+                        <rect
+                          width="64.8251"
+                          height="33.6592"
+                          rx="16.8296"
+                          fill="white"
+                        />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </button>
+              </Link>
             </div>
           </div>
 
