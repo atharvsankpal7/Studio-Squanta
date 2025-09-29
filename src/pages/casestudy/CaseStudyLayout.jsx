@@ -224,7 +224,7 @@ export default function CaseStudyLayout({ content, contentId }) {
           <Media src={data.images.two} alt="" className="w-full" />
 
           {/* Impact */}
-          <div className="pt-24 pb-20">
+          <div className="pt-24">
             <h2 className="text-5xl font-alan-sans uppercase mb-20">THE IMPACT</h2>
             <div ref={impactSectionRef} className="flex flex-col md:items-end gap-16">
               {data.impact.map((item, i) => (

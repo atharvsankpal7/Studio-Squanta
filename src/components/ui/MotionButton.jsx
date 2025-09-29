@@ -1,15 +1,15 @@
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom"; // Make sure to import this
 
-const MotionButton = ({className}) => {
+const MotionButton = ({ className = "" }) => {
   const navigate = useNavigate();
 
-  className = `py-6 sm:py-8 md:py-10 lg:py-12 xl:pt-[6.6rem] xl:pb-[3rem] ${className}`
-  return (
-    <div className={className}>
+  // Ensure passed className takes precedence by appending it last
+  const mergedClassName = `${className}  py-6 sm:py-8 md:py-10 lg:py-12 xl:pt-[6.6rem] xl:pb-[3rem] `;
 
+  return (
+    <div className={mergedClassName}>
       <motion.button
-        // 1. Removed the 'whileHover' prop to prevent scaling and shadow changes.
         whileTap={{ scale: 0.97 }}
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
         className="
@@ -21,7 +21,7 @@ const MotionButton = ({className}) => {
         lg:w-[50rem] lg:h-[5rem] lg:p-[0.625rem] lg:gap-[1.125rem] lg:rounded-[3rem] 
         xl:w-[82.375rem] xl:h-[6.3125rem] xl:p-[0.625rem] xl:gap-[1.25rem] xl:rounded-[3.5625rem]
         border-2 border-[#00FF26] bg-[#000] cursor-pointer
-        " // 2. Removed Tailwind's hover classes: 'hover:bg-[#00FF26]' and 'hover:drop-shadow-[...]'
+        "
         onClick={() => navigate("/collaboration")}
       >
         {/* Button Text */}
@@ -33,7 +33,7 @@ const MotionButton = ({className}) => {
           md:text-[1.5rem] md:w-[12rem]
           lg:text-[2rem] lg:w-[16rem]
           xl:text-[3rem] xl:w-[25.75rem]
-          " // 3. Removed 'group-hover:text-black' to keep the text color white on hover.
+          "
           style={{
             flexShrink: 0,
             fontFamily: "Montserrat",
@@ -51,7 +51,7 @@ const MotionButton = ({className}) => {
           viewBox="0 0 32 31"
           fill="none"
           className="
-          group-hover:rotate-[42.597deg] transition-transform duration-300 ease-in-out // This is the only hover effect remaining
+          group-hover:rotate-[42.597deg] transition-transform duration-300 ease-in-out
           w-[1rem] h-[1rem]
           sm:w-[1.25rem] sm:h-[1.25rem]
           md:w-[1.5rem] md:h-[1.5rem]
@@ -71,7 +71,6 @@ const MotionButton = ({className}) => {
         </motion.svg>
       </motion.button>
     </div>
-
   );
 };
 

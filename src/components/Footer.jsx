@@ -37,11 +37,11 @@ const Footer = () => {
           <div className="flex flex-col items-start flex-1">
             {/* Let's Discuss Text */}
             <h2 className="text-white text-left text-[18.778px] md:text-[27px] lg:text-[38px] font-[700] md:w-[357px] break-auto leading-tight ">
-              Let's Discuss Your Vision. With US
+              Let's Discuss Your Vision With Us
             </h2>
 
             {/* Schedule Call Button */}
-            <button className="flex justify-center items-center bg-black border border-[#00FF26] rounded-full hover:cursor-pointer group mt-4 px-4 sm:px-6 py-2 w-full sm:w-auto lg:w-[18rem] lg:h-[2.75rem] transition-all duration-300">
+            <button className="flex justify-center items-center bg-black border border-[#00FF26] rounded-full hover:cursor-pointer group mt-4 px-4 sm:px-6 py-2 w-full sm:w-auto lg:w-[18rem] lg:h-[2.75rem] transition-all duration-300" onClick={() => window.location.href = '/collaboration'}>
               <span className="text-white text-sm sm:text-base lg:text-[1.15281rem] font-semibold">
                 Let's schedule a call
               </span>
