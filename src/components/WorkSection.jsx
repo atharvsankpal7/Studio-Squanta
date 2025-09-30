@@ -16,18 +16,24 @@ const WorkCard = ({
   const card = (
     <div className="flex flex-col bg-black text-white overflow-hidden shadow-lg font-alan-sans">
       {/* Image */}
-      <div className="w-full overflow-hidden">
+      <div className="w-full">
         {image && (
-          <img src={image} alt={title} className="lg:w-[645px] lg:h-[618px]" />
+          <img
+            src={image}
+            alt={title}
+            className="object-cover w-full aspect-square"
+          />
         )}
         {video && (
           <video
             src="Squanta Assets/off-third.mp4"
             alt="OFF-THRD"
-            class="lg:w-[645px] lg:h-[618px] object-fill"
-            autoplay
-
-          ></video>
+            className="object-cover w-full aspect-square"
+            autoPlay
+            loop
+            muted
+            playsInline
+          />
         )}
       </div>
 

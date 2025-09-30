@@ -17,7 +17,6 @@ export const fadeInUp = {
   },
 };
 
-
 const Media = ({
   src,
   alt = "",
@@ -90,20 +89,28 @@ const WorkCard = ({
   description,
   disableDescription,
   slug,
+  video,
 }) => {
   const card = (
     <div className="flex flex-col bg-black text-white overflow-hidden shadow-lg">
       <div className="w-full overflow-hidden">
         {/* Support image or video for card media */}
-        <Media
-          src={image}
-          alt={title}
-          className=" object-cover"
-          autoPlay
-          loop
-          muted
-          playsInline
-        />
+        {image ? (
+          <img
+            src={image}
+            alt={title}
+            className="object-cover w-full aspect-square"
+          />
+        ) : video ? (
+          <video
+            src={video}
+            className="object-cover w-full aspect-square"
+            autoPlay
+            loop
+            muted
+            playsInline
+          />
+        ) : null}
       </div>
       <div className="py-6 flex flex-col ">
         <div className="flex items-center gap-2 mb-4">
@@ -344,7 +351,7 @@ export default function CaseStudyLayout({ content, contentId }) {
                 </div>
               ))}
             </div>
-            <Media src={data.images.three} alt="" className="my-20 w-full" />
+            <Media src={data.images.three} alt="" className="my-40 w-full" />
             <Media
               src={data.images.four}
               alt=""
