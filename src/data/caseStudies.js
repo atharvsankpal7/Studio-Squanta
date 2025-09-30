@@ -216,7 +216,7 @@ export const caseStudies = {
         title: "OFF-THRD",
         countryFlag: "https://flagcdn.com/w20/us.png", // India flag
         description:
-          "Curated headlines, topic follows, breaking notifications, and save-for-later reading across devices with seamless sync.",
+          "Designed a minimalist yet expressive interface, focused on discovery, personalization, and community style-sharing",
         tags: ["Application", "Branding"],
         slug: "off-thrd", // add when ready in caseStudies.js
       },

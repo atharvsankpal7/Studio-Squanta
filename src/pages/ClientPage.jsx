@@ -21,9 +21,9 @@ const KnowMorePage = () => {
           >
             COLLAB
           </motion.h1>
-          <p className="text-[27px] md:text-[38px] font-[500] text-center lg:px-40 ">
-            At Studio Squanta, we collaborate with brands to craft impactful
-            experiences
+          <p className="text-[27px] md:text-[38px] font-[500] pb-10 text-center lg:px-40 ">
+            At Studio Squanta, we collaborate with 
+            brands to craft impactful experiences
           </p>
           <div className="flex flex-col items-center gap-y-6">
             <img

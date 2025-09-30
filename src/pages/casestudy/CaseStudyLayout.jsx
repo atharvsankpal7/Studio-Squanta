@@ -46,7 +46,7 @@ const Media = ({
   if (isVideo) {
     return (
       <video
-        className={`w-full ${className}`}
+        className={`w-full ${className} aspect-square`}
         src={src}
         {...(poster ? { poster } : {})}
         {...(playsInline ? { playsInline: true } : {})}
