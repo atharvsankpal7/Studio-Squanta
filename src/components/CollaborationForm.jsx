@@ -159,7 +159,7 @@ const CollaborationForm = () => {
 
   return (
     <>
-      <h3 className="text-2xl lg:text-[3rem] pt-6 pb-6  font-alan-sans font-bold">
+      <h3 className="text-2xl lg:text-[3rem] pt-6 pb-6 font-alan-sans font-bold">
         Got an idea? Let's build it
       </h3>
       <motion.div

@@ -8,18 +8,18 @@ const MotionButton = ({ className = "" }) => {
   const mergedClassName = `${className}  py-6 sm:py-8 md:py-10 lg:py-12 xl:pt-[6.6rem] xl:pb-[3rem] `;
 
   return (
-    <div className={mergedClassName}>
+    <div className={mergedClassName + "w-full"}>
       <motion.button
         whileTap={{ scale: 0.97 }}
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
         className="
         hidden 
         group lg:flex justify-center items-center
-        w-[18rem] h-[3rem] p-[0.375rem] gap-[0.75rem] rounded-[1.5rem] 
+       h-[3rem] p-[0.375rem] gap-[0.75rem] rounded-[1.5rem] 
         sm:w-[24rem] sm:h-[3.5rem] sm:p-[0.5rem] sm:gap-[0.875rem] sm:rounded-[2rem] 
         md:w-[32rem] md:h-[4rem] md:p-[0.625rem] md:gap-[1rem] md:rounded-[2.5rem] 
         lg:w-[50rem] lg:h-[5rem] lg:p-[0.625rem] lg:gap-[1.125rem] lg:rounded-[3rem] 
-        xl:w-[82.375rem] xl:h-[6.3125rem] xl:p-[0.625rem] xl:gap-[1.25rem] xl:rounded-[3.5625rem]
+        min-w-full xl:gap-[1.25rem] xl:rounded-[3.5625rem]
         border-2 border-[#00FF26] bg-[#000] cursor-pointer
         "
         onClick={() => navigate("/collaboration")}

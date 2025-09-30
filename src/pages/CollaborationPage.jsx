@@ -12,7 +12,7 @@ const CollaborationPage = () => {
     return (
         <div className="bg-black w-full">
 
-        <div className="w-full mx-auto  max-w-[100vw] lg:max-w-[90rem] lg:px-10 px-2 md:px-[3.75rem] max-w-[100vw]lg:pl-0 pt-18">
+        <div className="w-full mx-auto  max-w-[100vw] lg:max-w-[90rem] lg:px-10 px-2 md:px-[3.75rem] text-white t max-w-[100vw]lg:pl-0 pt-18">
             <CollaborationForm />
         </div>
         </div>

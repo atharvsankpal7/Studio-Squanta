@@ -102,7 +102,7 @@ const WorkCard = ({
 };
 
 // Featured Works Section
-const FeaturedWorks = ({ disableDescription = false }) => {
+const FeaturedWorks = ({ disableDescription = false, disable= false }) => {
   let featuredworks = [
     {
       image: "Squanta Assets/Rectangle 64.png",
@@ -238,7 +238,7 @@ const FeaturedWorks = ({ disableDescription = false }) => {
             />
           ))}
         </div>
-        {!disableDescription && (
+        {!disableDescription && !disable &&(
           <a href="/work" className="cursor-pointer group">
             <div className="flex justify-center lg:mt-12 cursor-pointer">
               <button

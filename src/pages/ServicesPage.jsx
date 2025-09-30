@@ -19,8 +19,8 @@ export const ServicesPage = () => {
           <CollaborationSection1 />
         </FirstSectionWrapper>
         <ServicesGrid />
-        <FeaturedWorks />
-        <CollaborationSection />
+        <FeaturedWorks disable={true} />
+        <CollaborationSection  />
       </Container>
     </div>
   );
