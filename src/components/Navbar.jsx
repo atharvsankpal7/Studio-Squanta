@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
+import Container from "./ui/Container";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -57,163 +58,177 @@ const Navbar = () => {
   };
 
   return (
-    <div className={`w-full fixed top-0 left-0 right-0 z-50 bg-black transition-opacity duration-300 ${showNavbar ? "opacity-100" : "opacity-0 pointer-events-none"
-      }`}>
-      <nav
-        className="w-full lg:max-w-[90rem] mx-auto lg:px-10 px-2 md:px-[3.75rem] max-w-[100vw] flex flex-col lg:flex-row items-center justify-center font-alan-sans"
-        style={{ minHeight: "5.44rem" }}
-      >
-        <div className="flex justify-between items-center text-white h-full w-full relative ">
-          {/* Logo */}
-          <motion.div whileTap={{ scale: 0.95 }} className="flex items-center">
-            <Link to="/" className="flex items-center hover:opacity-80">
-              <div className="flex items-center gap-1 justify-center px-[10px] py-[10px] text-4xl leading-normal font-boatica font-bold">
-                <span style={{ color: "#FFFFFF" }}>STUDIO </span>
-                <span style={{ color: "#00FF26" }}>SQUANTA</span>
-              </div>
-            </Link>
-          </motion.div>
+    <div
+      className={`w-full fixed top-0 left-0 right-0 z-50 bg-black transition-opacity duration-300 ${
+        showNavbar ? "opacity-100" : "opacity-0 pointer-events-none"
+      }`}
+    >
+        <nav
+          className="w-full max-w-[90rem] mx-auto px-4 sm:px-6 md:px-[3.75rem] bg-black  flex flex-col lg:flex-row items-center justify-center font-alan-sans"
+          style={{ minHeight: "5.44rem" }}
+        >
+          <div className="flex justify-between items-center text-white h-full w-full relative ">
+            {/* Logo */}
+            <motion.div
+              whileTap={{ scale: 0.95 }}
+              className="flex items-center"
+            >
+              <Link to="/" className="flex items-center hover:opacity-80">
+                <div className="flex items-center gap-1 justify-center  text-4xl leading-normal font-boatica font-bold">
+                  <span style={{ color: "#FFFFFF" }}>STUDIO </span>
+                  <span style={{ color: "#00FF26" }}>SQUANTA</span>
+                </div>
+              </Link>
+            </motion.div>
 
-          {/* Desktop Navigation - Centered */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 hidden lg:flex items-center gap-8">
-            {menuItems.map((item) => (
-              <motion.div key={item.path} whileHover={{ scale: 1.05 }}>
-                <Link
-                  to={item.path}
-                  className={`transition-all duration-300 whitespace-nowrap hover:opacity-80 ${isActivePath(item.path) ? 'opacity-100' : 'opacity-100'
+            {/* Desktop Navigation - Centered */}
+            <div className="absolute left-1/2 transform -translate-x-1/2 hidden lg:flex items-center gap-8">
+              {menuItems.map((item) => (
+                <motion.div key={item.path} whileHover={{ scale: 1.05 }}>
+                  <Link
+                    to={item.path}
+                    className={`transition-all duration-300 whitespace-nowrap hover:opacity-80 ${
+                      isActivePath(item.path) ? "opacity-100" : "opacity-100"
                     } font-montserrat`}
-                  style={{
-                    fontSize: "14px",
-                    fontWeight: "600",
-                    letterSpacing: "1.54px",
-                    color: "#FFF"
-                  }}
-                >
-                  {item.label}
-                </Link>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Right Side Buttons */}
-          <div className="flex items-center gap-4">
-            {/* Desktop Buttons */}
-            <div className="hidden lg:flex items-center gap-4">
-              <motion.div whileHover={{ scale: 1.05 }}>
-                <Link
-                  to="/future"
-                  className="flex items-center justify-center px-[10px] py-[10px] transition-all duration-300 hover:bg-gray-800 font-montserrat text-[16px] font-semibold"
-                  style={{
-                    width: "133px",
-                    height: "40px",
-                    borderRadius: "57px",
-                    border: "1px solid #FFF",
-                    background: "#2B2B2B",
-                    color: "#FFF"
-                  }}
-                >
-                  Future
-                </Link>
-              </motion.div>
-
-              <motion.div whileHover={{ scale: 1.05 }}>
-                <Link
-                  to="/collaboration"
-                  className="flex items-center justify-center px-[10px] py-[10px] transition-all duration-300 hover:bg-gray-800 font-montserrat text-[16px] font-semibold"
-                  style={{
-                    width: "133px",
-                    height: "40px",
-                    borderRadius: "57px",
-                    border: "1px solid #FFF",
-                    background: "#2B2B2B",
-                    color: "#FFF"
-                  }}
-                >
-                  Contact
-                </Link>
-              </motion.div>
+                    style={{
+                      fontSize: "14px",
+                      fontWeight: "600",
+                      letterSpacing: "1.54px",
+                      color: "#FFF",
+                    }}
+                  >
+                    {item.label}
+                  </Link>
+                </motion.div>
+              ))}
             </div>
 
-            {/* Mobile Hamburger */}
-            <button
-              onClick={handleMenuToggle}
-              className="lg:hidden relative w-6 h-6 sm:w-8 sm:h-8 flex flex-col justify-center items-center"
-            >
-              <motion.span
-                animate={
-                  isMobileMenuOpen ? { rotate: 45, y: 0 } : { rotate: 0, y: -4 }
-                }
-                transition={{ duration: 0.4 }}
-                className="absolute w-7 sm:w-8 h-0.5 sm:h-1 bg-white rounded"
-              />
-              <motion.span
-                animate={
-                  isMobileMenuOpen ? { rotate: -45, y: 0 } : { rotate: 0, y: 4 }
-                }
-                transition={{ duration: 0.4 }}
-                className="absolute w-7 sm:w-8 h-0.5 sm:h-1 bg-white rounded"
-              />
-            </button>
-          </div>
-        </div>
-
-        {/* Mobile Dropdown */}
-        <AnimatePresence>
-          {isMobileMenuOpen && (
-            <motion.div
-              key="dropdown-menu"
-              initial="hidden"
-              animate="visible"
-              exit="exit"
-              variants={dropdownVariants}
-              className="bg-black text-white border-t lg:hidden border-gray-800 w-full"
-            >
-              <div className="lg:hidden py-4 px-4 space-y-3">
-                {menuItems.map((item) => (
-                  <motion.div key={item.path} variants={itemVariants}>
-                    <Link
-                      to={item.path}
-                      className="block py-2 text-base font-medium hover:text-gray-400 font-montserrat"
-                      style={{
-                        fontSize: "14px",
-                        fontWeight: "600",
-                        letterSpacing: "1.54px",
-                      }}
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      {item.label}
-                    </Link>
-                  </motion.div>
-                ))}
-                <motion.div variants={itemVariants} className="pt-3 space-y-2">
+            {/* Right Side Buttons */}
+            <div className="flex items-center gap-4">
+              {/* Desktop Buttons */}
+              <div className="hidden lg:flex items-center gap-4">
+                <motion.div whileHover={{ scale: 1.05 }}>
                   <Link
                     to="/future"
-                    className="bg-[#2B2B2B] border border-white text-white hover:bg-gray-800 font-medium py-2 px-4 rounded-full w-full block text-center text-sm font-montserrat"
+                    className="flex items-center justify-center px-[10px] py-[10px] transition-all duration-300 hover:bg-gray-800 font-montserrat text-[16px] font-semibold"
                     style={{
-                      fontSize: "16px",
-                      fontWeight: "600",
+                      width: "133px",
+                      height: "40px",
+                      borderRadius: "57px",
+                      border: "1px solid #FFF",
+                      background: "#2B2B2B",
+                      color: "#FFF",
                     }}
-                    onClick={() => setIsMobileMenuOpen(false)}
                   >
                     Future
                   </Link>
+                </motion.div>
+
+                <motion.div whileHover={{ scale: 1.05 }}>
                   <Link
                     to="/collaboration"
-                    className="bg-[#2B2B2B] border border-white text-white hover:bg-gray-800 font-medium py-2 px-4 rounded-full w-full block text-center text-sm font-montserrat"
+                    className="flex items-center justify-center px-[10px] py-[10px] transition-all duration-300 hover:bg-gray-800 font-montserrat text-[16px] font-semibold"
                     style={{
-                      fontSize: "16px",
-                      fontWeight: "600",
+                      width: "133px",
+                      height: "40px",
+                      borderRadius: "57px",
+                      border: "1px solid #FFF",
+                      background: "#2B2B2B",
+                      color: "#FFF",
                     }}
-                    onClick={() => setIsMobileMenuOpen(false)}
                   >
                     Contact
                   </Link>
                 </motion.div>
               </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </nav>
+
+              {/* Mobile Hamburger */}
+              <button
+                onClick={handleMenuToggle}
+                className="lg:hidden relative w-6 h-6 sm:w-8 sm:h-8 flex flex-col justify-center items-center"
+              >
+                <motion.span
+                  animate={
+                    isMobileMenuOpen
+                      ? { rotate: 45, y: 0 }
+                      : { rotate: 0, y: -4 }
+                  }
+                  transition={{ duration: 0.4 }}
+                  className="absolute w-7 sm:w-8 h-0.5 sm:h-1 bg-white rounded"
+                />
+                <motion.span
+                  animate={
+                    isMobileMenuOpen
+                      ? { rotate: -45, y: 0 }
+                      : { rotate: 0, y: 4 }
+                  }
+                  transition={{ duration: 0.4 }}
+                  className="absolute w-7 sm:w-8 h-0.5 sm:h-1 bg-white rounded"
+                />
+              </button>
+            </div>
+          </div>
+
+          {/* Mobile Dropdown */}
+          <AnimatePresence>
+            {isMobileMenuOpen && (
+              <motion.div
+                key="dropdown-menu"
+                initial="hidden"
+                animate="visible"
+                exit="exit"
+                variants={dropdownVariants}
+                className="bg-black text-white border-t lg:hidden border-gray-800 w-full"
+              >
+                <div className="lg:hidden py-4 px-4 space-y-3">
+                  {menuItems.map((item) => (
+                    <motion.div key={item.path} variants={itemVariants}>
+                      <Link
+                        to={item.path}
+                        className="block py-2 text-base font-medium hover:text-gray-400 font-montserrat"
+                        style={{
+                          fontSize: "14px",
+                          fontWeight: "600",
+                          letterSpacing: "1.54px",
+                        }}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        {item.label}
+                      </Link>
+                    </motion.div>
+                  ))}
+                  <motion.div
+                    variants={itemVariants}
+                    className="pt-3 space-y-2"
+                  >
+                    <Link
+                      to="/future"
+                      className="bg-[#2B2B2B] border border-white text-white hover:bg-gray-800 font-medium py-2 px-4 rounded-full w-full block text-center text-sm font-montserrat"
+                      style={{
+                        fontSize: "16px",
+                        fontWeight: "600",
+                      }}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Future
+                    </Link>
+                    <Link
+                      to="/collaboration"
+                      className="bg-[#2B2B2B] border border-white text-white hover:bg-gray-800 font-medium py-2 px-4 rounded-full w-full block text-center text-sm font-montserrat"
+                      style={{
+                        fontSize: "16px",
+                        fontWeight: "600",
+                      }}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Contact
+                    </Link>
+                  </motion.div>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </nav>
     </div>
   );
 };
