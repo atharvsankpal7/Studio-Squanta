@@ -45,7 +45,9 @@ const KnowMorePage = () => {
         </FirstSectionWrapper>
       </Container>
       {/* TODO: add Grid here */}
-      <SoftwareSection2 />
+      <Container className="pt-[5.43rem] bg-black text-white">
+        <SoftwareSection2 />
+      </Container>
       <div></div>
       <CollaborationSection />
     </div>
