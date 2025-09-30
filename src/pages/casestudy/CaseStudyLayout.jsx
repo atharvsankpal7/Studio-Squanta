@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 
 // Reusable media renderer that auto-detects image vs video from file extension
 
-export const fadeInUp = {
+ const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
