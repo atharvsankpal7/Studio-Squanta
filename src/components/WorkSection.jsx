@@ -21,7 +21,13 @@ const WorkCard = ({
           <img src={image} alt={title} className="lg:w-[645px] lg:h-[618px]" />
         )}
         {video && (
-          <video src={video} alt={title} className="lg:w-[645px] lg:h-[618px]" autoPlay />
+          <video
+            src="Squanta Assets/off-third.mp4"
+            alt="OFF-THRD"
+            class="lg:w-[645px] lg:h-[618px] object-fill"
+            autoplay
+
+          ></video>
         )}
       </div>
 

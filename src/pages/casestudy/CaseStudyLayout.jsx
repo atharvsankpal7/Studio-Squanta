@@ -4,9 +4,31 @@ import Container from "../../components/ui/Container";
 import { useInView } from "react-intersection-observer";
 import { Link } from "react-router-dom";
 import CollaborationSection2 from "../../components/CollaborationSection2.jsx";
-import {motion} from "framer-motion"
+import { motion } from "framer-motion";
+
 // Reusable media renderer that auto-detects image vs video from file extension
-const Media = ({ src, alt = "", className = "", controls, autoPlay = true, loop = true, muted = true, playsInline = true, poster }) => {
+
+export const fadeInUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
+
+
+const Media = ({
+  src,
+  alt = "",
+  className = "",
+  controls,
+  autoPlay = true,
+  loop = true,
+  muted = true,
+  playsInline = true,
+  poster,
+}) => {
   if (!src) return null;
   const getExt = (path) => {
     try {
@@ -61,17 +83,38 @@ const CountUp = ({ end, duration = 2000, start = false }) => {
   return <>{count}</>;
 };
 
-const WorkCard = ({ image, title, countryFlag, description, disableDescription, slug }) => {
+const WorkCard = ({
+  image,
+  title,
+  countryFlag,
+  description,
+  disableDescription,
+  slug,
+}) => {
   const card = (
     <div className="flex flex-col bg-black text-white overflow-hidden shadow-lg">
       <div className="w-full overflow-hidden">
         {/* Support image or video for card media */}
-        <Media src={image} alt={title} className=" object-cover" autoPlay loop muted playsInline />
+        <Media
+          src={image}
+          alt={title}
+          className=" object-cover"
+          autoPlay
+          loop
+          muted
+          playsInline
+        />
       </div>
       <div className="py-6 flex flex-col ">
         <div className="flex items-center gap-2 mb-4">
           <h3 className="text-xl font-semibold">{title}</h3>
-          {countryFlag && <img src={countryFlag} alt="flag" className="w-5 h-5 object-cover rounded-full" />}
+          {countryFlag && (
+            <img
+              src={countryFlag}
+              alt="flag"
+              className="w-5 h-5 object-cover rounded-full"
+            />
+          )}
         </div>
         {!disableDescription && (
           <p
@@ -84,7 +127,13 @@ const WorkCard = ({ image, title, countryFlag, description, disableDescription, 
       </div>
     </div>
   );
-  return slug ? <Link to={`/casestudy/${slug}`} className="block">{card}</Link> : card;
+  return slug ? (
+    <Link to={`/casestudy/${slug}`} className="block">
+      {card}
+    </Link>
+  ) : (
+    card
+  );
 };
 
 export default function CaseStudyLayout({ content, contentId }) {
@@ -112,7 +161,10 @@ export default function CaseStudyLayout({ content, contentId }) {
   }, [content, contentId]);
 
   const data = resolvedContent || content;
-  const { ref: impactSectionRef, inView: isImpactSectionVisible } = useInView({ triggerOnce: true, threshold: 0.5 });
+  const { ref: impactSectionRef, inView: isImpactSectionVisible } = useInView({
+    triggerOnce: true,
+    threshold: 0.5,
+  });
 
   if (!data) {
     // If we are still loading dynamic content, render nothing (or a lightweight placeholder)
@@ -121,11 +173,25 @@ export default function CaseStudyLayout({ content, contentId }) {
     return (
       <div className="bg-black text-white min-h-screen flex items-center justify-center px-6">
         <div className="max-w-xl text-center">
-          <h1 className="text-4xl md:text-5xl font-alan-sans mb-4">Case study not found</h1>
-          <p className="text-gray-400 mb-8">The case study you are looking for doesn’t exist or has been moved.</p>
+          <h1 className="text-4xl md:text-5xl font-alan-sans mb-4">
+            Case study not found
+          </h1>
+          <p className="text-gray-400 mb-8">
+            The case study you are looking for doesn’t exist or has been moved.
+          </p>
           <div className="flex gap-4 justify-center">
-            <Link className="border border-white rounded-[57px] px-6 py-2 hover:bg-white hover:text-black" to="/work">Back to Work</Link>
-            <Link className="border border-white rounded-[57px] px-6 py-2 hover:bg-white hover:text-black" to="/">Go Home</Link>
+            <Link
+              className="border border-white rounded-[57px] px-6 py-2 hover:bg-white hover:text-black"
+              to="/work"
+            >
+              Back to Work
+            </Link>
+            <Link
+              className="border border-white rounded-[57px] px-6 py-2 hover:bg-white hover:text-black"
+              to="/"
+            >
+              Go Home
+            </Link>
           </div>
         </div>
       </div>
@@ -136,18 +202,21 @@ export default function CaseStudyLayout({ content, contentId }) {
     <div className="bg-black text-white font-montserrat">
       <Container className="pt-20">
         {/* Ensure Media components have full-width parent containers */}
-        <div className="w-full">
-          {/* Heading */}
+        <div className="w-full overflow-visible">
           <motion.h1
             className="text-5xl lg:text-[60px] xl:text-[64px] font-alan-sans max-w-7xl pb-20"
-            initial={{ x: -100, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
           >
             <span>{data.heading.preTitle}</span>{" "}
-            <span style={{ color: data.companyAccent }}>{data.heading.title}</span>{" "}
+            <span style={{ color: data.companyAccent }}>
+              {data.heading.title}
+            </span>{" "}
             <span>{data.heading.postTitle}</span>
           </motion.h1>
+
           <hr
             className="w-full h-[14px] flex-shrink-0 border-0 mb-6"
             style={{ backgroundColor: data.companyAccent }}
@@ -157,17 +226,24 @@ export default function CaseStudyLayout({ content, contentId }) {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pb-8">
             <div className="max-w-[244px]">
               <h5 className="text-xl font-semibold mb-12">ABOUT</h5>
-              <p className="text-[#A6A6A6] text-base font-semibold">{data.info.about}</p>
+              <p className="text-[#A6A6A6] text-base font-semibold">
+                {data.info.about}
+              </p>
             </div>
             <div className="max-w-[244px]">
               <h5 className="text-xl font-semibold mb-12">INDUSTRY</h5>
-              <p className="text-[#A6A6A6] text-base font-semibold">{data.info.industry}</p>
+              <p className="text-[#A6A6A6] text-base font-semibold">
+                {data.info.industry}
+              </p>
             </div>
             <div className="max-w-[244px]">
               <h5 className="text-xl font-semibold mb-12">SERVICES</h5>
               <div className="flex flex-col gap-4">
                 {data.services.map((service, i) => (
-                  <div key={i} className="text-[#A6A6A6] font-semibold text-base uppercase">
+                  <div
+                    key={i}
+                    className="text-[#A6A6A6] font-semibold text-base uppercase"
+                  >
                     {service}
                   </div>
                 ))}
@@ -183,44 +259,62 @@ export default function CaseStudyLayout({ content, contentId }) {
 
           {/* Images + Timeline */}
           <Media src={data.images.one} alt="preview" className="mb-16 w-full" />
-          <h6 className="text-xl font-alan-sans pb-16">{data.timeline.intro}</h6>
+          <h6 className="text-xl font-alan-sans pb-16">
+            {data.timeline.intro}
+          </h6>
 
           {/* Timeline Sections */}
           <div className="flex flex-col md:flex-row gap-8 py-12">
             <div className="w-full md:w-1/4 lg:w-1/5">
-              <h3 className="text-[#787878] font-medium uppercase mb-5">TIMELINE</h3>
+              <h3 className="text-[#787878] font-medium uppercase mb-5">
+                TIMELINE
+              </h3>
               <p>{data.timeline.duration}</p>
             </div>
             <div className="w-full md:w-3/4 lg:w-4/5 space-y-5">
               {/* Challenge */}
               <div>
                 <h3 className="text-[#787878] uppercase mb-5">CHALLENGE</h3>
-                <p className="text-gray-300 mb-4">{data.timeline.challenge.description}</p>
+                <p className="text-gray-300 mb-4">
+                  {data.timeline.challenge.description}
+                </p>
                 <p className="text-gray-300">The Challenge?</p>
                 <ul className="text-gray-300">
-                  {data.timeline.challenge.points.map((point, i) => <li key={i}>{point}</li>)}
+                  {data.timeline.challenge.points.map((point, i) => (
+                    <li key={i}>{point}</li>
+                  ))}
                 </ul>
               </div>
 
               {/* Solution */}
               <div>
                 <h3 className="text-[#787878] uppercase ">SOLUTION</h3>
-                <p className="text-gray-300">{data.timeline.solution.description}</p>
+                <p className="text-gray-300">
+                  {data.timeline.solution.description}
+                </p>
               </div>
 
               {/* Branding */}
               <div>
-                <h3 className="text-[#787878] uppercase ">{data.timeline.branding.title}</h3>
+                <h3 className="text-[#787878] uppercase ">
+                  {data.timeline.branding.title}
+                </h3>
                 <ul className="text-gray-300">
-                  {data.timeline.branding.points.map((point, i) => <li key={i}>{point}</li>)}
+                  {data.timeline.branding.points.map((point, i) => (
+                    <li key={i}>{point}</li>
+                  ))}
                 </ul>
               </div>
 
               {/* App Design */}
               <div>
-                <h3 className="text-[#787878] uppercase ">{data.timeline.appDesign.title}</h3>
+                <h3 className="text-[#787878] uppercase ">
+                  {data.timeline.appDesign.title}
+                </h3>
                 <ul className="text-gray-300">
-                  {data.timeline.appDesign.points.map((point, i) => <li key={i}>{point}</li>)}
+                  {data.timeline.appDesign.points.map((point, i) => (
+                    <li key={i}>{point}</li>
+                  ))}
                 </ul>
               </div>
             </div>
@@ -230,24 +324,41 @@ export default function CaseStudyLayout({ content, contentId }) {
 
           {/* Impact */}
           <div className="pt-24">
-            <h2 className="text-5xl font-alan-sans uppercase mb-20">THE IMPACT</h2>
-            <div ref={impactSectionRef} className="flex flex-col md:items-end gap-16">
+            <h2 className="text-5xl font-alan-sans uppercase mb-20">
+              THE IMPACT
+            </h2>
+            <div
+              ref={impactSectionRef}
+              className="flex flex-col md:items-end gap-16"
+            >
               {data.impact.map((item, i) => (
                 <div key={i} className="flex items-center">
                   <span className="text-8xl font-light mr-12 w-48">
-                    <CountUp end={item.percentage} start={isImpactSectionVisible} />%
+                    <CountUp
+                      end={item.percentage}
+                      start={isImpactSectionVisible}
+                    />
+                    %
                   </span>
                   <p className="text-lg w-[13.13rem]">{item.description}</p>
                 </div>
               ))}
             </div>
             <Media src={data.images.three} alt="" className="my-20 w-full" />
-            <Media src={data.images.four} alt="" className="mb-20 md:px-20 w-full" />
+            <Media
+              src={data.images.four}
+              alt=""
+              className="mb-20 md:px-20 w-full"
+            />
 
             {/* Discover More */}
-            <h2 className="text-white font-alan-sans text-[32px] md:text-[96.68px] mb-20">Discover More</h2>
+            <h2 className="text-white font-alan-sans text-[32px] md:text-[96.68px] mb-20">
+              Discover More
+            </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {data.works?.map((work, i) => <WorkCard key={i} {...work} />)}
+              {data.works?.map((work, i) => (
+                <WorkCard key={i} {...work} />
+              ))}
             </div>
           </div>
           <CollaborationSection2 />

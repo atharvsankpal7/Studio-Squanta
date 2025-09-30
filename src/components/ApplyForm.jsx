@@ -1,60 +1,5 @@
 import React, { useState } from "react";
 
-// A reusable styled input field for the application form
-const InputField = ({
-  label,
-  placeholder,
-  type = "text",
-  optional = false,
-  value,
-  onChange,
-  onBlur,
-  error,
-  name,
-}) => (
-  <div style={{ marginBottom: "clamp(1.75rem, 5vw, 4.31rem)" }}>
-    <label
-      style={{
-        color: "#898989",
-        fontFamily: "Montserrat",
-        fontSize: "clamp(0.75rem, 2vw, 1.06131rem)",
-        fontStyle: "normal",
-        fontWeight: 700,
-        lineHeight: "normal",
-        marginBottom: "clamp(0.5rem, 1vw, 0.44rem)",
-        display: "block",
-      }}
-    >
-      {label} {!optional}
-    </label>
-    <div style={{ marginBottom: "clamp(1rem, 1vw, 1.06rem)" }}>
-      <input
-        type={type}
-        name={name}
-        placeholder={placeholder}
-        value={value}
-        onChange={onChange}
-        onBlur={onBlur}
-        style={{
-          display: "flex",
-          padding: "clamp(0.5rem, 2vw, 1.03006rem) clamp(0.75rem, 2vw, 1.24856rem)",
-          justifyContent: "space-between",
-          alignItems: "center",
-          alignSelf: "stretch",
-          width: "100%",
-          border: error ? "1px solid #ef4444" : "1px solid #d1d5db",
-          borderRadius: "9999px",
-          backgroundColor: "white",
-          color: "#000",
-          outline: "none",
-        }}
-        className="focus:ring-2 focus:ring-green-500 transition-shadow"
-      />
-      {error && <p className="text-center text-red-500 text-sm">{error}</p>}
-    </div>
-  </div>
-);
-
 const ApplyForm = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -97,15 +42,7 @@ const ApplyForm = () => {
       newErrors.ctc = "Please enter a valid CTC";
     }
 
-    // Portfolio validation (optional)
-    if (
-      formData.portfolio &&
-      !/^(https?:\/\/)?([\w-]+\.)+[\w-]+(\/[\w- .\/\?%&=]*)?$/.test(
-        formData.portfolio
-      )
-    ) {
-      newErrors.portfolio = "Please enter a valid URL";
-    }
+  
 
     // Resume validation
     if (!formData.resume) {

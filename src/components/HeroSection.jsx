@@ -1,8 +1,8 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import Container from './ui/Container';
-import FirstSectionWrapper from './FirstSectionWrapper';
+import React from "react";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import Container from "./ui/Container";
+import FirstSectionWrapper from "./FirstSectionWrapper";
 
 const HeroSection = () => {
   return (
@@ -20,7 +20,6 @@ const HeroSection = () => {
 
         {/* Main Content Container */}
         <Container className="mt-[4.625rem] lg:mt-[5.44rem] relative z-10 w-full h-[22rem] md:h-[38rem] lg:h-[53.56rem] flex flex-col items-center justify-center">
-
           {/* Studio and SQUANTA Text */}
           <div className="flex flex-col items-center justify-center font-[700] ">
             <motion.div
@@ -56,17 +55,16 @@ const HeroSection = () => {
           >
             <Link
               to="/collaboration"
-              className="group inline-flex items-center justify-center gap-[0.15875rem] bg-black border border-white rounded-[57px] text-white hover:bg-white hover:text-black transition-all duration-300 hover:scale-105 p-3 xl:ml-16"
+              className="group inline-flex items-center justify-center  bg-black border border-white rounded-[57px] text-white hover:bg-white hover:text-black transition-all duration-300 hover:scale-105 p-3 xl:ml-16"
               style={{
-                width: 'clamp(9.92063rem, 15vw, 250px)', // Responsive width
-
+                width: "clamp(9.92063rem, 15vw, 250px)", // Responsive width
               }}
             >
               <span
                 className="font-alan-sans font-semibold leading-normal"
                 style={{
-                  width: 'clamp(5.6rem, 10vw, 8.81rem)', // Responsive width
-                  fontSize: 'clamp(0.63494rem, 1vw, 16px)', // Responsive font size
+                  width: "clamp(5.6rem, 10vw, 8rem)", // Responsive width
+                  fontSize: "clamp(0.63494rem, 1vw, 16px)", // Responsive font size
                 }}
               >
                 Let's Collaborate
@@ -89,7 +87,6 @@ const HeroSection = () => {
               </svg>
             </Link>
           </motion.div>
-
         </Container>
       </div>
     </FirstSectionWrapper>
