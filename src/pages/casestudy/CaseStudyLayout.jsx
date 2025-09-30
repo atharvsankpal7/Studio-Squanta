@@ -4,7 +4,7 @@ import Container from "../../components/ui/Container";
 import { useInView } from "react-intersection-observer";
 import { Link } from "react-router-dom";
 import CollaborationSection2 from "../../components/CollaborationSection2.jsx";
-
+import {motion} from "framer-motion"
 // Reusable media renderer that auto-detects image vs video from file extension
 const Media = ({ src, alt = "", className = "", controls, autoPlay = true, loop = true, muted = true, playsInline = true, poster }) => {
   if (!src) return null;
@@ -138,11 +138,16 @@ export default function CaseStudyLayout({ content, contentId }) {
         {/* Ensure Media components have full-width parent containers */}
         <div className="w-full">
           {/* Heading */}
-          <h1 className="text-5xl lg:text-[60px] xl:text-[64px] font-alan-sans max-w-7xl pb-20">
+          <motion.h1
+            className="text-5xl lg:text-[60px] xl:text-[64px] font-alan-sans max-w-7xl pb-20"
+            initial={{ x: -100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             <span>{data.heading.preTitle}</span>{" "}
             <span style={{ color: data.companyAccent }}>{data.heading.title}</span>{" "}
             <span>{data.heading.postTitle}</span>
-          </h1>
+          </motion.h1>
           <hr
             className="w-full h-[14px] flex-shrink-0 border-0 mb-6"
             style={{ backgroundColor: data.companyAccent }}

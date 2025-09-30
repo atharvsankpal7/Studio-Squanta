@@ -11,12 +11,18 @@ const WorkCard = ({
   tags,
   disableDescription,
   slug,
+  video,
 }) => {
   const card = (
     <div className="flex flex-col bg-black text-white overflow-hidden shadow-lg font-alan-sans">
       {/* Image */}
       <div className="w-full overflow-hidden">
-        <img src={image} alt={title} className="lg:w-[645px] lg:h-[618px]" />
+        {image && (
+          <img src={image} alt={title} className="lg:w-[645px] lg:h-[618px]" />
+        )}
+        {video && (
+          <video src={video} alt={title} className="lg:w-[645px] lg:h-[618px]" autoPlay />
+        )}
       </div>
 
       {/* Content */}
@@ -143,7 +149,7 @@ const FeaturedWorks = ({ disableDescription = false }) => {
       slug: "trenddy", // uncomment when case study JSON is added
     },
     {
-      image: "Squanta Assets/Rectangle 66.png",
+      image: "Squanta Assets/Rectangle 9664.png",
       title: "AUTOMATE",
       countryFlag: "https://flagcdn.com/w20/in.png", // India flag
       description:
@@ -152,7 +158,8 @@ const FeaturedWorks = ({ disableDescription = false }) => {
       slug: "automate", // add when ready in caseStudies.js
     },
     {
-      image: "Squanta Assets/Rectangle 96.png",
+      // image: "Squanta Assets/Rectangle 96.png",
+      video: "Squanta Assets/off-third.mp4",
       title: "OFF-THRD",
       countryFlag: "https://flagcdn.com/w20/us.png", // India flag
       description:
@@ -161,8 +168,8 @@ const FeaturedWorks = ({ disableDescription = false }) => {
       slug: "off-thrd", // add when ready in caseStudies.js
     },
     {
-      image: "Squanta Assets/Rectangle 64.png",
-      title: "FIREFIT",
+      image: "Squanta Assets/Rectangle 84.png",
+      title: "FINORA",
       countryFlag: "https://flagcdn.com/w20/in.png", // India flag
       description:
         "Digitizing the sales experience for a leading healthcare band maker, saving millions in print costs",
@@ -170,7 +177,7 @@ const FeaturedWorks = ({ disableDescription = false }) => {
       // slug: "firefit",
     },
     {
-      image: "Squanta Assets/Rectangle 65.png",
+      image: "Squanta Assets/Rectangle 9666.png",
       title: "Cafe 10",
       countryFlag: "https://flagcdn.com/w20/us.png", // USA flag
       description:
@@ -222,10 +229,13 @@ const FeaturedWorks = ({ disableDescription = false }) => {
         {!disableDescription && (
           <a href="/work" className="cursor-pointer group">
             <div className="flex justify-center lg:mt-12 cursor-pointer">
-              <button className="flex justify-center items-center gap-2 text-white border border-white rounded-[57px] px-6 py-2 hover:bg-white hover:text-black  transition-all duration-300 hover:scale-105 p-3"
-                style={{ width: 'clamp(10rem,20vw,12.3rem)' }}
+              <button
+                className="flex justify-center items-center gap-2 text-white border border-white rounded-[57px] px-6 py-2 hover:bg-white hover:text-black  transition-all duration-300 hover:scale-105 p-3"
+                style={{ width: "clamp(10rem,20vw,12.3rem)" }}
               >
-                <span style={{ fontSize: 'clamp(14px, 2vw, 1rem)' }}>View All</span>
+                <span style={{ fontSize: "clamp(14px, 2vw, 1rem)" }}>
+                  View All
+                </span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
