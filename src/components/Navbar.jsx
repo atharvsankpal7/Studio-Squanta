@@ -74,7 +74,7 @@ const Navbar = () => {
               className="flex items-center"
             >
               <Link to="/" className="flex items-center hover:opacity-80">
-                <div className="flex items-center gap-2 justify-center text-3xl lg:text-4xl leading-normal font-alan-sans font-bold">
+              <div className="flex items-center gap-2 justify-center text-3xl lg:text-4xl leading-normal font-boatica font-semibold">
                   <span style={{ color: "#FFFFFF" }}>STUDIO </span>
                   <span style={{ color: "#00FF26" }}>SQUANTA</span>
                 </div>
