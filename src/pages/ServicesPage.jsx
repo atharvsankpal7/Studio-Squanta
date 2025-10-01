@@ -18,10 +18,10 @@ export const ServicesPage = () => {
         <FirstSectionWrapper>
           <CollaborationSection1 />
         </FirstSectionWrapper>
+      </Container>
         <ServicesGrid />
         <FeaturedWorks disable={true} />
         <CollaborationSection  />
-      </Container>
     </div>
   );
 };

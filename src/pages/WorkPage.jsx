@@ -25,8 +25,8 @@ const WorkPage = () => {
             <WorkPageFirstSection />
           </motion.div>
         </FirstSectionWrapper>
-      <FeaturedWorks disableDescription={true} />
       </Container>
+      <FeaturedWorks disableDescription={true} />
 
       <Container>
         <div

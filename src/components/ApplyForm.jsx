@@ -1,4 +1,48 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import FirstSectionWrapper from "./FirstSectionWrapper";
+import Container from "./ui/Container";
+import { motion } from "framer-motion";
+import { div } from "framer-motion/client";
+// Reusable styled input component
+const InputField = ({
+  label,
+  placeholder,
+  type = "text",
+  value,
+  onChange,
+  onBlur,
+  error,
+  name,
+  as = "input",
+  isDescription = false,
+}) => (
+  <div className="flex flex-col w-full mt-6 md:mt-12 font-alan-sans">
+    <label className="text-white text-[1.0625rem] mb-2 font-medium">
+      {label} *
+    </label>
+    {as === "textarea" ? (
+      <textarea
+        name={name}
+        placeholder={placeholder}
+        value={value}
+        onChange={onChange}
+        onBlur={onBlur}
+        className="w-full p-4 border border-gray-500 rounded-2xl  text-base outline-none resize-none h-28 "
+      />
+    ) : (
+      <input
+        type={type}
+        name={name}
+        placeholder={placeholder}
+        value={value}
+        onChange={onChange}
+        onBlur={onBlur}
+        className="w-full p-4 border border-gray-500 rounded-2xl  text-base outline-none"
+      />
+    )}
+    {error && <p className="mt-1 text-red-500 text-sm">{error}</p>}
+  </div>
+);
 
 const ApplyForm = () => {
   const [formData, setFormData] = useState({

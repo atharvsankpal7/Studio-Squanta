@@ -13,7 +13,7 @@ const   Container = ({
 }) => {
   const containerClasses = fullWidth 
     ? `w-full px-4 sm:px-6 md:px-[3.75rem] ${className}`
-    : `w-full max-w-[90rem] mx-auto  ${className}`;
+    : `w-full max-w-[90rem] mx-auto px-4 sm:px-6 md:px-[3.75rem] ${className}`;
 
   return (
     <Component className={containerClasses} {...props}>

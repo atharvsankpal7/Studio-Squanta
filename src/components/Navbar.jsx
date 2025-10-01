@@ -65,16 +65,16 @@ const Navbar = () => {
     >
         <nav
           className="w-full max-w-[90rem] mx-auto px-4 sm:px-6 md:px-[3.75rem] bg-black  flex flex-col lg:flex-row items-center justify-center font-alan-sans"
-          style={{ minHeight: "5.44rem" }}
+          
         >
-          <div className="flex justify-between items-center text-white h-full w-full relative ">
+        <div className="flex justify-between items-center text-white h-full w-full relative " style={{ minHeight: "5.44rem" }}>
             {/* Logo */}
             <motion.div
               whileTap={{ scale: 0.95 }}
               className="flex items-center"
             >
               <Link to="/" className="flex items-center hover:opacity-80">
-                <div className="flex items-center gap-1 justify-center  text-4xl leading-normal font-boatica font-bold">
+                <div className="flex items-center gap-2 justify-center text-3xl lg:text-4xl leading-normal font-alan-sans font-bold">
                   <span style={{ color: "#FFFFFF" }}>STUDIO </span>
                   <span style={{ color: "#00FF26" }}>SQUANTA</span>
                 </div>
