@@ -1,8 +1,8 @@
 import CollaborationSection from "../components/CollaborationSection";
 import Container from "../components/ui/Container";
 import FirstSectionWrapper from "../components/FirstSectionWrapper";
-import { motion }  from "framer-motion";
-import { fadeInUp } from "../components/ui/animations";
+import { motion } from "framer-motion";
+import { containerVariants, fadeInUp } from "../components/ui/animations";
 
 const KnowMorePage = () => {
   return (
@@ -53,16 +53,26 @@ const KnowMorePage = () => {
             United Team Worldwide Impact
           </h1>
           <div className="flex flex-col items-around justify-center items-center">
-            <div className="text-[80px] md:text-[120px] xl:text-[174.816px] font-bold">
+            <motion.div className="text-[80px] md:text-[120px] xl:text-[174.816px] font-bold transition-colors duration-300" variants={fadeInUp} initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }} transition={{ delay: 0.2 }}>
               45+
-            </div>
-            <div className="text-[16px] lg:text-[32px]  font-bold">
+            </motion.div>
+            <motion.div className="text-[16px] lg:text-[32px]  font-bold transition-colors duration-300" variants={fadeInUp} initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }} transition={{ delay: 0.2 }}>
               Project Delivered
-            </div>
-            <div className="text-[80px] md:text-[120px] xl:text-[174.816px] font-bold">
+            </motion.div>
+            <motion.div className="text-[80px] md:text-[120px] xl:text-[174.816px] font-bold transition-colors duration-300" variants={fadeInUp} initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }} transition={{ delay: 0.2 }}>
               40+
-            </div>
-            <div className="text-[16px] lg:text-[32px] font-bold">Clients</div>
+            </motion.div>
+            <motion.div className="text-[16px] lg:text-[32px] font-bold transition-colors duration-300" variants={fadeInUp} initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }} transition={{ delay: 0.2 }}>
+              Clients
+            </motion.div>
           </div>
         </Container>
         <Container>
@@ -101,7 +111,7 @@ const KnowMorePage = () => {
           </div>
         </div>
       </div>
-      
+
       <CollaborationSection />
     </div>
   );
