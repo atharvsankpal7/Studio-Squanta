@@ -59,18 +59,18 @@ export const caseStudies = {
                 // image: "Squanta Assets/Rectangle 96.png",
                 video: "/Squanta Assets/off-third.mp4",
                 title: "OFF-THRD",
-                countryFlag: "https://flagcdn.com/w20/us.png", // India flag
+                countryFlag: "/Squanta Assets/India.png", // India flag
                 description:
-                    "Curated headlines, topic follows, breaking notifications, and save-for-later reading across devices with seamless sync.",
+                    "Designed a minimalist yet expressive interface, focused on discovery, personalization, and community style-sharing.",
                 tags: ["Application", "Branding"],
                 slug: "off-thrd", // add when ready in caseStudies.js
             },
             {
                 image: "/Squanta Assets/Rectangle 9664.png",
                 title: "AUTOMATE",
-                countryFlag: "https://flagcdn.com/w20/in.png", // India flag
+                countryFlag: "/Squanta Assets/India.png", // India flag
                 description:
-                    "Curated headlines, topic follows, breaking notifications, and save-for-later reading across devices with seamless sync.",
+                    "Design an experience that’s intuitive, engaging, and empowering - not complicated like many control apps.",
                 tags: ["Application", "Branding"],
                 slug: "automate", // add when ready in caseStudies.js
             },
@@ -134,20 +134,20 @@ export const caseStudies = {
         ],
         works: [
             {
-                image: "/Squanta Assets/t3.png",
-                title: "TRENDDY",
-                countryFlag: "https://flagcdn.com/w20/in.png", // India flag
+                image: "/Squanta Assets/sss3.png",
+                title: "THE TRENDY TABLE ",
+                countryFlag: "/Squanta Assets/India.png", // India flag
                 description:
-                    "Rebranded OFF-THRD with a fresh identity and executed targeted digital marketing, boosting visibility, footfall, and conversions across channels.",
+                    "Designed a minimalist yet vibrant menu, focused on clarity, highlights, and easy choices.",
                 tags: ["Branding", "Digital marketing"],
                 slug: "trenddy", // uncomment when case study JSON is added
             },
             {
                 image: "/Squanta Assets/Rectangle 9664.png",
                 title: "AUTOMATE",
-                countryFlag: "https://flagcdn.com/w20/in.png", // India flag
+                countryFlag: "/Squanta Assets/India.png", // India flag
                 description:
-                    "Curated headlines, topic follows, breaking notifications, and save-for-later reading across devices with seamless sync.",
+                    "Design an experience that’s intuitive, engaging, and empowering - not complicated like many control apps   .",
                 tags: ["Application", "Branding"],
                 slug: "automate", // add when ready in caseStudies.js
             },
@@ -213,19 +213,19 @@ export const caseStudies = {
             {
                 // image: "Squanta Assets/Rectangle 96.png",
                 video: "/Squanta Assets/off-third.mp4",
-                title: "OFF-THRD",
-                countryFlag: "https://flagcdn.com/w20/us.png", // India flag
+                title: "OFF-THRD ",
+                countryFlag: "/Squanta Assets/India.png", // India flag
                 description:
-                    "Designed a minimalist yet expressive interface, focused on discovery, personalization, and community style-sharing",
+                    "Designed a minimalist yet expressive interface, focused on discovery, personalization, and community style-sharing.",
                 tags: ["Application", "Branding"],
                 slug: "off-thrd", // add when ready in caseStudies.js
             },
             {
                 image: "/Squanta Assets/Rectangle 9664.png",
                 title: "AUTOMATE",
-                countryFlag: "https://flagcdn.com/w20/in.png", // India flag
+                countryFlag: "/Squanta Assets/India.png", // India flag
                 description:
-                    "Curated headlines, topic follows, breaking notifications, and save-for-later reading across devices with seamless sync.",
+                    "Design an experience that’s intuitive, engaging, and empowering - not complicated like many control apps.",
                 tags: ["Application", "Branding"],
                 slug: "automate", // add when ready in caseStudies.js
             },
@@ -293,18 +293,18 @@ export const caseStudies = {
                 // image: "Squanta Assets/Rectangle 96.png",
                 video: "/Squanta Assets/off-third.mp4",
                 title: "OFF-THRD",
-                countryFlag: "https://flagcdn.com/w20/us.png", // India flag
+                countryFlag: "/Squanta Assets/India.png", // India flag
                 description:
-                    "Curated headlines, topic follows, breaking notifications, and save-for-later reading across devices with seamless sync.",
+                    "Designed a minimalist yet expressive interface, focused on discovery, personalization, and community style-sharing.",
                 tags: ["Application", "Branding"],
                 slug: "off-thrd", // add when ready in caseStudies.js
             },
             {
-                image: "/Squanta Assets/t3.png",
-                title: "TRENDDY",
-                countryFlag: "https://flagcdn.com/w20/in.png", // India flag
+                image: "/Squanta Assets/sss3.png",
+                title: "THE TRENDY TABLE ",
+                countryFlag: "/Squanta Assets/India.png", // India flag
                 description:
-                    "Rebranded OFF-THRD with a fresh identity and executed targeted digital marketing, boosting visibility, footfall, and conversions across channels.",
+                    "Designed a minimalist yet vibrant menu, focused on clarity, highlights, and easy choices.",
                 tags: ["Branding", "Digital marketing"],
                 slug: "trenddy", // uncomment when case study JSON is added
             },

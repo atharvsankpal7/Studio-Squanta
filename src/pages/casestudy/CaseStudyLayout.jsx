@@ -119,7 +119,7 @@ const WorkCard = ({
             <img
               src={countryFlag}
               alt="flag"
-              className="w-5 h-5 object-cover rounded-full"
+              className="w-7 h-7 object-cover rounded-full"
             />
           )}
         </div>
