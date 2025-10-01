@@ -102,7 +102,7 @@ const WorkCard = ({
 };
 
 // Featured Works Section
-const FeaturedWorks = ({ disableDescription = false, disable= false }) => {
+const FeaturedWorks = ({ disableDescription = false, disable = false }) => {
   let featuredworks = [
     {
       image: "Squanta Assets/Rectangle 64.png",
@@ -110,7 +110,7 @@ const FeaturedWorks = ({ disableDescription = false, disable= false }) => {
       countryFlag: "https://flagcdn.com/w20/in.png", // India flag
       description:
         "Digitizing the sales experience for a leading healthcare band maker, saving millions in print costs",
-      tags: ["Iconography", "Illustration", "Graphics"],
+      tags: ["Iconography", "Illustration", "App Design"],
       // slug: "firefit",
     },
     {
@@ -148,7 +148,7 @@ const FeaturedWorks = ({ disableDescription = false, disable= false }) => {
       countryFlag: "https://flagcdn.com/w20/in.png", // India flag
       description:
         "Digitizing the sales experience for a leading healthcare band maker, saving millions in print costs",
-      tags: ["Iconography", "Illustration", "Graphics"],
+      tags: ["Iconography", "Illustration", "App Design"],
       slug: "firefit",
     },
     {
@@ -185,7 +185,7 @@ const FeaturedWorks = ({ disableDescription = false, disable= false }) => {
       countryFlag: "https://flagcdn.com/w20/in.png", // India flag
       description:
         "Digitizing the sales experience for a leading healthcare band maker, saving millions in print costs",
-      tags: ["Iconography", "Illustration", "Graphics"],
+      tags: ["Iconography", "Illustration", "App Design"],
       // slug: "firefit",
     },
     {
@@ -238,7 +238,7 @@ const FeaturedWorks = ({ disableDescription = false, disable= false }) => {
             />
           ))}
         </div>
-        {!disableDescription && !disable &&(
+        {!disableDescription && !disable && (
           <a href="/work" className="cursor-pointer group">
             <div className="flex justify-center lg:mt-12 cursor-pointer">
               <button
