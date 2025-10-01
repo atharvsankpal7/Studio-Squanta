@@ -44,8 +44,11 @@ const KnowMorePage = () => {
           />
         </FirstSectionWrapper>
       </Container>
+      <Container>
+        <div className="border-t border-white"></div>
+      </Container>
       <div className="bg-black text-white">
-        <Container className="flex flex-col md:flex-row items-center md:justify-between border-t border-white border-b py-60 gap-4">
+        <Container className="flex flex-col md:flex-row items-center md:justify-between  py-60 gap-4">
           <h1 className="text-[32px] md:text-[50px] xl:text-[64px] font-bold lg:w-[550px] font-alan-sans">
             United Team Worldwide Impact
           </h1>
@@ -62,7 +65,10 @@ const KnowMorePage = () => {
             <div className="text-[16px] lg:text-[32px] font-bold">Clients</div>
           </div>
         </Container>
-        <div className="w-full px-4 sm:px-6 md:px-[3.75rem] flex flex-col items-center md:justify-between my-60 gap-10">
+        <Container>
+          <div className="border-t border-white"></div>
+        </Container>
+        <div className="w-full max-w-[90rem] mx-auto  px-4 sm:px-6 md:px-[3.75rem] flex flex-col items-center md:justify-between my-60 gap-10">
           <div className="bg-black text-white font-sans w-full">
             <div className="flex flex-col w-full gap-20">
               <div className="flex flex-col md:flex-row justify-between items-start md:items-center pb-8 lg:px-8">
@@ -95,6 +101,7 @@ const KnowMorePage = () => {
           </div>
         </div>
       </div>
+      
       <CollaborationSection />
     </div>
   );
