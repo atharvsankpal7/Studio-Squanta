@@ -93,7 +93,7 @@ export const caseStudies = {
             one: "/Squanta Assets/Work/offthrd-1.mp4",
             two: "/Squanta Assets/Work/offthrd-2.png",
             three: "/Squanta Assets/Work/offthrd-3.png",
-            four: "/Squanta Assets/Work/t3_t.png",
+            four: "/Squanta Assets/Work/image.png",
         },
         timeline: {
             intro:
@@ -170,7 +170,7 @@ export const caseStudies = {
             one: "/Squanta Assets/Work/trenddy-1.png",
             two: "/Squanta Assets/Work/trenddy-2.png",
             three: "/Squanta Assets/Work/trenddy-3.png",
-            four: "/Squanta Assets/Work/image.png",
+            four: "/Squanta Assets/Work/t3_t.png",
         },
         timeline: {
             intro:
