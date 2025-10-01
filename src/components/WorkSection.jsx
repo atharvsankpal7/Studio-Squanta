@@ -115,12 +115,12 @@ const FeaturedWorks = ({ disableDescription = false, disable = false }) => {
     },
     {
       image: "Squanta Assets/Rectangle 65.png",
-      title: "Cafe 10",
+      title: "Cafa 10",
       countryFlag: "https://flagcdn.com/w20/us.png", // USA flag
       description:
-        "Rebranded Cafe 10 with a fresh identity and executed targeted digital marketing, boosting visibility, footfall, and conversions across channels.",
+        "Rebranded Cafa 10 with a fresh identity and executed targeted digital marketing, boosting visibility, footfall, and conversions across channels.",
       tags: ["Rebranding", "Digital marketing"],
-      // slug: "cafe-10", // uncomment when case study JSON is added
+      // slug: "cafa-10", // uncomment when case study JSON is added
     },
     {
       image: "Squanta Assets/CHRONICAL.png",
@@ -190,12 +190,12 @@ const FeaturedWorks = ({ disableDescription = false, disable = false }) => {
     },
     {
       image: "Squanta Assets/Rectangle 9666.png",
-      title: "Cafe 10",
+      title: "Cafa 10",
       countryFlag: "https://flagcdn.com/w20/us.png", // USA flag
       description:
-        "Rebranded Cafe 10 with a fresh identity and executed targeted digital marketing, boosting visibility, footfall, and conversions across channels.",
+        "Rebranded Cafa 10 with a fresh identity and executed targeted digital marketing, boosting visibility, footfall, and conversions across channels.",
       tags: ["Rebranding", "Digital marketing"],
-      // slug: "cafe-10", // uncomment when case study JSON is added
+      // slug: "cafa-10", // uncomment when case study JSON is added
     },
     {
       image: "Squanta Assets/CHRONICAL.png",

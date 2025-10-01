@@ -18,7 +18,7 @@ const SoftwareSection2 = () => {
     {
       id: 3,
       image: '/Squanta Assets/ss3.png',
-      title: 'T3 CAFE',
+      title: 'T3 CAFA',
       description: ['Rebranding']
     },
     {
@@ -36,7 +36,7 @@ const SoftwareSection2 = () => {
     {
       id: 6,
       image: '/Squanta Assets/ss6.png',
-      title: 'Cafe 10',
+      title: 'Cafa 10',
       description: ['Rebranding', 'Digital', 'Marketing']
     },
 

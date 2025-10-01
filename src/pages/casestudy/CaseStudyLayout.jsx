@@ -46,7 +46,7 @@ const Media = ({
   if (isVideo) {
     return (
       <video
-        className={`w-full ${className} aspect-square`}
+        className={`w-full ${className}`}
         src={src}
         {...(poster ? { poster } : {})}
         {...(playsInline ? { playsInline: true } : {})}
@@ -104,7 +104,7 @@ const WorkCard = ({
         ) : video ? (
           <video
             src={video}
-            className="object-cover w-full aspect-square"
+            className="object-cover w-full"
             autoPlay
             loop
             muted

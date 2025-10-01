@@ -156,7 +156,7 @@ export const caseStudies = {
     trenddy: {
         heading: {
             preTitle: "Helping",
-            title: "T3 Cafe",
+            title: "T3 Cafa",
             postTitle: "Accelerate Orders and Customer Engagement",
         },
         companyAccent: "#00B6B8",
