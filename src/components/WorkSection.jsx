@@ -46,7 +46,7 @@ const WorkCard = ({
             <img
               src={countryFlag}
               alt="flag"
-              className="w-5 h-5 object-cover rounded-full"
+              className="w-7 h-7 object-cover rounded-full"
             />
           )}
         </div>
@@ -107,7 +107,7 @@ const FeaturedWorks = ({ disableDescription = false, disable = false }) => {
     {
       image: "Squanta Assets/Rectangle 64.png",
       title: "FIREFIT",
-      countryFlag: "https://flagcdn.com/w20/in.png", // India flag
+      countryFlag: "/Squanta Assets/India.png", // India flag
       description:
         "Digitizing the sales experience for a leading healthcare band maker, saving millions in print costs",
       tags: ["Iconography", "Illustration", "App Design"],
@@ -116,7 +116,7 @@ const FeaturedWorks = ({ disableDescription = false, disable = false }) => {
     {
       image: "Squanta Assets/Rectangle 65.png",
       title: "Cafa 10",
-      countryFlag: "https://flagcdn.com/w20/us.png", // USA flag
+      countryFlag: "/Squanta Assets/USA.png", // USA flag
       description:
         "Rebranded Cafa 10 with a fresh identity and executed targeted digital marketing, boosting visibility, footfall, and conversions across channels.",
       tags: ["Rebranding", "Digital marketing"],
@@ -125,7 +125,7 @@ const FeaturedWorks = ({ disableDescription = false, disable = false }) => {
     {
       image: "Squanta Assets/CHRONICAL.png",
       title: "Chronical",
-      countryFlag: "https://flagcdn.com/w20/in.png", // India flag
+      countryFlag: "/Squanta Assets/India.png", // India flag
       description:
         "Curated headlines, topic follows, breaking notifications, and save-for-later reading across devices with seamless sync.",
       tags: ["Iconography", "App Design"],
@@ -134,7 +134,7 @@ const FeaturedWorks = ({ disableDescription = false, disable = false }) => {
     {
       image: "Squanta Assets/Rectangle 67.png",
       title: "Trade Craft",
-      countryFlag: "https://flagcdn.com/w20/us.png", // USA flag
+      countryFlag: "/Squanta Assets/USA.png", // USA flag
       description:
         "Designed and developed a stock trading app with real-time data, advanced charts, alerts, and seamless order execution.",
       tags: ["Iconography", "Illustration", "App Design"],
@@ -145,7 +145,7 @@ const FeaturedWorks = ({ disableDescription = false, disable = false }) => {
     {
       image: "Squanta Assets/Rectangle 64.png",
       title: "FIREFIT",
-      countryFlag: "https://flagcdn.com/w20/in.png", // India flag
+      countryFlag: "/Squanta Assets/India.png", // India flag
       description:
         "Digitizing the sales experience for a leading healthcare band maker, saving millions in print costs",
       tags: ["Iconography", "Illustration", "App Design"],
@@ -154,7 +154,7 @@ const FeaturedWorks = ({ disableDescription = false, disable = false }) => {
     {
       image: "Squanta Assets/t3.png",
       title: "TRENDDY",
-      countryFlag: "https://flagcdn.com/w20/in.png", // India flag
+      countryFlag: "/Squanta Assets/India.png", // India flag
       description:
         "Rebranded OFF-THRD with a fresh identity and executed targeted digital marketing, boosting visibility, footfall, and conversions across channels.",
       tags: ["Branding", "Digital marketing"],
@@ -163,7 +163,7 @@ const FeaturedWorks = ({ disableDescription = false, disable = false }) => {
     {
       image: "Squanta Assets/Rectangle 9664.png",
       title: "AUTOMATE",
-      countryFlag: "https://flagcdn.com/w20/in.png", // India flag
+      countryFlag: "/Squanta Assets/India.png", // India flag
       description:
         "Curated headlines, topic follows, breaking notifications, and save-for-later reading across devices with seamless sync.",
       tags: ["Application", "Branding"],
@@ -173,7 +173,7 @@ const FeaturedWorks = ({ disableDescription = false, disable = false }) => {
       // image: "Squanta Assets/Rectangle 96.png",
       video: "Squanta Assets/off-third.mp4",
       title: "OFF-THRD",
-      countryFlag: "https://flagcdn.com/w20/us.png", // India flag
+      countryFlag: "/Squanta Assets/USA.png", // USA flag
       description:
         "Curated headlines, topic follows, breaking notifications, and save-for-later reading across devices with seamless sync.",
       tags: ["Application", "Branding"],
@@ -182,7 +182,7 @@ const FeaturedWorks = ({ disableDescription = false, disable = false }) => {
     {
       image: "Squanta Assets/Rectangle 84.png",
       title: "FINORA",
-      countryFlag: "https://flagcdn.com/w20/in.png", // India flag
+      countryFlag: "/Squanta Assets/India.png", // India flag
       description:
         "Digitizing the sales experience for a leading healthcare band maker, saving millions in print costs",
       tags: ["Iconography", "Illustration", "App Design"],
@@ -191,7 +191,7 @@ const FeaturedWorks = ({ disableDescription = false, disable = false }) => {
     {
       image: "Squanta Assets/Rectangle 9666.png",
       title: "Cafa 10",
-      countryFlag: "https://flagcdn.com/w20/us.png", // USA flag
+      countryFlag: "/Squanta Assets/USA.png", // USA flag
       description:
         "Rebranded Cafa 10 with a fresh identity and executed targeted digital marketing, boosting visibility, footfall, and conversions across channels.",
       tags: ["Rebranding", "Digital marketing"],
@@ -200,7 +200,7 @@ const FeaturedWorks = ({ disableDescription = false, disable = false }) => {
     {
       image: "Squanta Assets/CHRONICAL.png",
       title: "Chronical",
-      countryFlag: "https://flagcdn.com/w20/in.png", // India flag
+      countryFlag: "/Squanta Assets/India.png", // India flag
       description:
         "Curated headlines, topic follows, breaking notifications, and save-for-later reading across devices with seamless sync.",
       tags: ["Iconography", "App Design"],
@@ -209,7 +209,7 @@ const FeaturedWorks = ({ disableDescription = false, disable = false }) => {
     {
       image: "Squanta Assets/Rectangle 67.png",
       title: "Trade Craft",
-      countryFlag: "https://flagcdn.com/w20/us.png", // USA flag
+      countryFlag: "/Squanta Assets/USA.png", // USA flag
       description:
         "Designed and developed a stock trading app with real-time data, advanced charts, alerts, and seamless order execution.",
       tags: ["Iconography", "Illustration", "App Design"],
